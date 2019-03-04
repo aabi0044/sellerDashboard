@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { ForgetpasswordComponent } from './pages/forgetpassword/forgetpassword.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ForgetpasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,10 @@ import { SignupComponent } from './pages/signup/signup.component';
     {
       path:'signup',
       component:SignupComponent
+    },
+    {
+      path:'forgetpassword',
+      component:ForgetpasswordComponent
     }
   ])
   ],
