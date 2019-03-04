@@ -17,7 +17,9 @@ body{
     box-sizing: border-box;
     padding: 40px 30px;
   }
-  
+  .heading{
+    color: white;
+}
   .avatar{
     width: 100px;
     height: 100px;

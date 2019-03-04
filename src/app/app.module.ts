@@ -42,6 +42,10 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     {
       path:'forgetpassword',
       component:ForgetpasswordComponent
+    },
+    {
+      path:'dashboard',
+      component:DashboardComponent
     }
   ])
   ],

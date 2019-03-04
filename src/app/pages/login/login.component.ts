@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import{Validator}from '@angular/forms'
-import{NgModel}from '@angular/forms';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,12 +11,16 @@ export class LoginComponent implements OnInit {
     email:'',
     password:''
   }
-  constructor() { }
+
+
+  constructor(
+    private router:Router
+  ) { }
 
   ngOnInit() {
   }
   login(){
-    
+this.router.navigate(['/dashboard'])
   }
 
 }
