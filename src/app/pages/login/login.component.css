@@ -45,6 +45,17 @@ h1{
     width: 100%;
     margin-bottom: 20px;
 }
+.btn{
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #0000FF;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
 
 .loginbox input[type="text"], input[type="password"]
 {

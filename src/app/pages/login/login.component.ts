@@ -8,11 +8,15 @@ import{NgModel}from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   user={
-    email:''
+    email:'',
+    password:''
   }
   constructor() { }
 
   ngOnInit() {
+  }
+  login(){
+    
   }
 
 }
