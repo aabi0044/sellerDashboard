@@ -17,6 +17,17 @@ body{
     box-sizing: border-box;
     padding: 40px 30px;
   }
+  .btn{
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #0000FF;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
   .heading{
     color: white;
 }
