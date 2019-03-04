@@ -8,6 +8,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { ForgetpasswordComponent } from './pages/forgetpassword/forgetpassword.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import{FormsModule}from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     RouterModule.forRoot([
     { path:'',
       redirectTo:'login',

@@ -10,12 +10,12 @@
 
 <div class="loginbox">
     <h1>Please Log In</h1>
-  <form method="post" action="login">
+  <form >
         <p>Email</p>
         <input type="text" name="email" id="email" placeholder="Enter Email">
         <p>Password</p>
         <input type="password" name="password" id="password" placeholder="Enter Password">
-        <input type="submit" name="loginButton" value="Login">
+        <button (click)="login()" class="btn" type="button" name="loginButton" value="Login" >Login</button>
        <a routerLink='/forgetpassword'>Forgot your password?</a><br>
         <a routerLink='/signup'>Don't have an account?</a>
     </form>
