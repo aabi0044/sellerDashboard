@@ -7,10 +7,15 @@ import { ApiService } from 'src/app/services/api/api.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+  user={
+    fname:'',
+    lastname:'',
+    email:'',
+    password:'',
+    cpassword:''
 
-  constructor(
-    private api:ApiService
-  ) { }
+  }
+  constructor(private api :ApiService) { }
 
   ngOnInit() {
   }
