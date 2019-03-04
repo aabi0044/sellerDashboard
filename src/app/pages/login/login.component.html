@@ -11,12 +11,20 @@
 <div class="loginbox">
     <h1>Please Log In</h1>
   <form method="post" action="login">
-        <p>Email</p>
-        <input type="text" name="email" id="email" placeholder="Enter Email">
+       <div  class="form-group" [class.has-error]="email.invalid && email.touched" >
+        <label for="email" class="control-label">Email</label>
+        <input required email type="text" name="email" #email="ngModel" [(ngModel)]="user.email" id="email" placeholder="Enter Email">
         <p>Password</p>
+        <small style="color:red" class="help-block" *ngIf="email.errors?.required  && email.touched">
+            Email is required 
+          </small>
+          <small style="color:red" class="help-block" *ngIf=" email.errors?.email && email.touched">
+            Email is Invalid 
+          </small>
+      </div>
         <input type="password" name="password" id="password" placeholder="Enter Password">
         <input type="submit" name="loginButton" value="Login">
-       <a routerLink='/forgetpassword'>Forgot your password?</a><br>
+      <a routerLink='/forgetpassword'>Forgot your password?</a><br>
         <a routerLink='/signup'>Don't have an account?</a>
     </form>
 </div>

@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+
 import{RouterModule}from'@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ForgetpasswordComponent } from './pages/forgetpassword/forgetpassword.component';
-
+import { NgModule } from '@angular/core';
+import{FormsModule,ReactiveFormsModule}from'@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
