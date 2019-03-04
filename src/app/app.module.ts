@@ -39,6 +39,10 @@ import{FormsModule}from '@angular/forms';
     {
       path:'forgetpassword',
       component:ForgetpasswordComponent
+    },
+    {
+      path:'dashboard',
+      component:DashboardComponent
     }
   ])
   ],
