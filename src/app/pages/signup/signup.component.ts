@@ -15,20 +15,49 @@ export class SignupComponent implements OnInit {
     cpassword:''
 
   }
-  constructor(private api :ApiService) { }
+  getid;
+  constructor(private api :ApiService) {
+    this.getAllUsers();
+   }
 
   ngOnInit() {
   }
   createUser(){
-    let data={
-      "id":1,
-      "name":"ali",
-     
-      
-    }
-this.api.Createuser(data).subscribe(res=>{
-  console.log("userCreated");
-})
-  }
+    this.api.getUsers().subscribe(res=>{
+      console.log(res);
+      this.getid=res;
+      let dataEmail=this.getid.filter(e=>e.email==this.user.email);
+      console.log(dataEmail);
+      if(dataEmail.length==0){
+        console.log("not exist");
+            let data={
+        "id":this.getid.id+1,
+        "firstName":this.user.fname,
+        "lastName":this.user.lastname,
+        "email":this.user.email,
+        "password":this.user.password
+       
+        
+      }
+  this.api.Createuser(data).subscribe(res=>{
+    console.log("userCreated");
+  })
+      }
+      else{
+        console.log("exist");
+      }
+  
+    })
 
+  }
+ 
+// getUser(){
+
+//   this.api.getUser(id)
+// }
+getAllUsers(){
+  this.api.getUsers().subscribe(res=>{
+    console.log(res);
+  })
+}
 }

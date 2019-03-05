@@ -2,7 +2,22 @@
   "users": [
     {
       "id": 1,
-      "name": "ali"
+      "name": "ali",
+      "email": "nothing@email.com"
+    },
+    {
+      "id": 2,
+      "firstName": "Muhammad",
+      "lastName": "Abdullah",
+      "email": "email@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": 3,
+      "firstName": "Johan",
+      "lastName": "Deny",
+      "email": "email@deny.com",
+      "password": "123456"
     }
   ]
 }
