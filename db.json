@@ -25,6 +25,13 @@
       "lastName": "Mudassir",
       "email": "mudassir@gmail.com",
       "password": "123456"
+    },
+    {
+      "id": 5,
+      "firstName": "sarmad",
+      "lastName": "raja",
+      "email": "raja@email.com",
+      "password": "123456"
     }
   ]
 }
