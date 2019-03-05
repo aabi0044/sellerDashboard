@@ -18,6 +18,20 @@
       "lastName": "Deny",
       "email": "email@deny.com",
       "password": "123456"
+    },
+    {
+      "id": 4,
+      "firstName": "sarmad",
+      "lastName": "raja",
+      "email": "s@s.com",
+      "password": "1111111"
+    },
+    {
+      "id": 5,
+      "firstName": "abd",
+      "lastName": "a",
+      "email": "sa@s.com",
+      "password": "1111111"
     }
   ]
 }
