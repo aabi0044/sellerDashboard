@@ -20,5 +20,8 @@ url="http://localhost:3000/users/";
   getUsers(){
     return this.http.get(this.url);
   }
+  updateUser(id,data){
+    return this.http.post(this.url,+ '' +id,data)
+  }
 
 }
