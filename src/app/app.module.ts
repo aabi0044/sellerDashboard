@@ -12,6 +12,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 
 import{HttpClientModule} from '@angular/common/http';
+import { SellerAccountComponent } from './pages/dashboard/seller-account/seller-account.component';
+import { HeaderComponent } from './shared/header/header.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import{HttpClientModule} from '@angular/common/http';
     SignupComponent,
     ForgetpasswordComponent,
     DashboardComponent,
-    NavbarComponent
+    NavbarComponent,
+    SellerAccountComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -48,8 +52,16 @@ import{HttpClientModule} from '@angular/common/http';
     },
     {
       path:'dashboard',
-      component:DashboardComponent
+      component:DashboardComponent,
+      children:[
+        
+        {
+          path:'selleraccount',
+          component:SellerAccountComponent
+        }
+      ]
     }
+  
   ])
   ],
   providers: [],
