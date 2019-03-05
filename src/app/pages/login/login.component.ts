@@ -31,15 +31,10 @@ this.api.getUsers().subscribe(res=>{
   if(getuser.length!=0 ){
     
       localStorage.setItem('uid',getuser[0].id)
-<<<<<<< HEAD
       this.router.navigate(['./dashboard']);
    
    
     
-=======
-      this.router.navigate(['/dashboard']);
-  
->>>>>>> 1966ec9a2c2172d6d53307861cdccf08bf474dd9
   }
   else{
     console.log("user doesnot Exist");

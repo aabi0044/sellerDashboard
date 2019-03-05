@@ -36,11 +36,13 @@
         
          <div class="form-group" [class.has-error]="pass.invalid && pass.touched">
             <label for="psw"><b>Password</b></label>
-            <input required type="password" placeholder="Enter Password" name="psw" #pass="ngModel" [(ngModel)]="user.password" >
+            <input required type="password" placeholder="Enter Password" 
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="psw" #pass="ngModel" [(ngModel)]="user.password" >
       
             <small id="msg" style="color:red" class="help-block" *ngIf="pass.touched && pass.errors?.required">
               Required
             </small>
+            
           </div>
       
       

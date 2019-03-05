@@ -34,7 +34,6 @@
     },
     {
       "id": 4,
-<<<<<<< HEAD
       "firstName": "sarmad",
       "lastName": "raja",
       "email": "s@s.com",
@@ -53,19 +52,6 @@
       "lastName": "shah",
       "email": "umair@gmail.com",
       "password": "111111"
-=======
-      "firstName": "Muhammad",
-      "lastName": "Mudassir",
-      "email": "mudassir@gmail.com",
-      "password": "123456"
-    },
-    {
-      "id": 5,
-      "firstName": "sarmad",
-      "lastName": "raja",
-      "email": "raja@email.com",
-      "password": "123456"
->>>>>>> 9d548baa08fa4566854eb3576bf972fc6cf4dd03
     }
   ]
 }
