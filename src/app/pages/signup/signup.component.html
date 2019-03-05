@@ -15,7 +15,7 @@
       </div>
         <div class="form-group" [class.has-error]="lname.touched">
           <label for="lname" class="control-label">Last Name</label>
-          <input required type="text" id=lastName name="lastname" #lname="ngModel" [(ngModel)]="user.lastname" placeholder="Enter First Name">
+          <input required type="text" id=lastName name="lastname" #lname="ngModel" [(ngModel)]="user.lastname" placeholder="Enter Last Name">
           <small style="color:red" class="help-block" *ngIf="lname.touched && lname.errors?.required ">
               Last Name is required 
           </small>
@@ -36,11 +36,13 @@
         
          <div class="form-group" [class.has-error]="pass.invalid && pass.touched">
             <label for="psw"><b>Password</b></label>
-            <input required type="password" placeholder="Enter Password" name="psw" #pass="ngModel" [(ngModel)]="user.password" >
+            <input required type="password" placeholder="Enter Password" 
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="psw" #pass="ngModel" [(ngModel)]="user.password" >
       
             <small id="msg" style="color:red" class="help-block" *ngIf="pass.touched && pass.errors?.required">
               Required
             </small>
+            
           </div>
       
       

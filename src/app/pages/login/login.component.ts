@@ -31,7 +31,7 @@ this.api.getUsers().subscribe(res=>{
   if(getuser.length!=0 ){
     
       localStorage.setItem('uid',getuser[0].id)
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['./dashboard']);
    
    
     
