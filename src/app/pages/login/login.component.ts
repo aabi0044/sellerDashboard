@@ -32,9 +32,7 @@ this.api.getUsers().subscribe(res=>{
     
       localStorage.setItem('uid',getuser[0].id)
       this.router.navigate(['/dashboard']);
-   
-   
-    
+  
   }
   else{
     console.log("user doesnot Exist");
