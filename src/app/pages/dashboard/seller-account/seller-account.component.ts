@@ -63,11 +63,8 @@ imageData: any;
     })
   }
   updateUser(){
-    var reader = new FileReader();
-    reader.onload = function(){
-      console.log(reader.result);
-    }
-    reader.readAsDataURL(this.image);
+  
+    
 let data={
 "firstName":this.fname,
 "lastName":this.lname,
