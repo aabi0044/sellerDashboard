@@ -54,27 +54,6 @@
       "password": "111111"
     },
     {
-<<<<<<< HEAD
-      "id": "QmX23kX",
-      "firstName": "",
-      "lastName": "",
-      "email": "",
-      "password": "asasa"
-    },
-    {
-      "id": "GQghELb",
-      "firstName": "ali",
-      "lastName": "khan",
-      "email": "ali@gmail.com",
-      "password": ""
-    },
-    {
-      "id": "KI0rtgG",
-      "firstName": "",
-      "lastName": "",
-      "email": "adadada",
-      "password": "a"
-=======
       "id": 9,
       "firstName": "Balaj",
       "lastName": "Khan",
@@ -94,7 +73,6 @@
       "lastName": "Data",
       "email": "dummy@email1.com",
       "password": "1234567"
->>>>>>> 2c868f23d10c9875325c514e4a89d12126200e9b
     }
   ]
 }
