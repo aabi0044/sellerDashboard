@@ -5,11 +5,11 @@
     <h1 align="center">Welcome to Trollee's Seller Web Based Portal</h1>
     <div class="registerbox">
       <h1 class="heading">Registration Form</h1>
-      <form id="RegistrationForm" method="POST" action="">
-        <div class="form-group" [class.has-error]="fname.touched">
+      <form name="form" id="RegistrationForm" method="POST" action="">
+        <div class="form-group" [class.has-error]="fname.touched ">
         <label for="fname" class="control-label">First Name</label>
         <input required type="text" id=firstName name="firstname" #fname="ngModel" [(ngModel)]="user.fname" placeholder="Enter First Name">
-        <small style="color:red" class="help-block" *ngIf="fname.touched && fname.errors?.required ">
+        <small style="color:red" class="help-block" *ngIf=" fname.touched && fname.errors?.required ">
             First Name is required 
           </small>
       </div>
@@ -23,44 +23,46 @@
 
         <div  class="form-group" [class.has-error]="email.invalid && email.touched" >
             <label for="email" class="control-label">Email</label>
-            <input required email type="text" name="email" #email="ngModel" [(ngModel)]="user.email" id="email" placeholder="Enter Email">
+            <input required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="text" name="email"  #email="ngModel" [(ngModel)]="user.email" id="email" placeholder="Enter Email">
             
             <small style="color:red" class="help-block" *ngIf="email.errors?.required  && email.touched">
                 Email is required 
               </small>
-              <small style="color:red" class="help-block" *ngIf=" email.errors?.email && email.touched">
+              <small style="color:red" class="help-block" *ngIf=" email.errors?.pattern && email.touched">
                 Email is Badly formated 
               </small>
           </div>
        
-        
-         <div class="form-group" [class.has-error]="pass.invalid && pass.touched">
+          <div class="form-group" [class.has-error]="pass.invalid && pass.touched">
             <label for="psw"><b>Password</b></label>
-            <input required type="password" placeholder="Enter Password" 
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="psw" #pass="ngModel" [(ngModel)]="user.password" >
-      
+            <input required pattern="(?=.*[#/?//&/@/$/!/%////\/'/'/}/{/}])(?=.*\d).{7,}" type="password" placeholder="Enter Password"
+             name="psw" #pass="ngModel" [(ngModel)]="user.password"  >
+ 
             <small id="msg" style="color:red" class="help-block" *ngIf="pass.touched && pass.errors?.required">
               Required
             </small>
-            
+            <small id="msg" style="color:red;font-size: 15px" class="help-block" *ngIf=" pass.touched && pass.errors?.pattern">
+            Must contain at least one number and Special character, and at least 7.
+            </small>
           </div>
-      
-      
+ 
+ 
           <div class="form-group" [class.has-error]="passr.invalid && passr.touched">
             <label for="psw-repeat"><b>Confirm Password</b></label>
             <input type="password" appConfirmEqualValidator="psw" placeholder="Confirm Password" name="psw-repeat" #passr="ngModel" [(ngModel)]="user.cpassword" required>
             <small id="msg" style="color:red" class="help-block" *ngIf="passr.touched && passr.errors?.required">
-              Required  
+              Required
             </small>
             <small id="msg" style="color:red" class="help-block" *ngIf="passr.touched && passr.errors?.notEqual">
               Password not Match
             </small>
           </div>
-          
+
         
-        <button type="button" class="btn" (click)="createUser()" value="Register"> Register</button>
+        <button type="button"  class="btn" (click)="createUser()" value="register"> Register</button>
+        
         <a routerLink='/login'>Login?</a><br>
       </form>
     </div>
     
-    </body>
+ 

@@ -16,6 +16,8 @@ import { SellerAccountComponent } from './pages/dashboard/seller-account/seller-
 import { HeaderComponent } from './shared/header/header.component';
 import { ViewOrdersComponent } from './pages/dashboard/view-orders/view-orders.component';
 import { InvoiceComponent } from './pages/dashboard/invoice/invoice.component';
+import { ToasterService } from './services/toaster/toaster.service';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -36,6 +38,7 @@ import { InvoiceComponent } from './pages/dashboard/invoice/invoice.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ToastrModule.forRoot(),
     HttpClientModule,
     RouterModule.forRoot([
     { path:'',
@@ -76,7 +79,7 @@ import { InvoiceComponent } from './pages/dashboard/invoice/invoice.component';
   
   ])
   ],
-  providers: [],
+  providers: [ToasterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

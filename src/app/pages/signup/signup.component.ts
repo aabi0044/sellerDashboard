@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewChild, ElementRef } from '@angular/core';
 import { ApiService } from 'src/app/services/api/api.service';
 import { Router } from '@angular/router';
 import { timingSafeEqual } from 'crypto';
 
+import{ToasterService}from 'src/app/services/toaster/toaster.service'
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -19,14 +20,25 @@ export class SignupComponent implements OnInit {
   }
   getid;
   constructor(private api :ApiService,
-    private router:Router) {
+    private router:Router,
+    private tos:ToasterService) {
+  // @ViewChild('btn')  button: ElementRef;
+
     this.getAllUsers();
    }
 
   ngOnInit() {
   }
   createUser(){
-    this.api.getUsers().subscribe(res=>{
+    try{
+      if(this.user.email.match("^[a-z0-9._%+-]+\.@[a-z0-9.-]+\.[a-z]{2,4}$")
+    && this.user.password.match("(?=.*[#/?//&/@/$/!/%////\/'/'/}/{/}])(?=.*).{7,}")
+    &&this.user.fname!=''
+    &&this.user.lastname!=''
+    &&this.user.password==this.user.cpassword
+    ){
+     
+      this.api.getUsers().subscribe(res=>{
       console.log(res);
       this.getid=res;
      let index= this.getid.length-1;
@@ -35,6 +47,7 @@ export class SignupComponent implements OnInit {
       let dataEmail=this.getid.filter(e=>e.email==this.user.email);
       console.log(dataEmail);
       if(dataEmail.length==0){
+        this.tos.showSuccess();
         console.log("not exist");
             let data={
         "id":this.getid[index].id+1,
@@ -45,24 +58,32 @@ export class SignupComponent implements OnInit {
        
         
       }
-  this.api.Createuser(data).subscribe(res=>{
+      
+      this.api.Createuser(data).subscribe(res=>{
     console.log("userCreated");
     this.router.navigate(['/login']);
     
   })
       }
       else{
+        
         console.log("exist");
       }
   
     })
-
   }
- 
-// getUser(){
+  else{
+    this.tos.warning();
+    console.log("Email is not in format")
+  }
+    }
+    catch(error){
+     
+      console.log(error.message);
 
-//   this.api.getUser(id)
-// }
+    }
+    
+  }
 getAllUsers(){
   this.api.getUsers().subscribe(res=>{
     console.log(res);
