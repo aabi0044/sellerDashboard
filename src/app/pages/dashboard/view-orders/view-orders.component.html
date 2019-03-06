@@ -139,7 +139,7 @@
                     <td>{{item.paymentStatus}}</td>
                     <td>${{item.totalPrice}}</td>
                     <td><button (click)="viewInvoice(item.id)">View</button>
-                    <button>Ship</button>
+                    <button (click)="viewShipment(item.id)">Ship</button>
                     </td>
                   </tr>
                   </tbody>

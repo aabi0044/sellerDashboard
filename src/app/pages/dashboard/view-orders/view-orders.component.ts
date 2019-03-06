@@ -24,4 +24,8 @@ viewInvoice(id){
   console.log(id);
   this.router.navigate(['dashboard/invoice/'+id]);
 }
+viewShipment(id){
+  console.log(id);
+  this.router.navigate(['dashboard/shipment/'+id]);
+}
 }
