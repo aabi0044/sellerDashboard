@@ -1,78 +1,94 @@
 {
   "users": [
     {
-      "id": 1,
-      "firstName": "John",
-      "lastName": "Doe",
-      "email": "john@gmail.com"
-    },
-    {
-      "id": 2,
-      "firstName": "Muhammad",
-      "lastName": "Saad",
-      "email": "saad@gmail.com"
-    },
-    {
-      "id": 3,
-      "firstName": "Muhammad",
-      "lastName": "Mudassir",
-      "email": "mudassir@gmail.com"
-    },
-    {
-      "id": 4,
-      "firstName": "waqar",
-      "lastName": "ali",
-      "email": "waqar@yahoo.com",
-      "password": "123456"
-    },
-    {
-      "id": 5,
-      "firstName": "babar",
-      "lastName": "kiani",
-      "email": "babar@yahoo.com",
-      "password": "123456"
-    },
-    {
-      "id": 6,
-      "firstName": "sarmad",
-      "lastName": "raja",
-      "email": "s@s.com",
-      "password": "1111111"
-    },
-    {
-      "id": 7,
-      "firstName": "abd",
-      "lastName": "a",
-      "email": "sa@s.com",
-      "password": "1111111"
-    },
-    {
-      "id": 8,
-      "firstName": "umair",
-      "lastName": "shah",
-      "email": "umair@gmail.com",
-      "password": "111111"
-    },
-    {
-      "id": 9,
       "firstName": "Balaj",
       "lastName": "Khan",
-      "email": "balaj@email.com",
-      "password": "1234567"
+      "companyName": "atarix",
+      "billingName": "Mudassar",
+      "phoneNumber": "00923345406986",
+      "street1": "any street nothing to live",
+      "street2": "Dummy testing bro",
+      "city": "Pakistan",
+      "state": "Punjab",
+      "id": 1
     },
     {
-      "id": 10,
-      "firstName": "Dummy",
-      "lastName": "Data",
-      "email": "dummy@email.com",
-      "password": "1234567"
+      "firstName": "Muhammad",
+      "lastName": "Abdullah",
+      "companyName": "atarix",
+      "billingName": "Mudassar",
+      "phoneNumber": "00923345406986",
+      "street1": "any street nothing to live",
+      "street2": "Dummy testing bro",
+      "city": "Pakistan",
+      "state": "Punjab",
+      "id": 2
     },
     {
-      "id": 11,
       "firstName": "Dummy",
-      "lastName": "Data",
-      "email": "dummy@email1.com",
-      "password": "1234567"
+      "lastName": "Khan",
+      "companyName": "atarix",
+      "billingName": "Mudassar",
+      "phoneNumber": "00923345406986",
+      "street1": "any street nothing to live",
+      "street2": "Dummy testing bro",
+      "city": "Australia",
+      "state": "Punjab",
+      "email": "aqibpakii@hotmail.com",
+      "password": "1234567",
+      "id": 3
     }
+  ],
+  "orders":[
+
+    {
+      "id":1,
+      "orderId":1,
+      "image":"./image.jpg",
+      "orderPlaced":"1551870980698",
+      "forDelivery":"1551870980698",
+      "trackingNumber":1,
+      "customerName":"johan",
+      "deliveryStatus":"In Transit",
+      "paymentStatus":"Paid",
+      "totalPrice":987
+    },
+    {
+      "id":2,
+      "orderId":2,
+      "image":"/image",
+      "orderPlaced":"1551870980698",
+      "forDelivery":"1551870980698",
+      "trackingNumber":2,
+      "customerName":"johan",
+      "deliveryStatus":"In Transit",
+      "paymentStatus":"Paid",
+      "totalPrice":907
+    },
+    {
+      "id":3,
+      "orderId":3,
+      "image":"/image",
+      "orderPlaced":"1551870980698",
+      "forDelivery":"1551870980698",
+      "trackingNumber":3,
+      "customerName":"johan",
+      "deliveryStatus":"In Transit",
+      "paymentStatus":"Paid",
+      "totalPrice":900
+    },
+    {
+      "id":4,
+      "orderId":4,
+      "image":"/image",
+      "orderPlaced":"1551870980698",
+      "forDelivery":"1551870980698",
+      "trackingNumber":4,
+      "customerName":"johan",
+      "deliveryStatus":"In Transit",
+      "paymentStatus":"Paid",
+      "totalPrice":90
+    }
+
   ]
 }

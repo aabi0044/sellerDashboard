@@ -6,7 +6,9 @@ import { map} from 'rxjs/operators';
 })
 export class ApiService {
 url="http://localhost:3000/users/";
+url1="http://localhost:3000/users";
 
+ordersUrl="http://localhost:3000/orders/";
   constructor(
     private http:HttpClient
   ) { }
@@ -21,7 +23,25 @@ url="http://localhost:3000/users/";
     return this.http.get(this.url);
   }
   updateUser(id,data){
-    return this.http.post(this.url,+ '' +id,data)
+    console.log(id);
+    console.log(data);
+    return this.http.put(this.url1+ '/' +id,data)
+  }
+  //===================Orders===============================
+  CreateOrder(data){
+    return this.http.post(this.ordersUrl,data);
+  }
+  getSpecificOrder(id){
+    console.log(id);
+    return this.http.get(this.ordersUrl + '' +id);
+  }
+  getOrders(){
+    return this.http.get(this.ordersUrl);
+  }
+  updateOrder(id,data){
+    console.log(id);
+    console.log(data);
+    return this.http.put(this.ordersUrl+ '' +id,data)
   }
 
 }

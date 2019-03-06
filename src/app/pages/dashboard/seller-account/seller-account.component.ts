@@ -22,6 +22,8 @@ street2;
 city;
 state;
 imageData: any;
+email;
+password;
 @ViewChild('display') displayImage : ElementRef;
   constructor(private api:ApiService,
     public ren: Renderer2) { 
@@ -32,34 +34,47 @@ imageData: any;
     this.getUser();
 
   }
-  getImage(event:any){
-    let d = this.imageData;
-    console.log(event.target.files[0]);
-    var reader = new FileReader();
-    reader.onload = (_event) => { 
-      this.imageData = reader.result;
-    }
-    reader.readAsDataURL(event.target.files[0]);
-  }
+//   getImage(event:any){
+//     let d = this.imageData;
+//     console.log(event.target.files[0]);
+//     var reader = new FileReader();
+//     reader.onload = (_event) => { 
+//       this.imageData = reader.result;
+//     }
+//     reader.readAsDataURL(event.target.files[0]);
+//   }
 
-  getBase64Image(img) {
-    var canvas = document.createElement("canvas");
-    canvas.width = img.width;
-    canvas.height = img.height;
+//   getBase64Image(img) {
+//     var canvas = document.createElement("canvas");
+//     canvas.width = img.width;
+//     canvas.height = img.height;
 
-    var ctx = canvas.getContext("2d");
-    ctx.drawImage(img, 0, 0);
+//     var ctx = canvas.getContext("2d");
+//     ctx.drawImage(img, 0, 0);
 
-    var dataURL = canvas.toDataURL("image/png");
+//     var dataURL = canvas.toDataURL("image/png");
 
-    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-}
+//     return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+// }
 
   getUser(){
     this.id=localStorage.getItem('uid');
     this.api.getSpecificUser(this.id).subscribe(res=>{
       console.log(res);
       this.getuser=res;
+
+      this.fname=this.getuser.firstName;
+      this.lname=this.getuser.lastName;
+      this.companyName=this.getuser.companyName;
+      this.billingName=this.getuser.billingName;
+      this.phoneNumber=this.getuser.phoneNumber;
+     this.street1=this.getuser.street1;
+      this.street2=this.getuser.street2;
+      this.city=this.getuser.city;
+      this.state=this.getuser.state;
+this.email=this.getuser.email;
+this.password=this.getuser.password;
+
     })
   }
   updateUser(){
@@ -74,11 +89,14 @@ let data={
 "street1":this.street1,
 "street2":this.street2,
 "city":this.city,
-"state":this.state
-
-
+"state":this.state,
+"email":this.email,
+"password":this.password
 
 }
+this.api.updateUser(this.id,data).subscribe(res=>{
+  console.log("user updated");
+})
   }
   selectCountry(event:any){
     let country=event.target.value;

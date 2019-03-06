@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api/api.service';
+import { Router } from '@angular/router';
+import { timingSafeEqual } from 'crypto';
 
 @Component({
   selector: 'app-signup',
@@ -16,7 +18,8 @@ export class SignupComponent implements OnInit {
 
   }
   getid;
-  constructor(private api :ApiService) {
+  constructor(private api :ApiService,
+    private router:Router) {
     this.getAllUsers();
    }
 
@@ -44,6 +47,8 @@ export class SignupComponent implements OnInit {
       }
   this.api.Createuser(data).subscribe(res=>{
     console.log("userCreated");
+    this.router.navigate(['/login']);
+    
   })
       }
       else{

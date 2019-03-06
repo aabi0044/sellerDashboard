@@ -14,6 +14,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import{HttpClientModule} from '@angular/common/http';
 import { SellerAccountComponent } from './pages/dashboard/seller-account/seller-account.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { ViewOrdersComponent } from './pages/dashboard/view-orders/view-orders.component';
+import { InvoiceComponent } from './pages/dashboard/invoice/invoice.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { HeaderComponent } from './shared/header/header.component';
     DashboardComponent,
     NavbarComponent,
     SellerAccountComponent,
-    HeaderComponent
+    HeaderComponent,
+    ViewOrdersComponent,
+    InvoiceComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,7 @@ import { HeaderComponent } from './shared/header/header.component';
     HttpClientModule,
     RouterModule.forRoot([
     { path:'',
-      redirectTo:'login',
+      redirectTo:'dashboard/vieworders',
       pathMatch:'full'
     },
     {
@@ -58,6 +62,14 @@ import { HeaderComponent } from './shared/header/header.component';
         {
           path:'selleraccount',
           component:SellerAccountComponent
+        },
+        {
+          path:'vieworders',
+          component:ViewOrdersComponent
+        },
+        {
+          path:'invoice/:id',
+          component:InvoiceComponent
         }
       ]
     }
