@@ -13,6 +13,7 @@ export class ViewOrdersComponent implements OnInit {
 orders;
   ngOnInit() {
     this.getOrders();
+    this.getPendingOrders();
   }
 getOrders(){
 this.api.getOrders().subscribe(res=>{
@@ -20,6 +21,30 @@ this.api.getOrders().subscribe(res=>{
   this.orders=res;
 })
 }
+//===================================Filter===============================
+getPendingOrders(){
+  this.api.getOrders().subscribe(res=>{
+    console.log(res);
+    
+    this.orders=res;
+    let a = this.orders.Filter(e=>{e.deliveryStatus=='pending'});
+    console.log(a);
+  })
+  }
+
+  getOverDueOrders(){
+    this.api.getOrders().subscribe(res=>{
+      console.log(res);
+      this.orders=res;
+    })
+    }
+    getDueOrders(){
+      this.api.getOrders().subscribe(res=>{
+        console.log(res);
+        this.orders=res;
+      })
+      }
+  //=========================================================================
 viewInvoice(id){
   console.log(id);
   this.router.navigate(['dashboard/invoice/'+id]);
