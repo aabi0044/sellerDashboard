@@ -1,31 +1,8 @@
 
-<!-- ============================================================== -->
-<!-- main wrapper -->
-<!-- ============================================================== -->
-
-  <!-- ============================================================== -->
-  <!-- navbar -->
-  <!-- ============================================================== -->
-
-  <!-- ============================================================== -->
-  <!-- end navbar -->
-  <!-- ============================================================== -->
-  <!-- ============================================================== -->
-  <!-- left sidebar -->
-  <!-- ============================================================== -->
-
-  <!-- ============================================================== -->
-  <!-- end left sidebar -->
-  <!-- ============================================================== -->
-  <!-- ============================================================== -->
-  <!-- wrapper  -->
-  <!-- ============================================================== -->
   <div class="dashboard-wrapper">
     <div class="dashboard-ecommerce">
       <div class="container-fluid dashboard-content ">
-        <!-- ============================================================== -->
-        <!-- pageheader  -->
-        <!-- ============================================================== -->
+      
         <div class="row">
           <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="page-header">
@@ -61,61 +38,62 @@
                   <div class="card-body">
                     <form>
                       <div class="user-avatar d-block">
-                        <input type="file" [(ngModel)]="image" >
-                        <img src="assets/images/avatar-1.jpg" alt="User Avatar" class="rounded-circle user-avatar-xxl">
+                        <input type="file" (change)="getImage($event)" name="image" >
+                        <input type="hidden" [(ngModel)]="image1" name="image1" [ngModelOptions]="{standalone: true}" >
+                        <img #display id="display" [src]="imageData" alt="" class="rounded-circle user-avatar-xxl">
                       </div>
                       <div class="form-group row">
                         <label for="sellerName" class="col-sm-2 col-form-label">Seller First Name:</label>
                         <div class="col-sm-4">
-                          <input type="text" class="form-control" id="sellerName"  [(ngModel)]="fname">
+                          <input type="text" class="form-control" name="sellerfName"  [(ngModel)]="fname" [ngModelOptions]="{standalone: true}">
                         </div>
                       </div>
                       <div class="form-group row">
                           <label for="sellerName" class="col-sm-2 col-form-label">Seller Last Name:</label>
                           <div class="col-sm-4">
-                            <input type="text" class="form-control" id="sellerName" [(ngModel)]="lname" >
+                            <input type="text" class="form-control" name="sellerlName" [(ngModel)]="lname" [ngModelOptions]="{standalone: true}" >
                           </div>
                         </div>
                       <div class="form-group row">
                         <label for="companyName" class="col-sm-2 col-form-label">Company Name:</label>
                         <div class="col-sm-4">
-                          <input type="text" class="form-control" id="companyName" [(ngModel)]="companyName">
+                          <input type="text" class="form-control" name="companyName" [(ngModel)]="companyName" [ngModelOptions]="{standalone: true}">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="billingName" class="col-sm-2 col-form-label">Billing Name:</label>
                         <div class="col-sm-4">
-                          <input type="text" class="form-control" id="billingName" [(ngModel)]="billingName">
+                          <input type="text" class="form-control" name="billingName" [(ngModel)]="billingName" [ngModelOptions]="{standalone: true}">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="phoneNumber" class="col-sm-2 col-form-label">Phone Number:</label>
                         <div class="col-sm-4">
-                          <input type="text" class="form-control" id="phoneNumber" [(ngModel)]="phoneNumber">
+                          <input type="text" class="form-control" name="phoneNumber" [(ngModel)]="phoneNumber" [ngModelOptions]="{standalone: true}">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="streetAddress1" class="col-sm-2 col-form-label">Street Address 1:</label>
                         <div class="col-sm-4">
-                          <input type="text" class="form-control" id="streetAddress1" [(ngModel)]="street1">
+                          <input type="text" class="form-control" name="streetAddress1" [(ngModel)]="street1" [ngModelOptions]="{standalone: true}">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="streetAddress2" class="col-sm-2 col-form-label">Street Address 2:</label>
                         <div class="col-sm-4">
-                          <input type="text" class="form-control" id="streetAddress2" [(ngModel)]="street2">
+                          <input type="text" class="form-control" name="streetAddress2" [(ngModel)]="street2" [ngModelOptions]="{standalone: true}">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="city" class="col-sm-2 col-form-label">City:</label>
                         <div class="col-sm-4">
-                          <input type="text" class="form-control" id="city" [(ngModel)]="city">
+                          <input type="text" class="form-control" name="city" [(ngModel)]="city"[ngModelOptions]="{standalone: true}">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="state" class="col-sm-2 col-form-label">State:</label>
                         <div class="col-sm-4">
-                          <input type="text" class="form-control" id="state" [(ngModel)]="state">
+                          <input type="text" class="form-control" name="state" [(ngModel)]="state" [ngModelOptions]="{standalone: true}">
                         </div>
                       </div>
                       <div class="form-group row">
@@ -375,7 +353,7 @@
                         </div>
                       </div>
                     </form>
-                    <button type="button" class="btn btn-primary btn-sm">Save</button>
+                    <button type="button" class="btn btn-primary btn-sm" (click)="updateUser()">Save</button>
                   </div>
 
 

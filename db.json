@@ -1,59 +1,60 @@
 {
   "users": [
     {
-      "id": "1",
+      "id": 1,
       "firstName": "John",
       "lastName": "Doe",
       "email": "john@gmail.com"
     },
     {
-      "id": "2",
+      "id": 2,
       "firstName": "Muhammad",
       "lastName": "Saad",
       "email": "saad@gmail.com"
     },
     {
-      "id": "3",
+      "id": 3,
       "firstName": "Muhammad",
       "lastName": "Mudassir",
       "email": "mudassir@gmail.com"
     },
     {
-      "id": "UQWzoXB",
+      "id": 4,
       "firstName": "waqar",
       "lastName": "ali",
       "email": "waqar@yahoo.com",
       "password": "123456"
     },
     {
-      "id": "EiH5ncj",
+      "id": 5,
       "firstName": "babar",
       "lastName": "kiani",
       "email": "babar@yahoo.com",
       "password": "123456"
     },
     {
-      "id": 4,
+      "id": 6,
       "firstName": "sarmad",
       "lastName": "raja",
       "email": "s@s.com",
       "password": "1111111"
     },
     {
-      "id": 5,
+      "id": 7,
       "firstName": "abd",
       "lastName": "a",
       "email": "sa@s.com",
       "password": "1111111"
     },
     {
-      "id": 6,
+      "id": 8,
       "firstName": "umair",
       "lastName": "shah",
       "email": "umair@gmail.com",
       "password": "111111"
     },
     {
+<<<<<<< HEAD
       "id": "QmX23kX",
       "firstName": "",
       "lastName": "",
@@ -73,6 +74,27 @@
       "lastName": "",
       "email": "adadada",
       "password": "a"
+=======
+      "id": 9,
+      "firstName": "Balaj",
+      "lastName": "Khan",
+      "email": "balaj@email.com",
+      "password": "1234567"
+    },
+    {
+      "id": 10,
+      "firstName": "Dummy",
+      "lastName": "Data",
+      "email": "dummy@email.com",
+      "password": "1234567"
+    },
+    {
+      "id": 11,
+      "firstName": "Dummy",
+      "lastName": "Data",
+      "email": "dummy@email1.com",
+      "password": "1234567"
+>>>>>>> 2c868f23d10c9875325c514e4a89d12126200e9b
     }
   ]
 }
