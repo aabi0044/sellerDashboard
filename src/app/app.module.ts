@@ -14,6 +14,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import{HttpClientModule} from '@angular/common/http';
 import { SellerAccountComponent } from './pages/dashboard/seller-account/seller-account.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { ToasterService } from './services/toaster/toaster.service';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -32,6 +34,7 @@ import { HeaderComponent } from './shared/header/header.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ToastrModule.forRoot(),
     HttpClientModule,
     RouterModule.forRoot([
     { path:'',
@@ -64,7 +67,7 @@ import { HeaderComponent } from './shared/header/header.component';
   
   ])
   ],
-  providers: [],
+  providers: [ToasterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
