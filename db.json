@@ -39,60 +39,236 @@
       "id": 3
     }
   ],
-  "orders":[
-
+  "orders": [
     {
-      "id":1,
-      "orderId":1,
-      "image":"./image.jpg",
-      "orderPlaced":"1551870980698",
-      "forDelivery":"1551870980698",
-      "trackingNumber":1,
-      "customerName":"johan",
-      "deliveryStatus":"In Transit",
-      "paymentStatus":"Paid",
-      "totalPrice":987
+      "id": 1,
+      "orderId": 1,
+      "image": "./image.jpg",
+      "orderPlaced": "1551870980698",
+      "forDelivery": "1551870980698",
+      "trackingNumber": 1,
+      "customerName": "johan",
+      "deliveryStatus": "In Transit",
+      "paymentStatus": "Paid",
+      "totalPrice": 987,
+      "invoiceNo": 1,
+      "customerEmail": "customer@email.com",
+      "shippingEmail": "customer@email.com",
+      "billingAddress": "house No 311 F10 Islamabad",
+      "shippingAddress": "house No 311 F10 Islamabad",
+      "billingPhone": "004451247892",
+      "products": [
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 5,
+          "total": 5000,
+          "subTotal": 5000,
+          "Discount": 1000,
+          "vat": 100
+        },
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 5,
+          "total": 5000,
+          "subTotal": 5000,
+          "Discount": 1000,
+          "vat": 100
+        },
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 5,
+          "total": 5000,
+          "subTotal": 5000,
+          "Discount": 1000,
+          "vat": 100
+        },
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 5,
+          "total": 5000,
+          "subTotal": 5000,
+          "Discount": 1000,
+          "vat": 100
+        }
+      ]
     },
     {
-      "id":2,
-      "orderId":2,
-      "image":"/image",
-      "orderPlaced":"1551870980698",
-      "forDelivery":"1551870980698",
-      "trackingNumber":2,
-      "customerName":"johan",
-      "deliveryStatus":"In Transit",
-      "paymentStatus":"Paid",
-      "totalPrice":907
+      "id": 2,
+      "orderId": 2,
+      "image": "./image.jpg",
+      "orderPlaced": "1551870980698",
+      "forDelivery": "1551870980698",
+      "trackingNumber": 2,
+      "customerName": "johan",
+      "deliveryStatus": "In Transit",
+      "paymentStatus": "Paid",
+      "totalPrice": 987,
+      "invoiceNo": 2,
+      "customerEmail": "customer@email.com",
+      "shippingEmail": "customer@email.com",
+      "billingAddress": "house No 311 F10 Islamabad",
+      "shippingAddress": "house No 311 F10 Islamabad",
+      "billingPhone": "004451247892",
+      "products": [
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 5,
+          "total": 5000,
+          "subTotal": 5000,
+          "Discount": 1000,
+          "vat": 100
+        },
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 5,
+          "total": 5000,
+          "subTotal": 5000,
+          "Discount": 1000,
+          "vat": 100
+        },
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 5,
+          "total": 5000,
+          "subTotal": 5000,
+          "Discount": 1000,
+          "vat": 100
+        },
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 5,
+          "total": 5000,
+          "subTotal": 5000,
+          "Discount": 1000,
+          "vat": 100
+        }
+      ]
     },
     {
-
-      "id":3,
-      "orderId":3,
-      "image":"/image",
-      "orderPlaced":"1551870980698",
-      "forDelivery":"1551870980698",
-      "trackingNumber":3,
-      "customerName":"johan",
-      "deliveryStatus":"In Transit",
-      "paymentStatus":"Paid",
-      "totalPrice":900
+      "id": 3,
+      "orderId": 3,
+      "image": "./image.jpg",
+      "orderPlaced": "1551870980698",
+      "forDelivery": "1551870980698",
+      "trackingNumber": 3,
+      "customerName": "johan",
+      "deliveryStatus": "In Transit",
+      "paymentStatus": "Paid",
+      "totalPrice": 987,
+      "invoiceNo": 3,
+      "customerEmail": "customer@email.com",
+      "shippingEmail": "customer@email.com",
+      "billingAddress": "house No 311 F10 Islamabad",
+      "shippingAddress": "house No 311 F10 Islamabad",
+      "billingPhone": "004451247892",
+      "products": [
+        {
+          "itemName":"Origin License",
+          "Description":"Extended License",
+          "unitCost":1000,
+          "quantity":5,
+          "total":5000,
+          "subTotal":5000,
+          "Discount":1000,
+          "vat":100
+        },
+        {
+          "itemName":"Origin License",
+          "Description":"Extended License",
+          "unitCost":1000,
+          "quantity":5,
+          "total":5000,
+          "subTotal":5000,
+          "Discount":1000,
+          "vat":100
+        },
+        {
+          "itemName":"Origin License",
+          "Description":"Extended License",
+          "unitCost":1000,
+          "quantity":5,
+          "total":5000,
+          "subTotal":5000,
+          "Discount":1000,
+          "vat":100
+        },
+        {
+          "itemName":"Origin License",
+          "Description":"Extended License",
+          "unitCost":1000,
+          "quantity":5,
+          "total":5000
+        }
+      ]
     },
-    {
-      "id":4,
-      "orderId":4,
-      "image":"/image",
-      "orderPlaced":"1551870980698",
-      "forDelivery":"1551870980698",
-      "trackingNumber":4,
-      "customerName":"johan",
-      "deliveryStatus":"In Transit",
-      "paymentStatus":"Paid",
-      "totalPrice":90
-
+     {
+      "id": 4,
+      "orderId": 4,
+      "image": "./image.jpg",
+      "orderPlaced": "1551870980698",
+      "forDelivery": "1551870980698",
+      "trackingNumber": 4,
+      "customerName": "johan",
+      "deliveryStatus": "In Transit",
+      "paymentStatus": "Paid",
+      "totalPrice": 987,
+      "invoiceNo": 4,
+      "customerEmail": "customer@email.com",
+      "shippingEmail": "customer@email.com",
+      "billingAddress": "house No 311 F10 Islamabad",
+      "shippingAddress": "house No 311 F10 Islamabad",
+      "billingPhone": "004451247892",
+      "netTotal":5000,
+      "subTotal":5000,
+      "Discount":1000,
+      "vat":100,
+      "products": [
+        {
+          "itemName":"Origin License",
+          "Description":"Extended License",
+          "unitCost":1000,
+          "quantity":5,
+          "total":5000
+         
+        },
+        {
+          "itemName":"Origin License",
+          "Description":"Extended License",
+          "unitCost":1000,
+          "quantity":5,
+          "total":5000
+        },
+        {
+          "itemName":"Origin License",
+          "Description":"Extended License",
+          "unitCost":1000,
+          "quantity":5,
+          "total":5000
+        },
+        {
+          "itemName":"Origin License",
+          "Description":"Extended License",
+          "unitCost":1000,
+          "quantity":5,
+          "total":5000
+        }
+      ]
     }
-
-    
-
   ]
 }

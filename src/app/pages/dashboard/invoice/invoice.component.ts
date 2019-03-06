@@ -9,6 +9,7 @@ import { ApiService } from 'src/app/services/api/api.service';
 })
 export class InvoiceComponent implements OnInit {
 id;
+invoice;
   constructor(private route: ActivatedRoute,
     private api:ApiService) {
     this.id = this.route.snapshot.params['id'];
@@ -19,8 +20,10 @@ id;
     this.getOrder();
   }
 getOrder(){
+  console.log("object");
 this.api.getSpecificOrder(this.id).subscribe(res=>{
   console.log(res);
+  this.invoice=res;
 })
 }
 }
