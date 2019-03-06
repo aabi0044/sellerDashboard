@@ -87,7 +87,7 @@
                   <td>{{item.Description}}</td>
                   <td>{{item.unitCost}}</td>
                   <td>{{item.quantity}}</td>
-                  <td>{{item.total}}</td>
+                  <td>${{item.total}}</td>
                 </tr>
            
               </tbody>
@@ -107,22 +107,22 @@
                   </tr>
                   <tr>
                     <td class="left">
-                      <strong class="text-dark">Discount (20%)</strong>
+                      <strong class="text-dark">Discount </strong>
                     </td>
-                    <td class="right">$5,761,00</td>
+                    <td class="right">${{invoice.Discount}}</td>
                   </tr>
                   <tr>
                     <td class="left">
-                      <strong class="text-dark">VAT (10%)</strong>
+                      <strong class="text-dark">VAT </strong>
                     </td>
-                    <td class="right">$2,304,00</td>
+                    <td class="right">${{invoice.vat}}</td>
                   </tr>
                   <tr>
                     <td class="left">
                       <strong class="text-dark">Total</strong>
                     </td>
                     <td class="right">
-                      <strong class="text-dark">$20,744,00</strong>
+                      <strong class="text-dark">${{invoice.totalPrice}}</strong>
                     </td>
                   </tr>
                 </tbody>

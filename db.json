@@ -57,46 +57,38 @@
       "billingAddress": "house No 311 F10 Islamabad",
       "shippingAddress": "house No 311 F10 Islamabad",
       "billingPhone": "004451247892",
+      "netTotal":5000,
+      "subTotal":5000,
+      "Discount":1000,
+      "vat":100,
       "products": [
         {
           "itemName": "Origin License",
           "Description": "Extended License",
           "unitCost": 1000,
           "quantity": 5,
-          "total": 5000,
-          "subTotal": 5000,
-          "Discount": 1000,
-          "vat": 100
+          "total": 5000
         },
         {
           "itemName": "Origin License",
           "Description": "Extended License",
           "unitCost": 1000,
           "quantity": 5,
-          "total": 5000,
-          "subTotal": 5000,
-          "Discount": 1000,
-          "vat": 100
+          "total": 5000
         },
         {
           "itemName": "Origin License",
           "Description": "Extended License",
           "unitCost": 1000,
           "quantity": 5,
-          "total": 5000,
-          "subTotal": 5000,
-          "Discount": 1000,
-          "vat": 100
+          "total": 5000
         },
         {
           "itemName": "Origin License",
           "Description": "Extended License",
           "unitCost": 1000,
           "quantity": 5,
-          "total": 5000,
-          "subTotal": 5000,
-          "Discount": 1000,
-          "vat": 100
+          "total": 5000
         }
       ]
     },
@@ -117,46 +109,38 @@
       "billingAddress": "house No 311 F10 Islamabad",
       "shippingAddress": "house No 311 F10 Islamabad",
       "billingPhone": "004451247892",
+      "netTotal":5000,
+      "subTotal":5000,
+      "Discount":1000,
+      "vat":100,
       "products": [
         {
           "itemName": "Origin License",
           "Description": "Extended License",
           "unitCost": 1000,
           "quantity": 5,
-          "total": 5000,
-          "subTotal": 5000,
-          "Discount": 1000,
-          "vat": 100
+          "total": 5000
         },
         {
           "itemName": "Origin License",
           "Description": "Extended License",
           "unitCost": 1000,
           "quantity": 5,
-          "total": 5000,
-          "subTotal": 5000,
-          "Discount": 1000,
-          "vat": 100
+          "total": 5000
         },
         {
           "itemName": "Origin License",
           "Description": "Extended License",
           "unitCost": 1000,
           "quantity": 5,
-          "total": 5000,
-          "subTotal": 5000,
-          "Discount": 1000,
-          "vat": 100
+          "total": 5000
         },
         {
           "itemName": "Origin License",
           "Description": "Extended License",
           "unitCost": 1000,
           "quantity": 5,
-          "total": 5000,
-          "subTotal": 5000,
-          "Discount": 1000,
-          "vat": 100
+          "total": 5000
         }
       ]
     },
@@ -177,36 +161,30 @@
       "billingAddress": "house No 311 F10 Islamabad",
       "shippingAddress": "house No 311 F10 Islamabad",
       "billingPhone": "004451247892",
+      "netTotal":5000,
+      "subTotal":5000,
+      "Discount":1000,
+      "vat":100,
       "products": [
         {
           "itemName":"Origin License",
           "Description":"Extended License",
           "unitCost":1000,
           "quantity":5,
-          "total":5000,
-          "subTotal":5000,
-          "Discount":1000,
-          "vat":100
+          "total":5000
         },
         {
           "itemName":"Origin License",
           "Description":"Extended License",
           "unitCost":1000,
           "quantity":5,
-          "total":5000,
-          "subTotal":5000,
-          "Discount":1000,
-          "vat":100
+          "total":5000
         },
         {
           "itemName":"Origin License",
           "Description":"Extended License",
           "unitCost":1000,
-          "quantity":5,
-          "total":5000,
-          "subTotal":5000,
-          "Discount":1000,
-          "vat":100
+          "quantity":5
         },
         {
           "itemName":"Origin License",
