@@ -42,7 +42,12 @@
 
   "products":[
     {
-      
+      "id":1,
+      "productName":"Shirt",
+      "productPrice":400,
+      "salePrice":300,
+      "saleStartDate":"",
+      "saleEndDate":""
     }
   ],
   "orders": [

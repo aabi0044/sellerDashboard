@@ -14,8 +14,8 @@ export class CreateproductComponent implements OnInit {
   }
   
   goto(){
-    $("pills-productinfo-tabpills-productinfo-tab").attr("aria-arries","true");
-    $("pills-productinfo-tabpills-productinfo-tab").attr("aria-arries","true");
-    $("pills-productinfo-tabpills-productinfo-tab").attr("aria-arries","true");
+    $("pills-productinfo-tabpills-productinfo-tab").attr("aria-arries","false");
+    $("pills-offers-tab").attr("aria-arries","true");
+    $("pills-description-tab").attr("aria-arries","false");
   }
 }
