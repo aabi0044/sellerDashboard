@@ -9,6 +9,7 @@ url="http://localhost:3000/users/";
 url1="http://localhost:3000/users";
 
 ordersUrl="http://localhost:3000/orders/";
+productUrl="http://localhost:3000/products/";
   constructor(
     private http:HttpClient
   ) { }
@@ -45,18 +46,18 @@ ordersUrl="http://localhost:3000/orders/";
   }
 //===================================Products=================
 CreateProduct(data){
-  return this.http.post(this.ordersUrl,data);
+  return this.http.post(this.productUrl,data);
 }
 getSpecificProduct(id){
   console.log(id);
-  return this.http.get(this.ordersUrl + '' +id);
+  return this.http.get(this.productUrl + '' +id);
 }
 getProducts(){
-  return this.http.get(this.ordersUrl);
+  return this.http.get(this.productUrl);
 }
-updateOrder(id,data){
+updateProducts(id,data){
   console.log(id);
   console.log(data);
-  return this.http.put(this.ordersUrl+ '' +id,data)
+  return this.http.put(this.productUrl+ '' +id,data)
 }
 }
