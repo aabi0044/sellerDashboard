@@ -38,14 +38,15 @@
                   <div class="card-body">
                     <form>
                       <div class="user-avatar d-block">
-                        <input type="file" (change)="getImage($event)" name="image" >
-                        <input type="hidden" [(ngModel)]="image1" name="image1" [ngModelOptions]="{standalone: true}" >
+                        <!-- <input type="file" (change)="getImage($event)" name="image" >
+                        <input type="hidden" [(ngModel)]="image1" name="image1" [ngModelOptions]="{standalone: true}" > -->
                         <img #display id="display" [src]="imageData" alt="" class="rounded-circle user-avatar-xxl">
                       </div>
                       <div class="form-group row">
                         <label for="sellerName" class="col-sm-2 col-form-label">Seller First Name:</label>
                         <div class="col-sm-4">
-                          <input type="text" class="form-control" name="sellerfName"  [(ngModel)]="fname" [ngModelOptions]="{standalone: true}">
+                          <input type="text" class="form-control" name="fname"  [(ngModel)]="fname" >
+                         
                         </div>
                       </div>
                       <div class="form-group row">
@@ -99,7 +100,9 @@
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Country:</label>
                         <div class="col-sm-4">
+                          
                           <select class="form-control" (change)="selectCountry($event)" >
+                            
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Aland Islands">Aland Islands</option>
                             <option value="Albania">Albania</option>

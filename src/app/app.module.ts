@@ -14,8 +14,11 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import{HttpClientModule} from '@angular/common/http';
 import { SellerAccountComponent } from './pages/dashboard/seller-account/seller-account.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { ViewOrdersComponent } from './pages/dashboard/view-orders/view-orders.component';
+import { InvoiceComponent } from './pages/dashboard/invoice/invoice.component';
 import { ToasterService } from './services/toaster/toaster.service';
 import { ToastrModule } from 'ngx-toastr';
+import { ShipmentComponent } from './pages/dashboard/shipment/shipment.component';
 
 
 @NgModule({
@@ -28,7 +31,10 @@ import { ToastrModule } from 'ngx-toastr';
     DashboardComponent,
     NavbarComponent,
     SellerAccountComponent,
-    HeaderComponent
+    HeaderComponent,
+    ViewOrdersComponent,
+    InvoiceComponent,
+    ShipmentComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,7 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     RouterModule.forRoot([
     { path:'',
-      redirectTo:'login',
+      redirectTo:'dashboard/vieworders',
       pathMatch:'full'
     },
     {
@@ -61,6 +67,18 @@ import { ToastrModule } from 'ngx-toastr';
         {
           path:'selleraccount',
           component:SellerAccountComponent
+        },
+        {
+          path:'vieworders',
+          component:ViewOrdersComponent
+        },
+        {
+          path:'invoice/:id',
+          component:InvoiceComponent
+        },
+        {
+          path:'shipment/:id',
+          component:ShipmentComponent
         }
       ]
     }

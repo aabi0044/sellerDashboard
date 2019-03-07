@@ -1,0 +1,204 @@
+
+<!-- ============================================================== -->
+<!-- main wrapper -->
+<!-- ============================================================== -->
+<div class="dashboard-main-wrapper">
+  <!-- ============================================================== -->
+  <!-- navbar -->
+  <!-- ============================================================== -->
+
+  <!-- ============================================================== -->
+  <!-- end navbar -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- left sidebar -->
+  <!-- ============================================================== -->
+
+  <!-- ============================================================== -->
+  <!-- end left sidebar -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- wrapper  -->
+  <!-- ============================================================== -->
+  <div class="dashboard-wrapper">
+    <div class="container-fluid  dashboard-content">
+      <!-- ============================================================== -->
+      <!-- pageheader  -->
+      <!-- ============================================================== -->
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="page-header">
+            <h2 class="pageheader-title">View Orders </h2>
+            <div class="page-breadcrumb">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Inventory</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">View Orders</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="col-xl-2 col-lg-12 col-md-6 col-sm-12 col-12" style="top: 20px;">
+          <div id="show-label" class="show-label">
+            <p class="input-group">
+              <label class="label1" style="margin: 2px; margin-bottom: 1px">Show </label>
+              <select class="selectpicker">
+                <option>10</option>
+                <option>20</option>
+                <option>30</option>
+              </select>
+              &nbsp
+              <label class="label1" style="margin: 2px; margin-bottom: 1px">Entries</label>
+            </p>
+          </div>
+        </div> -->
+
+        <div class="col-xl-3 col-lg-12 col-md-6 col-sm-12 col-12">
+          <div id="inventory-search" class="inventory-search">
+            <p class="input-group" style="left: 775px">
+                    <span class="input-group-btn">
+                     <button type="button" class="btn btn-default"><i class="fas fa-search"></i></button>
+                    </span>
+              <input type="text" class="form-control" placeholder="Search.."/>
+            </p>
+          </div>
+        </div>
+
+
+        <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 col-12">
+          <div class="card">
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class="bg-light">
+                  <tr class="border-0">
+                    <th class="border-0">
+                      <label style="margin-bottom: 2px;">Filters</label>
+                    </th>
+                    <th class="border-0">
+                      <label>Status:</label>
+                      <label class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" checked="" class="custom-control-input"><span class="custom-control-label">All</span>
+                      </label>
+                      <label class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="custom-control-input"><span class="custom-control-label">Pending</span>
+                      </label>
+                      <label class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="custom-control-input"><span class="custom-control-label">Overdue for dispatch</span>
+                      </label>
+                      <label class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="custom-control-input"><span class="custom-control-label">Due for dispatch</span>
+                      </label>
+                      <label class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="custom-control-input"><span class="custom-control-label">All undispatched</span>
+                      </label>
+             
+                    </th>
+                  </tr>
+                  </thead>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 col-12">
+          <div class="card">
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class="bg-light">
+                  <tr class="border-0">
+                    <th class="border-0">#</th>
+                    <th class="border-0">Order ID</th>
+                    <th class="border-0">Image</th>
+                    <th class="border-0">Order placed</th>
+                    <th class="border-0">For delivery by</th>
+                    <th class="border-0">Tracking Number</th>
+                    <th class="border-0">Customer Name</th>
+                    <th class="border-0">Delivery Status</th>
+                    <th class="border-0">Payment Status</th>
+                    <th class="border-0">Total Price</th>
+                    <th class="border-0">Actions</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let item of orders">
+                    <td><input type="checkbox"><br></td>
+                    <td>{{item.orderId}}</td>
+                    <td>
+                      <div class="m-r-10"><img src="item.image" alt="user" class="rounded" width="45"></div>
+                    </td>
+                    <td>{{item.orderPlaced | date}}</td>
+                    <td>{{item.forDelivery | date}}</td>
+                    <td>{{item.trackingNumber}} </td>
+                    <td>{{item.customerName}} </td>
+                    <td><span class="badge-dot badge-brand mr-1"></span>{{item.deliveryStatus}}</td>
+                    <td>{{item.paymentStatus}}</td>
+                    <td>${{item.totalPrice}}</td>
+                    <td><button (click)="viewInvoice(item.id)">View</button>
+                    <button (click)="viewShipment(item.id)">Ship</button>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- <nav aria-label="Page navigation">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link " href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </nav> -->
+          <!--<label class="label2">Page</label>-->
+          <!--<select class="selectpicker">-->
+          <!--<option>1</option>-->
+          <!--<option>2</option>-->
+          <!--<option>3</option>-->
+          <!--</select>-->
+          <!--<label class="label2">of</label>-->
+          <!--<label class="label2">1</label>-->
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12">
+          <!-- ============================================================== -->
+
+        </div>
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+          <!-- ============================================================== -->
+        </div>
+      </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    <div class="footer">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            Copyright © 2018-2019 Trollee. All rights reserved.
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="text-md-right footer-links d-none d-sm-block">
+              <a href="javascript: void(0);">About</a>
+              <a href="javascript: void(0);">Support</a>
+              <a href="javascript: void(0);">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

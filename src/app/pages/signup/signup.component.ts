@@ -1,5 +1,8 @@
 import { Component, OnInit ,ViewChild, ElementRef } from '@angular/core';
 import { ApiService } from 'src/app/services/api/api.service';
+import { Router } from '@angular/router';
+import { timingSafeEqual } from 'crypto';
+
 import{ToasterService}from 'src/app/services/toaster/toaster.service'
 @Component({
   selector: 'app-signup',
@@ -16,8 +19,11 @@ export class SignupComponent implements OnInit {
 
   }
   getid;
+  constructor(private api :ApiService,
+    private router:Router,
+    private tos:ToasterService) {
   // @ViewChild('btn')  button: ElementRef;
-  constructor(private api :ApiService,private tos:ToasterService) {
+
     this.getAllUsers();
    }
 
@@ -55,6 +61,8 @@ export class SignupComponent implements OnInit {
       
       this.api.Createuser(data).subscribe(res=>{
     console.log("userCreated");
+    this.router.navigate(['/login']);
+    
   })
       }
       else{
