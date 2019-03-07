@@ -27,7 +27,7 @@ getPendingOrders(){
     console.log(res);
     
     this.orders=res;
-    let a = this.orders.Filter(e=>{e.deliveryStatus=='pending'});
+    let a = this.orders.filter(e=>e.deliveryStatus=="pending");
     console.log(a);
   })
   }
@@ -52,5 +52,10 @@ viewInvoice(id){
 viewShipment(id){
   console.log(id);
   this.router.navigate(['dashboard/shipment/'+id]);
+}
+onChange(event:any){
+  let val=event.target.value;
+  console.log(val);
+  
 }
 }
