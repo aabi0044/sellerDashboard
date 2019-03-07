@@ -79,20 +79,20 @@
                     </th>
                     <th class="border-0">
                       <label>Status:</label>
-                      <label class="custom-control custom-checkbox custom-control-inline">
-                        <input type="checkbox" checked="" class="custom-control-input"><span class="custom-control-label">All</span>
+                      <label  class="custom-control custom-checkbox custom-control-inline">
+                        <input #ch1 type="checkbox" (click)="buttoncheck()"  class="custom-control-input"><span class="custom-control-label">All</span>
                       </label>
                       <label class="custom-control custom-checkbox custom-control-inline">
-                        <input type="checkbox" class="custom-control-input"><span class="custom-control-label">Pending</span>
+                        <input #ch2 type="checkbox"    (click)="buttoncheck2()" class="custom-control-input"><span class="custom-control-label">Pending</span>
                       </label>
                       <label class="custom-control custom-checkbox custom-control-inline">
-                        <input type="checkbox" class="custom-control-input"><span class="custom-control-label">Overdue for dispatch</span>
+                        <input  #ch3 type="checkbox" (click)="buttoncheck3()" class="custom-control-input"><span class="custom-control-label">Overdue for dispatch</span>
                       </label>
                       <label class="custom-control custom-checkbox custom-control-inline">
-                        <input type="checkbox" class="custom-control-input"><span class="custom-control-label">Due for dispatch</span>
+                        <input  #ch4 type="checkbox"  (click)="buttoncheck4()" class="custom-control-input"><span class="custom-control-label">Due for dispatch</span>
                       </label>
                       <label class="custom-control custom-checkbox custom-control-inline">
-                        <input type="checkbox" class="custom-control-input"><span class="custom-control-label">All undispatched</span>
+                        <input  #ch5 type="checkbox"   (click)="buttoncheck5()" class="custom-control-input"><span class="custom-control-label">All undispatched</span>
                       </label>
              
                     </th>
