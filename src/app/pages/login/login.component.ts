@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api/api.service';
+import { ToasterService } from 'src/app/services/toaster/toaster.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ getUser;
 
   constructor(
     private router:Router,
-    private api:ApiService
+    private api:ApiService,
+    private tos:ToasterService
   ) { }
 
   ngOnInit() {
@@ -29,7 +31,7 @@ this.api.getUsers().subscribe(res=>{
   console.log(getuser);
   console.log(this.user);
   if(getuser.length!=0 ){
-    
+    this.tos.showSuccess("login Successfully")
       localStorage.setItem('uid',getuser[0].id)
       this.router.navigate(['./dashboard']);
    
@@ -37,6 +39,7 @@ this.api.getUsers().subscribe(res=>{
     
   }
   else{
+    this.tos.warning("User Not Exist in system")
     console.log("user doesnot Exist");
   }
 })

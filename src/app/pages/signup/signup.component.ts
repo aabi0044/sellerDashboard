@@ -47,8 +47,10 @@ export class SignupComponent implements OnInit {
       let dataEmail=this.getid.filter(e=>e.email==this.user.email);
       console.log(dataEmail);
       if(dataEmail.length==0){
-        this.tos.showSuccess();
+       
         console.log("not exist");
+   
+        this.tos.warning("User Does not Exist")
             let data={
         "id":this.getid[index].id+1,
         "firstName":this.user.fname,
@@ -61,24 +63,25 @@ export class SignupComponent implements OnInit {
       
       this.api.Createuser(data).subscribe(res=>{
     console.log("userCreated");
+    this.tos.showSuccess('User Created')
     this.router.navigate(['/login']);
     
   })
       }
       else{
-        
+        this.tos.warning("Already Exist");
         console.log("exist");
       }
   
     })
   }
   else{
-    this.tos.warning();
+    this.tos.warning("Email is not in format");
     console.log("Email is not in format")
   }
     }
     catch(error){
-     
+     this.tos.warning(error.message);
       console.log(error.message);
 
     }

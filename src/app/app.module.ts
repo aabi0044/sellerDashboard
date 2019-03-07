@@ -20,7 +20,10 @@ import { ToasterService } from './services/toaster/toaster.service';
 import { ToastrModule } from 'ngx-toastr';
 import { ShipmentComponent } from './pages/dashboard/shipment/shipment.component';
 import { ViewreportsComponent } from './pages/dashboard/viewreports/viewreports.component';
+import { CreateproductComponent } from './pages/dashboard/createproduct/createproduct.component';
 
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -36,11 +39,13 @@ import { ViewreportsComponent } from './pages/dashboard/viewreports/viewreports.
     ViewOrdersComponent,
     InvoiceComponent,
     ShipmentComponent,
-    ViewreportsComponent
+    ViewreportsComponent,
+    CreateproductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     FormsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
@@ -85,6 +90,10 @@ import { ViewreportsComponent } from './pages/dashboard/viewreports/viewreports.
         {
           path:'viewreports',
           component:ViewreportsComponent
+        },
+        {
+          path:'createproduct',
+          component:CreateproductComponent
         }
       ]
     }

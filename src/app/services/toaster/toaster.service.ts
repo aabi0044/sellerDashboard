@@ -6,10 +6,10 @@ import { ToastrService } from 'ngx-toastr';
 export class ToasterService {
 
   constructor(private toastr: ToastrService) { }
-  showSuccess() {
-    this.toastr.success('Your Account is created!', 'Done!');
+  showSuccess(m) {
+    this.toastr.success(m);
   }
-  warning() {
-    this.toastr.warning('Fields Inalid', 'Faild!');
+  warning(m) {  
+    this.toastr.warning(m);
   }
 }

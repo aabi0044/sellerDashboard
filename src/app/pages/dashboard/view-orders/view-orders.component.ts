@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ApiService } from 'src/app/services/api/api.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -8,6 +8,11 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./view-orders.component.css']
 })
 export class ViewOrdersComponent implements OnInit {
+@ViewChild('ch1') checkbox1:ElementRef;
+@ViewChild('ch2') checkbox2:ElementRef;
+@ViewChild('ch3') checkbox3:ElementRef;
+@ViewChild('ch4') checkbox4:ElementRef;
+@ViewChild('ch5') checkbox5:ElementRef;
 
   constructor(private api:ApiService, private router:Router,private route: ActivatedRoute) { }
 orders;
@@ -17,8 +22,9 @@ public results = [];
     this.getOrders();
     // this.getPendingOrders();
     // this.getDue();
-    // this.getOverDue();
-    this.getAllUnDispatched();
+    
+
+   
   }
 getOrders(){
 this.api.getOrders().subscribe(res=>{
@@ -26,45 +32,96 @@ this.api.getOrders().subscribe(res=>{
   this.orders=res;
 })
 }
+buttoncheck(){
+ 
+    this.checkbox1.nativeElement.checked=true
+    this.checkbox2.nativeElement.checked=false;
+    this.checkbox3.nativeElement.checked=false;
+    this.checkbox4.nativeElement.checked=false;
+    this.checkbox5.nativeElement.checked=false;
+  this.getOrders();
+    console.log("1")
+  }
+buttoncheck2(){
+    this.checkbox2.nativeElement.checked=true  
+    this.checkbox1.nativeElement.checked=false;
+    this.checkbox3.nativeElement.checked=false;
+    this.checkbox4.nativeElement.checked=false;
+    this.checkbox5.nativeElement.checked=false;
+   
+    console.log("2");
+    this.getPendingOrders();
+  
+}
+buttoncheck3(){
+    this.checkbox3.nativeElement.checked=true
+    this.checkbox1.nativeElement.checked=false;
+    this.checkbox2.nativeElement.checked=false;
+    this.checkbox4.nativeElement.checked=false;
+    this.checkbox5.nativeElement.checked=false;
+    console.log("3")
+this.getInProgress();
+  }
+
+buttoncheck4(){
+    this.checkbox4.nativeElement.checked=true
+    this.checkbox1.nativeElement.checked=false;
+    this.checkbox2.nativeElement.checked=false;
+    this.checkbox3.nativeElement.checked=false;
+    this.checkbox5.nativeElement.checked=false;
+    console.log("4")
+  this.getCompleted();
+}
+buttoncheck5(){
+    this.checkbox5.nativeElement.checked=true
+    this.checkbox1.nativeElement.checked=false;
+    this.checkbox2.nativeElement.checked=false;
+    this.checkbox4.nativeElement.checked=false;
+    this.checkbox3.nativeElement.checked=false;
+    console.log("5")
+ this.getFailed();
+  
+}
 //===================================Filter===============================
 getPendingOrders(){
   this.api.getOrders().subscribe(res=>{
     console.log(res);
     
-    this.orders=res;
-    let a = this.orders.filter(e=>e.deliveryStatus=="pending");
+    this.data=res;
+    let a = this.data.filter(e=>e.deliveryStatus=="In Transit");
     console.log(a);
+    this.orders=a;
   })
   }
 
-  getOverDue(){
+  getInProgress(){
     this.api.getOrders().subscribe(res=>{
       console.log(res);
       
-      this.orders=res;
-      let a = this.orders.filter(e=>e.deliveryStatus=="overdue");
+      this.data=res;
+      let a = this.data.filter(e=>e.deliveryStatus=="not delivered");
       console.log(a);
-      
+      this.orders=a;
     })
     }
-    getDue(){
+    getCompleted(){
       this.api.getOrders().subscribe(res=>{
         console.log(res);
         
-        this.orders=res;
-        let a = this.orders.filter(e=>e.deliveryStatus=="due");
+        this.data=res;
+        let a = this.data.filter(e=>e.deliveryStatus=="delivered");
         console.log(a);
-     
+        this.orders=a;
       })
       }
-      getAllUnDispatched(){
+      getFailed(){
         this.api.getOrders().subscribe(res=>{
           console.log(res);
           
-          this.orders=res;
-          let a = this.orders.filter(e=>e.deliveryStatus=="due" || e.deliveryStatus=="overdue");
+          this.data=res;
+          let a = this.data.filter(e=>e.deliveryStatus=="returned");
           console.log(a);
-     
+          this.orders=a;
         })
       }
   //=========================================================================

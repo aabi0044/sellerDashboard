@@ -43,5 +43,20 @@ ordersUrl="http://localhost:3000/orders/";
     console.log(data);
     return this.http.put(this.ordersUrl+ '' +id,data)
   }
-
+//===================================Products=================
+CreateProduct(data){
+  return this.http.post(this.ordersUrl,data);
+}
+getSpecificProduct(id){
+  console.log(id);
+  return this.http.get(this.ordersUrl + '' +id);
+}
+getProducts(){
+  return this.http.get(this.ordersUrl);
+}
+updateOrder(id,data){
+  console.log(id);
+  console.log(data);
+  return this.http.put(this.ordersUrl+ '' +id,data)
+}
 }
