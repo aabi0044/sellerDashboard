@@ -8,7 +8,7 @@ body{
   
   .registerbox{
     width: 320px;
-    height: 690px;
+    height: auto;
     background: #000;
     color: #fff;
     top: 55%;

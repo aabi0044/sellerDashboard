@@ -11,9 +11,14 @@ export class ViewOrdersComponent implements OnInit {
 
   constructor(private api:ApiService, private router:Router,private route: ActivatedRoute) { }
 orders;
+data;
+public results = [];
   ngOnInit() {
     this.getOrders();
-    this.getPendingOrders();
+    // this.getPendingOrders();
+    // this.getDue();
+    // this.getOverDue();
+    this.getAllUnDispatched();
   }
 getOrders(){
 this.api.getOrders().subscribe(res=>{
@@ -32,17 +37,35 @@ getPendingOrders(){
   })
   }
 
-  getOverDueOrders(){
+  getOverDue(){
     this.api.getOrders().subscribe(res=>{
       console.log(res);
+      
       this.orders=res;
+      let a = this.orders.filter(e=>e.deliveryStatus=="overdue");
+      console.log(a);
+      
     })
     }
-    getDueOrders(){
+    getDue(){
       this.api.getOrders().subscribe(res=>{
         console.log(res);
+        
         this.orders=res;
+        let a = this.orders.filter(e=>e.deliveryStatus=="due");
+        console.log(a);
+     
       })
+      }
+      getAllUnDispatched(){
+        this.api.getOrders().subscribe(res=>{
+          console.log(res);
+          
+          this.orders=res;
+          let a = this.orders.filter(e=>e.deliveryStatus=="due" || e.deliveryStatus=="overdue");
+          console.log(a);
+     
+        })
       }
   //=========================================================================
 viewInvoice(id){

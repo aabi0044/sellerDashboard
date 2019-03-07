@@ -19,6 +19,7 @@ import { InvoiceComponent } from './pages/dashboard/invoice/invoice.component';
 import { ToasterService } from './services/toaster/toaster.service';
 import { ToastrModule } from 'ngx-toastr';
 import { ShipmentComponent } from './pages/dashboard/shipment/shipment.component';
+import { ViewreportsComponent } from './pages/dashboard/viewreports/viewreports.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { ShipmentComponent } from './pages/dashboard/shipment/shipment.component
     HeaderComponent,
     ViewOrdersComponent,
     InvoiceComponent,
-    ShipmentComponent
+    ShipmentComponent,
+    ViewreportsComponent
   ],
   imports: [
     BrowserModule,
@@ -79,6 +81,10 @@ import { ShipmentComponent } from './pages/dashboard/shipment/shipment.component
         {
           path:'shipment/:id',
           component:ShipmentComponent
+        },
+        {
+          path:'viewreports',
+          component:ViewreportsComponent
         }
       ]
     }
