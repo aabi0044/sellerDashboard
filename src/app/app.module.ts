@@ -51,7 +51,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     RouterModule.forRoot([
     { path:'',
-      redirectTo:'dashboard/vieworders',
+      redirectTo:'login',
       pathMatch:'full'
     },
     {

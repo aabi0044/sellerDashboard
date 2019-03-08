@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, Renderer } from '@angular/core';
+import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
   selector: 'app-createproduct',
@@ -6,6 +7,24 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, Renderer } fro
   styleUrls: ['./createproduct.component.css']
 })
 export class CreateproductComponent implements OnInit {
+allProducts;
+
+
+productName;
+productPrice;
+salePrice;
+saleStartDate;
+saleEndDate;
+sku;
+weight;
+brandName;
+manufactureName;
+catagory;
+sellerSku;
+condition;
+shortDescription;
+detailedDescription;
+
 
   @ViewChild('tab1') Tab1 : ElementRef;
   @ViewChild('tab2') Tab2 : ElementRef;
@@ -13,7 +32,9 @@ export class CreateproductComponent implements OnInit {
   @ViewChild('tab1pill') Tab1Pill : ElementRef;
   @ViewChild('tab2pill') Tab2Pill : ElementRef;
   @ViewChild('tab3pill') Tab3Pill : ElementRef;
-  constructor(public renderer:Renderer) {
+  constructor(public renderer:Renderer,
+    private api :ApiService) {
+    
 
    }
 
@@ -65,6 +86,34 @@ export class CreateproductComponent implements OnInit {
     console.log(this.Tab3Pill);
   }
   ngAfterViewInit(){
+
+  }
+
+  createProduct(){
+    this.api.getProducts().subscribe(res=>{
+      this.allProducts=res;
+ 
+    let data={
+      "id":this.allProducts.id+1,
+      "productName":this.productName,
+      "productPrice":this.productPrice,
+      "salePrice":this.salePrice,
+      "saleStartDate":this.saleStartDate,
+      "saleEndDate":this.saleEndDate,
+      "sku":this.sku,
+      "weight":this.weight,
+      "brandName":this.brandName, 
+      "manufacturerName":this.manufactureName,
+      "catagory":this.catagory,
+      "sellerSku":this.sellerSku,
+      "condition":this.condition,
+      "shortDescription":this.shortDescription,
+      "detailedDescription":this.detailedDescription
+    }
+    this.api.CreateProduct(data).subscribe(res=>{
+      console.log("product Created Successfully");
+    })
+  });
 
   }
 }

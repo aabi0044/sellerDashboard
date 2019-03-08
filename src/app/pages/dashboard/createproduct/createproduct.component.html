@@ -50,56 +50,59 @@
                     <div class="form-group row">
                       <label for="productID" class="col-sm-3 col-form-label">Product ID:</label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="productID">
+                        <!-- <input type="text" class="form-control" id="productID"> --> 
+                        <label for="productID" class="col-sm-3 col-form-label" style="color:green !important">Auto Generated</label>
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="productName" class="col-sm-3 col-form-label">Product Name:</label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="productName">
+                        <input type="text" class="form-control" id="productName" name="productName" [(ngModel)]="productName"  [ngModelOptions]="{standalone: true}">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="sku" class="col-sm-3 col-form-label">SKU:</label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="sku">
+                        <input type="text" class="form-control" id="sku" name="sku" [(ngModel)]="sku" [ngModelOptions]="{standalone: true}">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="weight" class="col-sm-3 col-form-label">Weight:</label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="weight">
+                        <input type="text" class="form-control" id="weight" name="weight" [(ngModel)]="weight"  [ngModelOptions]="{standalone: true}">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="brandName" class="col-sm-3 col-form-label">*Brand Name:</label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="brandName">
+                        <input type="text" class="form-control" id="brandName"name="brandName" [(ngModel)]="brandName"  [ngModelOptions]="{standalone: true}">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="manufacturerName" class="col-sm-3 col-form-label likho">Manufacturer Name:</label>
                       <div class="col-sm-4 ">
-                        <input type="text" class="form-control" id="manufacturerName">
+                        <input type="text" class="form-control" id="manufacturerName" name="manufactureName" [(ngModel)]="manufactureName" [ngModelOptions]="{standalone: true}">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="productName" class="col-sm-3 col-form-label">Categories:</label>
                       <!-- Default checked -->
                       <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="categoryName" name="defaultExampleRadios" style=" padding: 0px 5px 0px 5px" checked> 
+                        <input type="radio" class="custom-control-input" id="categoryName" name="defaultExampleRadios" style=" padding: 0px 5px 0px 5px" checked
+                        [ngModelOptions]="{standalone: true}" [(ngModel)]="catagory"
+                        > 
                         <label class="custom-control-label" for="categoryName" style=" padding: 0px 5px 0px 0px">Electronics </label>   
                       </div>
                  
                       <!-- Default unchecked -->
                       <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="categoryName1" name="defaultExampleRadios" style=" padding: 0px 5px 0px 5px">
+                        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="catagory" type="radio" class="custom-control-input" id="categoryName1" name="defaultExampleRadios" style=" padding: 0px 5px 0px 5px">
                         <label class="custom-control-label" for="categoryName1" style=" padding: 0px 5px 0px 0px"> Fashion </label>
                       </div>
                    
                       <!-- Default unchecked -->
                       <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="categoryName2" name="defaultExampleRadios" style=" padding: 0px 5px 0px 5px">
+                        <input  [ngModelOptions]="{standalone: true}" [(ngModel)]="catagory" type="radio" class="custom-control-input" id="categoryName2" name="defaultExampleRadios" style=" padding: 0px 5px 0px 5px">
                         <label class="custom-control-label" for="categoryName2" style=" padding: 0px 5px 0px 0px">Home & Kitchen </label>
                       </div>
                      
@@ -109,18 +112,18 @@
                     <div class="form-group row">
                         <label for="productName" class="col-sm-3 col-form-label"></label>
                         <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" id="categoryName3" name="defaultExampleRadios" style=" padding: 0px 5px 0px 5px">
+                            <input   [ngModelOptions]="{standalone: true}" [(ngModel)]="catagory" type="radio" class="custom-control-input" id="categoryName3" name="defaultExampleRadios" style=" padding: 0px 5px 0px 5px">
                             <label class="custom-control-label" for="categoryName3" style=" padding: 0px 5px 0px 0px">Beauty & Fragrance </label>
                           </div>
                           <!-- Default unchecked -->
                           <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" id="categoryName4" name="defaultExampleRadios" style=" padding: 0px 5px 0px 5px">
+                            <input  [ngModelOptions]="{standalone: true}" [(ngModel)]="catagory" type="radio" class="custom-control-input" id="categoryName4" name="defaultExampleRadios" style=" padding: 0px 5px 0px 5px">
                             <label class="custom-control-label" for="categoryName3" style=" padding: 0px 5px 0px 0px">Baby & Kids</label>
                           </div>
 
                     </div>
                   </form>
-                  <button type="button" class="btn btn-cancel btn-sm">Cancel</button>
+                  <button type="button" class="btn btn-cancel btn-sm"(click)="cancel()">Cancel</button>
                   <button type="button"  class="btn btn-primary btn-sm" (click)="gotoTab2()" >Submit and Next</button>
               
               </div>
