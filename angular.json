@@ -27,8 +27,7 @@
               "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
-              "./node_modules/jquery/dist/jquery.min.js"
-
+           
               ]
           },
           "configurations": {

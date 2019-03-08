@@ -47,7 +47,17 @@
       "productPrice":400,
       "salePrice":300,
       "saleStartDate":"",
-      "saleEndDate":""
+      "saleEndDate":"",
+      "sku":"",
+      "weight":"",
+      "brandName":"",
+      "manufacturerName":"",
+      "catagory":"",
+      "sellerSku":"",
+      "condition":"",
+      "shortDescription":"",
+      "detailedDescription":""
+
     }
   ],
   "orders": [

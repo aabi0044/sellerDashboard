@@ -31,20 +31,20 @@
           <div class="pills-regular">
             <ul class="nav nav-pills mb-3 nav-justified" id="pills-tab" role="tablist">
               <li class="nav-item">
-                <a class="nav-link active" id="pills-productinfo-tab" data-toggle="pill" href="#pills-productinfo" role="tab" aria-controls="pills-productinfo" aria-selected="true">Product Information</a>
+                <a #tab1 class="nav-link active" id="pills-productinfo-tab" data-toggle="pill" href="#pills-productinfo" role="tab" aria-controls="pills-productinfo" aria-selected="true">Product Information</a>
               </li>
               <!-- <li class="nav-item">
                 <a class="nav-link" id="pills-images-tab" data-toggle="pill" href="#pills-images" role="tab" aria-controls="pills-images" aria-selected="false">Images</a>
               </li> -->
               <li class="nav-item">
-                <a class="nav-link" id="pills-offers-tab" data-toggle="pill" href="#pills-offers" role="tab" aria-controls="pills-offers" aria-selected="false">Offers</a>
+                <a #tab2 class="nav-link" id="pills-offers-tab" data-toggle="pill" href="#pills-offers" role="tab" aria-controls="pills-offers" aria-selected="false">Offers</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-selected="false">Description</a>
+                <a #tab3 class="nav-link" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-selected="false">Description</a>
               </li>
             </ul>
             <div class="tab-content" id="pills-tabContent">
-              <div class="tab-pane fade show active" id="pills-productinfo" role="tabpanel" aria-labelledby="pills-productinfo-tab">
+              <div #tab1pill class="tab-pane fade show active" id="pills-productinfo" role="tabpanel" aria-labelledby="pills-productinfo-tab">
                 <div class="card-body">
                   <form>
                     <div class="form-group row">
@@ -90,19 +90,19 @@
                         <input type="radio" class="custom-control-input" id="categoryName" name="defaultExampleRadios" checked>
                         <label class="custom-control-label" for="categoryName">Electronics </label>
                       </div>
-                      &nbsp
+                 
                       <!-- Default unchecked -->
                       <div class="custom-control custom-radio">
                         <input type="radio" class="custom-control-input" id="categoryName1" name="defaultExampleRadios">
                         <label class="custom-control-label" for="categoryName1">Fashion </label>
                       </div>
-                      &nbsp
+                   
                       <!-- Default unchecked -->
                       <div class="custom-control custom-radio">
                         <input type="radio" class="custom-control-input" id="categoryName2" name="defaultExampleRadios">
                         <label class="custom-control-label" for="categoryName2">Home & Kitchen </label>
                       </div>
-                      &nbsp
+                     
                       <!-- Default unchecked -->
                       <div class="custom-control custom-radio">
                         <input type="radio" class="custom-control-input" id="categoryName3" name="defaultExampleRadios">
@@ -116,8 +116,8 @@
                     </div>
                   </form>
                   <button type="button" class="btn btn-cancel btn-sm">Cancel</button>
-                  <button type="button"  class="btn btn-primary btn-sm" >Submit and Next</button>
-                  <button type="button" (click)="goto()">next</button>
+                  <button type="button"  class="btn btn-primary btn-sm" (click)="gotoTab2()" >Submit and Next</button>
+              
               </div>
 
               </div>
@@ -148,7 +148,7 @@
                 <button type="button" class="btn btn-cancel btn-sm">Cancel</button>
                 <button type="button" class="btn btn-primary btn-sm">Submit and Finish</button>
               </div> -->
-              <div  class="tab-pane fade" id="pills-offers" role="tabpanel" aria-labelledby="pills-offers-tab">
+              <div #tab2pill class="tab-pane fade" id="pills-offers" role="tabpanel" aria-labelledby="pills-offers-tab">
 
                   <form>
                     <!-- <div class="form-group row">
@@ -215,9 +215,9 @@
                     </div>
                   </form>
                 <button type="button" class="btn btn-cancel btn-sm">Cancel</button>
-                <button type="button" class="btn btn-primary btn-sm">Submit and Finish</button>
+                <button type="button" class="btn btn-primary btn-sm" (click)="gotoTab3()">Submit and Next</button>
               </div>
-              <div class="tab-pane fade" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
+              <div #tab3pill class="tab-pane fade" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
                   <div class="card-body">
                     <form>
                       <div class="form-group row">
