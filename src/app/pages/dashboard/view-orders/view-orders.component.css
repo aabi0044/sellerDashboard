@@ -1,0 +1,17 @@
+.badge-brand-green{
+    
+    background-color: greenyellow;
+    color: #2e2f39;
+}
+.badge-brand-red {
+    background-color: red !important;
+    color: #2e2f39;
+}
+.badge-brand-blue{
+    background-color: blue !important;
+    color: #2e2f39;
+}
+.badge-brand-orange{
+    background-color: orange !important;
+    color: #2e2f39;
+}
