@@ -18,3 +18,7 @@
 .custom-control-label::before {
     top:5px !important;
 }
+.dateicon{
+    margin-left: 1px !important;
+    
+}
