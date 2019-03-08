@@ -50,6 +50,20 @@ export class CreateproductComponent implements OnInit {
     console.log(this.Tab2Pill);
     console.log(this.Tab3Pill);
   }
+  gotoTab1()
+  {
+    console.log(this.Tab2Pill);
+    console.log(this.Tab3Pill);
+    this.renderer.setElementProperty(this.Tab3.nativeElement,'aria-selected',false);
+    this.renderer.setElementProperty(this.Tab3.nativeElement,'className','nav-link');
+    this.renderer.setElementProperty(this.Tab3Pill.nativeElement,'className','tab-pane fade');
+
+    this.renderer.setElementProperty(this.Tab1.nativeElement,'aria-selected',true);
+    this.renderer.setElementProperty(this.Tab1.nativeElement,'className','nav-link active');
+    this.renderer.setElementProperty(this.Tab1Pill.nativeElement,'className','tab-pane fade show active');
+    console.log(this.Tab2Pill);
+    console.log(this.Tab3Pill);
+  }
   ngAfterViewInit(){
 
   }
