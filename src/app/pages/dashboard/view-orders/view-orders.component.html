@@ -75,12 +75,12 @@
                   <thead class="bg-light">
                   <tr class="border-0">
                     <th class="border-0">
-                      <label style="margin-bottom: 2px;">Filters</label>
+                      <label style="margin-bottom: 10px;">Filters</label>
                     </th>
                     <th class="border-0">
-                      <label>Status:</label>
+                      <label style="padding:0px 5px 0px 0px ; margin-bottom: 10px">Status: </label>
                       <label  class="custom-control custom-checkbox custom-control-inline">
-                        <input #ch1 type="checkbox" (click)="buttoncheck()"  class="custom-control-input"><span class="custom-control-label">All</span>
+                        <input #ch1 type="checkbox" (click)="buttoncheck()"  class="custom-control-input"><span class="custom-control-label ">All</span>
                       </label>
                       <label class="custom-control custom-checkbox custom-control-inline">
                         <input #ch2 type="checkbox"    (click)="buttoncheck2()" class="custom-control-input"><span class="custom-control-label">Due Orders</span>
@@ -113,7 +113,7 @@
                   <tr class="border-0">
                     <th class="border-0">#</th>
                     <th class="border-0">Order ID</th>
-                    <th class="border-0">Image</th>
+                    <!-- <th class="border-0">Image</th> -->
                     <th class="border-0">Order placed</th>
                     <th class="border-0">For delivery by</th>
                     <th class="border-0">Tracking Number</th>
@@ -128,9 +128,9 @@
                   <tr *ngFor="let item of orders">
                     <td><input type="checkbox"><br></td>
                     <td>{{item.orderId}}</td>
-                    <td>
+                    <!-- <td>
                       <div class="m-r-10"><img src="item.image" alt="user" class="rounded" width="45"></div>
-                    </td>
+                    </td> -->
                     <td>{{item.orderPlaced | date}}</td>
                     <td>{{item.forDelivery | date}}</td>
                     <td>{{item.trackingNumber}} </td>

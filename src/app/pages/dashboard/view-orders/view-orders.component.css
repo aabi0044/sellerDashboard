@@ -15,3 +15,6 @@
     background-color: orange !important;
     color: #2e2f39;
 }
+.custom-control-label::before {
+    top:5px !important;
+}
