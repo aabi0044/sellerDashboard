@@ -99,7 +99,7 @@ getPendingOrders(){
       console.log(res);
       
       this.data=res;
-      let a = this.data.filter(e=>e.deliveryStatus=="not delivered");
+      let a = this.data.filter(e=>e.deliveryStatus=="Not Delivered");
       console.log(a);
       this.orders=a;
     })
@@ -109,7 +109,7 @@ getPendingOrders(){
         console.log(res);
         
         this.data=res;
-        let a = this.data.filter(e=>e.deliveryStatus=="delivered");
+        let a = this.data.filter(e=>e.deliveryStatus=="Delivered");
         console.log(a);
         this.orders=a;
       })
@@ -119,7 +119,7 @@ getPendingOrders(){
           console.log(res);
           
           this.data=res;
-          let a = this.data.filter(e=>e.deliveryStatus=="returned");
+          let a = this.data.filter(e=>e.deliveryStatus=="Returned");
           console.log(a);
           this.orders=a;
         })
