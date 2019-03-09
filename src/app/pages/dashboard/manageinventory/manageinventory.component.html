@@ -40,7 +40,7 @@
             <span class="input-group-btn">
               <button type="button" class="btn btn-default"><i class="fas fa-search"></i></button>
             </span>
-            <input type="text" class="form-control" placeholder="Search by Product Name or SKU" />
+            <input type="text" class="form-control" placeholder="Search by Product Name or SKU"   name="searchText" [(ngModel)]="searchText"   />
           </p>
         </div>
       </div>
@@ -74,11 +74,11 @@
                           class="custom-control-label">Not Approved</span>
                       </label>
                       <label class="custom-control custom-checkbox custom-control-inline">
-                          <input #ch4 type="checkbox" (click)="buttoncheck4()" class="custom-control-input"><span
+                          <input #ch5 type="checkbox" (click)="buttoncheck5()" class="custom-control-input"><span
                             class="custom-control-label">Active</span>
                         </label>
                         <label class="custom-control custom-checkbox custom-control-inline">
-                            <input #ch4 type="checkbox" (click)="buttoncheck4()" class="custom-control-input"><span
+                            <input #ch6 type="checkbox" (click)="buttoncheck6()" class="custom-control-input"><span
                               class="custom-control-label">DeActive</span>
                           </label>
                       <!-- <label class="custom-control custom-checkbox custom-control-inline">
@@ -116,7 +116,7 @@
                 </thead>
                 <tbody *ngFor="let item of products | paginate: { itemsPerPage: showEntries, currentPage: p }">
                
-                  <tr>
+                  <tr  *ngIf = "filterCondition(item)" >
                     <td><input type="checkbox"><br></td>
                     <td>{{item.status}}</td>
                   

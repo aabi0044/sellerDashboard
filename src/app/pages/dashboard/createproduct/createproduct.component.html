@@ -243,7 +243,8 @@
                       </div>
                     </form>
                     <button type="button" class="btn btn-cancel btn-sm">Cancel</button>
-                    <button type="button" class="btn btn-primary btn-sm" (click)="gotoTab1()">Submit and Finish</button>
+                    <button type="button" class="btn btn-primary btn-sm" *ngIf="id == null" (click)="gotoTab1()">Submit and Finish</button>
+                    <button type="button" class="btn btn-primary btn-sm" *ngIf="id != null" (click)="update()">update</button>
                   </div>
               </div>
             </div>

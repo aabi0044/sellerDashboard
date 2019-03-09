@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef  } from '@angular/core';
 import { ApiService } from 'src/app/services/api/api.service';
 import { ToasterService } from 'src/app/services/toaster/toaster.service';
 import { Router } from '@angular/router';
@@ -9,9 +9,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./manageinventory.component.css']
 })
 export class ManageinventoryComponent implements OnInit {
+  @ViewChild('ch1') checkbox1: ElementRef;
+  @ViewChild('ch2') checkbox2: ElementRef;
+  @ViewChild('ch3') checkbox3: ElementRef;
+  @ViewChild('ch4') checkbox4: ElementRef;
+  @ViewChild('ch5') checkbox5: ElementRef;
+  @ViewChild('ch6') checkbox6: ElementRef;
   showEntries = 10;
   products;
   getPrd;
+  data;
+  searchText='';
   constructor(private api :ApiService,
     private tos:ToasterService,
     private router:Router) { }
@@ -19,6 +27,129 @@ export class ManageinventoryComponent implements OnInit {
   ngOnInit() {
     this.getProducts();
   }
+  buttoncheck() {
+
+    this.checkbox1.nativeElement.checked = true
+    this.checkbox2.nativeElement.checked = false;
+    this.checkbox3.nativeElement.checked = false;
+    this.checkbox4.nativeElement.checked = false;
+    this.checkbox5.nativeElement.checked = false;
+    this.checkbox6.nativeElement.checked = false;
+   this.getProducts();
+    console.log("1")
+  }
+  buttoncheck2() {
+    this.checkbox2.nativeElement.checked = true
+    this.checkbox1.nativeElement.checked = false;
+    this.checkbox3.nativeElement.checked = false;
+    this.checkbox4.nativeElement.checked = false;
+    this.checkbox5.nativeElement.checked = false;
+    this.checkbox6.nativeElement.checked = false;
+this.getPending();
+    console.log("2");
+    
+
+  }
+  buttoncheck3() {
+    this.checkbox3.nativeElement.checked = true
+    this.checkbox1.nativeElement.checked = false;
+    this.checkbox2.nativeElement.checked = false;
+    this.checkbox4.nativeElement.checked = false;
+    this.checkbox5.nativeElement.checked = false;
+    this.checkbox6.nativeElement.checked = false;
+    console.log("3")
+    this.getApproved();
+
+  }
+
+  buttoncheck4() {
+    this.checkbox4.nativeElement.checked = true
+    this.checkbox1.nativeElement.checked = false;
+    this.checkbox2.nativeElement.checked = false;
+    this.checkbox3.nativeElement.checked = false;
+    this.checkbox5.nativeElement.checked = false;
+    this.checkbox6.nativeElement.checked = false;
+    console.log("4")
+    this.getNotApproved();
+
+  }
+  buttoncheck5() {
+    this.checkbox5.nativeElement.checked = true
+    this.checkbox1.nativeElement.checked = false;
+    this.checkbox2.nativeElement.checked = false;
+    this.checkbox4.nativeElement.checked = false;
+    this.checkbox3.nativeElement.checked = false;
+    this.checkbox6.nativeElement.checked = false;
+    console.log("5")
+    this.getActive();
+    
+
+  }
+  buttoncheck6() {
+    this.checkbox6.nativeElement.checked = true
+    this.checkbox1.nativeElement.checked = false;
+    this.checkbox2.nativeElement.checked = false;
+    this.checkbox4.nativeElement.checked = false;
+    this.checkbox3.nativeElement.checked = false;
+    this.checkbox5.nativeElement.checked = false;
+    console.log("5")
+    this.getNotActive();
+
+  }
+
+
+getPending(){
+  this.api.getProducts().subscribe(res=>{
+    this.data=res;
+    let a =this.data.filter((elem)=>{
+      return elem.status=="Pending";
+    })
+    this.products=a;
+  })
+}
+getApproved(){
+  this.api.getProducts().subscribe(res=>{
+    this.data=res;
+    let a =this.data.filter((elem)=>{
+      return elem.status=="Approved";
+    })
+    this.products=a;
+  })
+}
+getNotApproved(){
+  this.api.getProducts().subscribe(res=>{
+    this.data=res;
+    let a =this.data.filter((elem)=>{
+      return elem.status=="NotApproved";
+    })
+    this.products=a;
+  })
+}
+getActive(){
+  this.api.getProducts().subscribe(res=>{
+    this.data=res;
+    let a =this.data.filter((elem)=>{
+      return elem.prdstatus=="Active";
+    })
+    this.products=a;
+  })
+}
+getNotActive(){
+  this.api.getProducts().subscribe(res=>{
+    this.data=res;
+    let a =this.data.filter((elem)=>{
+      return elem.prdstatus=="Deactive";
+    })
+    this.products=a;
+  })
+}
+filterCondition(product) {
+
+  return product.productName.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1;
+}
+
+//===================================filter=====================================
+
 getProducts(){
 this.api.getProducts().subscribe(res=>{
   this.products=res;
