@@ -28,7 +28,9 @@ import { ManageinventoryComponent } from './pages/dashboard/manageinventory/mana
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ViewShipmentComponent } from './pages/dashboard/view-shipment/view-shipment.component';
 import { SellerdashboardComponent } from './pages/dashboard/sellerdashboard/sellerdashboard.component'; // <-- import the module
-import { CreateInvoiceComponent } from './pages/dashboard/create-invoice/create-invoice.component'; // <-- import the module
+import { CreateInvoiceComponent } from './pages/dashboard/create-invoice/create-invoice.component';
+import { PaymentSummaryComponent } from './pages/dashboard/payment-summary/payment-summary.component';
+import { SalesSummaryComponent } from './pages/dashboard/sales-summary/sales-summary.component'; // <-- import the module
 
 
 @NgModule({
@@ -51,6 +53,8 @@ import { CreateInvoiceComponent } from './pages/dashboard/create-invoice/create-
     ViewShipmentComponent,
     SellerdashboardComponent,
     CreateInvoiceComponent,
+    PaymentSummaryComponent,
+    SalesSummaryComponent,
   ],
   imports: [
     BrowserModule,
@@ -118,13 +122,21 @@ import { CreateInvoiceComponent } from './pages/dashboard/create-invoice/create-
           {
             path: 'view-shipment',
             component: ViewShipmentComponent
-          },{
-            path:'sellerdashboard',
-            component:SellerdashboardComponent
+          }, {
+            path: 'sellerdashboard',
+            component: SellerdashboardComponent
           },
           {
             path: 'create-invoice',
             component: CreateInvoiceComponent
+          },
+          {
+            path: 'payment-summary',
+            component: PaymentSummaryComponent
+          },
+          {
+            path: 'sales-summary',
+            component: SalesSummaryComponent
           }
         ]
       }
