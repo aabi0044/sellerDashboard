@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manageinventory.component.css']
 })
 export class ManageinventoryComponent implements OnInit {
-
+  showEntries = 10;
   constructor() { }
 
   ngOnInit() {
