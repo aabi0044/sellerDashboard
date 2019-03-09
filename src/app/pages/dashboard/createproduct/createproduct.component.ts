@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, Renderer } from '@angular/core';
 import { ApiService } from 'src/app/services/api/api.service';
 import { ToasterService } from 'src/app/services/toaster/toaster.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-createproduct',
@@ -50,7 +50,9 @@ getprd;
   constructor(public renderer:Renderer,
     private api :ApiService,
     private tos:ToasterService,
-    private route:ActivatedRoute) {
+    private route:ActivatedRoute,
+    private router:Router
+) {
     
 
    }
@@ -65,34 +67,35 @@ this.productName=this.getprd.productName;
 this.sku=this.getprd.sku;
 this.weight=this.getprd.weight;
 this.brandName=this.getprd.brandName;
-this.manufactureName=this.getprd.manufactureName;
+this.manufactureName=this.getprd.manufacturerName;
 this.productPrice=this.getprd.productPrice;
 this.sellerSku=this.getprd.sellerSku;
 this.salePrice=this.getprd.salePrice;
 this.shortDescription=this.getprd.shortDescription;
 this.detailedDescription=this.getprd.detailedDescription;
 this.saleEndDate=this.getprd.saleEndDate;
-this.saleStartDate=this.saleStartDate;
+this.saleStartDate=this.getprd.saleStartDate;
   })
 }
+else{
+
+  this.condition="New";
+
+  this.catagory="Electronics";
 
 
+  this.productName='';
+  this.sku='';
+  this.weight='';
+  this.brandName='';
+  this.manufactureName='';
+  this.productPrice='';
+  this.sellerSku='';
+  this.salePrice='';
+  this.shortDescription='';
+  this.detailedDescription='';
+}
 
-    this.condition="New";
-
-   this.catagory="Electronics";
-
-
-   this.productName='';
-   this.sku='';
-   this.weight='';
-   this.brandName='';
-   this.manufactureName='';
-   this.productPrice='';
-   this.sellerSku='';
-   this.salePrice='';
-   this.shortDescription='';
-   this.detailedDescription='';
   }
   Electronics1(){
     this.catagory="Electronics"
@@ -250,5 +253,41 @@ this.tos.warning('Must fill all entries')
     })
   });
 
+  }
+  update(){
+    if(this.saleEndDate != null  && this.saleStartDate != null){
+      let data={
+        "id":this.getprd.id,
+        "productName":this.productName,
+        "productPrice":this.productPrice,
+        "salePrice":this.salePrice,
+        "saleStartDate":this.saleStartDate,
+        "saleEndDate":this.saleEndDate,
+        "sku":this.sku,
+        "weight":this.weight,
+        "brandName":this.brandName, 
+        "manufacturerName":this.manufactureName,
+        "catagory":this.catagory,
+        "sellerSku":this.sellerSku,
+        "condition":this.condition,
+        "shortDescription":this.shortDescription,
+        "detailedDescription":this.detailedDescription,
+        "status":this.getprd.status,
+        "quantity":this.getprd.status,
+        "prdstatus":this.getprd.prdstatus
+      }
+  
+      this.api.updateProduct(this.id,data).subscribe(res=>{
+        this.tos.showSuccess("Updated");
+        setTimeout(function(){
+          
+        },1000);
+        this.router.navigate(['/dashboard/manageinventory']);
+      })
+    }
+    else{
+this.tos.warning('Sale Ending Date must grater than Starting date')
+    }
+   
   }
 }

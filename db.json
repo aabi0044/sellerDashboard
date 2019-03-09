@@ -110,7 +110,7 @@
   "products": [
     {
       "id": 1,
-      "productName": "any",
+      "productName": "Product Name",
       "productPrice": 2500,
       "salePrice": 2300,
       "saleStartDate": "2019-03-05",
@@ -119,14 +119,12 @@
       "weight": "2KG",
       "brandName": "addidas",
       "manufacturerName": "anybody ",
-      "catagory": "Fashion",
       "sellerSku": "qdfdw2122de",
-      "condition": "Old",
-      "shortDescription": "this is dummy testing ",
+      "shortDescription": "this is dummy testing blah blah blah .",
       "detailedDescription": "and this too. so that lets test again bro. okay fine . add more text here ",
       "status": "Approved",
-      "quantity": 50,
-      "prdstatus": "Active"
+      "quantity": "Approved",
+      "prdstatus": "Deactive"
     },
     {
       "id": 2,
