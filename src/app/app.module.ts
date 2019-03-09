@@ -24,6 +24,7 @@ import { CreateproductComponent } from './pages/dashboard/createproduct/createpr
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ManageinventoryComponent } from './pages/dashboard/manageinventory/manageinventory.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     InvoiceComponent,
     ShipmentComponent,
     ViewreportsComponent,
-    CreateproductComponent
+    CreateproductComponent,
+    ManageinventoryComponent
   ],
   imports: [
     BrowserModule,
@@ -94,6 +96,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         {
           path:'createproduct',
           component:CreateproductComponent
+        },
+        {
+          path:'manageinventory',
+          component:ManageinventoryComponent
         }
       ]
     }

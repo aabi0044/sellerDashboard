@@ -151,46 +151,52 @@ export class ViewOrdersComponent implements OnInit {
   }
   filterByDate() {
 
-  
-    console.log(this.startDateFilter);
-    let r=new Date(this.startDateFilter);
-    let t=new Date(this.endDateFilter);
-    console.log(r);
-     this.startdate = { year: r.getFullYear(), month: r.getMonth() + 1, day:r.getDate() };
-    console.log(this.startdate);
-     this.enddate = { year: t.getFullYear(), month: t.getMonth() + 1, day: t.getDate() };
+console.log(this.startDateFilter);
+    let i =this.orders.filter((elem)=>{
+      return elem.forDelivery>=this.startDateFilter && elem.forDelivery<=this.endDateFilter
+    }) 
+  console.log(i);
+  this.orders=i;
+//     console.log(this.startDateFilter);
 
-let b= this.orders.filter((elem)=>{
-  let w = new Date(elem.forDelivery);
-  // console.log(w);
-   this.comingdate = { year: w.getFullYear(), month: w.getMonth() + 1, day: w.getDate() };
-  console.log(this.comingdate);
-  if(this.comingdate.year==this.startdate.year && this.comingdate.year ==this.enddate.year && this.comingdate.month ==this.startdate.month ){
+//     let r=new Date(this.startDateFilter);
+//     let t=new Date(this.endDateFilter);
+//     console.log(r);
+//      this.startdate = { year: r.getFullYear(), month: r.getMonth() + 1, day:r.getDate() };
+//     console.log(this.startdate);
+//      this.enddate = { year: t.getFullYear(), month: t.getMonth() + 1, day: t.getDate() };
+
+// let b= this.orders.filter((elem)=>{
+//   let w = new Date(elem.forDelivery);
+//   // console.log(w);
+//    this.comingdate = { year: w.getFullYear(), month: w.getMonth() + 1, day: w.getDate() };
+//   console.log(this.comingdate);
+//   if(this.comingdate.year==this.startdate.year && this.comingdate.year ==this.enddate.year && this.comingdate.month ==this.startdate.month ){
 
 
-    return (this.comingdate.day>=this.startdate.day && this.comingdate.day <= this.enddate.day)
-  }
-else if(this.startdate.year==this.enddate.year && this.startdate.month != this.enddate.month){
-  return this.comingdate.year==this.startdate.year;
-}
+//     return (this.comingdate.day>=this.startdate.day && this.comingdate.day <= this.enddate.day)
+//   }
+// else if(this.startdate.year==this.enddate.year && this.startdate.month != this.enddate.month){
+//   return this.comingdate.year==this.startdate.year;
+// }
 
-  // return (this.comingdate.year==this.startdate.year && this.comingdate.month == this.startdate.month && this.comingdate.day>= this.startdate.day)
-  // && (this.comingdate.year==this.enddate.year && this.comingdate.month==this.enddate.year && this.comingdate.day<=this.enddate.day)
-})
-console.log(b);
- if(this.comingdate.year==this.startdate.year && this.comingdate.year ==this.enddate.year && this.comingdate.month ==this.startdate.month ){
-this.orders=b;
- }
- else if(this.startdate.year==this.enddate.year && this.startdate.month != this.enddate.month){
-this.use=b;
-this.use.filter((elem)=>{
-  let w = new Date(elem.forDelivery);
-  this.comingdate = { year: w.getFullYear(), month: w.getMonth() + 1, day: w.getDate() };
-return (this.comingdate.month== this.startdate.month || this.comingdate.month==this.enddate.month)
- && (this.comingdate.day>=this.startdate.day || this.comingdate.day<=this.enddate.day)
-})
-this.orders=this.use;
- }
+//   // return (this.comingdate.year==this.startdate.year && this.comingdate.month == this.startdate.month && this.comingdate.day>= this.startdate.day)
+//   // && (this.comingdate.year==this.enddate.year && this.comingdate.month==this.enddate.year && this.comingdate.day<=this.enddate.day)
+// })
+// console.log(b);
+//  if(this.comingdate.year==this.startdate.year && this.comingdate.year ==this.enddate.year && this.comingdate.month ==this.startdate.month ){
+// this.orders=b;
+//  }
+//  else if(this.startdate.year==this.enddate.year && this.startdate.month != this.enddate.month){
+// this.use=b;
+// this.use.filter((elem)=>{
+//   let w = new Date(elem.forDelivery);
+//   this.comingdate = { year: w.getFullYear(), month: w.getMonth() + 1, day: w.getDate() };
+// return (this.comingdate.month== this.startdate.month || this.comingdate.month==this.enddate.month)
+//  && (this.comingdate.day>=this.startdate.day || this.comingdate.day<=this.enddate.day)
+// })
+// this.orders=this.use;
+//  }
   }
   //=========================================================================
   viewInvoice(id) {

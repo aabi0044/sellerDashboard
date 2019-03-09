@@ -1,0 +1,265 @@
+<div class="dashboard-wrapper">
+    <div class="container-fluid  dashboard-content">
+        <!-- ============================================================== -->
+        <!-- pageheader  -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="page-header">
+                    <h2 class="pageheader-title">Manage Inventory </h2>
+                  <div class="page-breadcrumb">
+                    <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Inventory</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Manage Inventory</li>
+                      </ol>
+                    </nav>
+                  </div>
+                </div>
+                </div>
+
+          <div class="col-xl-2 col-lg-12 col-md-6 col-sm-12 col-12" style="top: 20px;">
+            <div id="show-label" class="show-label">
+              <p class="input-group">
+                <label class="label1" style="margin: 2px; margin-bottom: 1px">Show </label>
+                <select class="selectpicker">
+                  <option>10</option>
+                  <option>20</option>
+                  <option>30</option>
+                </select>
+              
+                <label class="label1" style="margin: 2px; margin-bottom: 1px">Entries</label>
+              </p>
+              <br/>
+            </div>
+          </div>
+
+            <div class="col-xl-3 col-lg-12 col-md-6 col-sm-12 col-12">
+              <div id="inventory-search" class="inventory-search">
+                 <p class="input-group" style="left: 613px">
+                <span class="input-group-btn">
+                 <button type="button" class="btn btn-default"><i class="fas fa-search"></i></button>
+                </span>
+                <input type="text" class="form-control" placeholder="Search by Product Name or SKU"/>
+                </p>
+              </div>
+            </div>
+
+            <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 col-12">
+                <div class="card">
+                  <div class="card-body p-0">
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead class="bg-light">
+                        <tr class="border-0">
+                          <th class="border-0">
+                            <label style="margin-bottom: 10px;">Filters</label>
+                          </th>
+                          <th class="border-0">
+                            <label style="padding:0px 5px 0px 0px ; margin-bottom: 10px">Status: </label>
+                            <label  class="custom-control custom-checkbox custom-control-inline">
+                              <input #ch1 type="checkbox" (click)="buttoncheck()"  class="custom-control-input"><span class="custom-control-label ">All</span>
+                            </label>
+                            <label class="custom-control custom-checkbox custom-control-inline">
+                              <input #ch2 type="checkbox"    (click)="buttoncheck2()" class="custom-control-input"><span class="custom-control-label">Due Orders</span>
+                            </label>
+                            <label class="custom-control custom-checkbox custom-control-inline">
+                              <input  #ch3 type="checkbox" (click)="buttoncheck3()" class="custom-control-input"><span class="custom-control-label">In progress</span>
+                            </label>
+                            <label class="custom-control custom-checkbox custom-control-inline">
+                              <input  #ch4 type="checkbox"  (click)="buttoncheck4()" class="custom-control-input"><span class="custom-control-label">Completed</span>
+                            </label>
+                            <label class="custom-control custom-checkbox custom-control-inline">
+                              <input  #ch5 type="checkbox"   (click)="buttoncheck5()" class="custom-control-input"><span class="custom-control-label">Failed</span>
+                            </label>
+                   
+                          </th>
+                        </tr>
+                        </thead>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 col-12">
+            <div class="card">
+            <div class="card-body p-0">
+            <div class="table-responsive">
+            <table class="table">
+            <thead class="bg-light">
+            <tr class="border-0">
+            <th class="border-0">#</th>
+            <th class="border-0">Status</th>
+            <th class="border-0">Image</th>
+            <th class="border-0">Product Name</th>
+            <th class="border-0">Product ID</th>
+            <th class="border-0">Manufacturer</th>
+            <th class="border-0">SKU</th>
+            <th class="border-0">Quantity Available</th>
+            <th class="border-0">Price</th>
+            <th class="border-0">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><input type="checkbox"><br></td>
+            <td>Pending</td>
+            <td>
+            <div class="m-r-10"><img src="assets/images/product-pic.jpg" alt="user" class="rounded" width="45"></div>
+            </td>
+            <td>Product #1 </td>
+            <td>id000001 </td>
+            <td>Toshiba</td>
+            <td>01120000 </td>
+            <td>20</td>
+            <td>$80.00</td>
+            <!--<td><button>View</button></td>-->
+
+            <td>
+              <div class="dropdown float-right">
+                <a href="#" class="card-drop" data-toggle="dropdown" aria-expanded="true">
+                  <i class="mdi mdi-dots-vertical"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <!-- item-->
+                  <a href="javascript:void(0);" class="dropdown-item">Edit</a>
+                  <!-- item-->
+                  <a href="javascript:void(0);" class="dropdown-item">Clone</a>
+                  <!-- item-->
+                  <a href="javascript:void(0);" class="dropdown-item">Deactivate</a>
+                </div>
+              </div>
+              <!--<select class="selectpicker">-->
+                <!--<option>Edit</option>-->
+                <!--<option>Delete</option>-->
+                <!--<option>Check Inventory Stocks</option>-->
+              <!--</select>-->
+            </td>
+
+            <tr>
+              <td><input type="checkbox"><br></td>
+              <td>Pending</td>
+              <td>
+                <div class="m-r-10"><img src="assets/images/product-pic.jpg" alt="user" class="rounded" width="45"></div>
+              </td>
+              <td>Product #1 </td>
+              <td>id000001 </td>
+              <td>Toshiba</td>
+              <td>01120000 </td>
+              <td>20</td>
+              <td>$80.00</td>
+              <!--<td><button>View</button></td>-->
+
+              <td>
+                <div class="dropdown float-right">
+                  <a href="#" class="card-drop" data-toggle="dropdown" aria-expanded="true">
+                    <i class="mdi mdi-dots-vertical"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item">Edit</a>
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item">Clone</a>
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item">Deactivate</a>
+                  </div>
+                </div>
+                <!--<select class="selectpicker">-->
+                <!--<option>Edit</option>-->
+                <!--<option>Delete</option>-->
+                <!--<option>Check Inventory Stocks</option>-->
+                <!--</select>-->
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"><br></td>
+              <td>Pending</td>
+              <td>
+                <div class="m-r-10"><img src="assets/images/product-pic.jpg" alt="user" class="rounded" width="45"></div>
+              </td>
+              <td>Product #1 </td>
+              <td>id000001 </td>
+              <td>Toshiba</td>
+              <td>01120000 </td>
+              <td>20</td>
+              <td>$80.00</td>
+              <!--<td><button>View</button></td>-->
+
+              <td>
+                <div class="dropdown float-right">
+                  <a href="#" class="card-drop" data-toggle="dropdown" aria-expanded="true">
+                    <i class="mdi mdi-dots-vertical"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item">Edit</a>
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item">Clone</a>
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item">Deactivate</a>
+                  </div>
+                </div>
+                <!--<select class="selectpicker">-->
+                <!--<option>Edit</option>-->
+                <!--<option>Delete</option>-->
+                <!--<option>Check Inventory Stocks</option>-->
+                <!--</select>-->
+              </td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+          </div>
+          </div>
+            <nav aria-label="Page navigation">
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link " href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+            <!--<label class="label2">Page</label>-->
+            <!--<select class="selectpicker">-->
+              <!--<option>1</option>-->
+              <!--<option>2</option>-->
+              <!--<option>3</option>-->
+            <!--</select>-->
+            <!--<label class="label2">of</label>-->
+            <!--<label class="label2">1</label>-->
+          </div>
+        </div>
+
+
+            <div class="row">
+                <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <!-- ============================================================== -->
+
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <!-- ============================================================== -->
+                </div>
+            </div>
+    </div>
+      <!-- ============================================================== -->
+      <!-- footer -->
+      <!-- ============================================================== -->
+      <div class="footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+              Copyright © 2018-2019 Trollee. All rights reserved.
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="text-md-right footer-links d-none d-sm-block">
+                <a href="javascript: void(0);">About</a>
+                <a href="javascript: void(0);">Support</a>
+                <a href="javascript: void(0);">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

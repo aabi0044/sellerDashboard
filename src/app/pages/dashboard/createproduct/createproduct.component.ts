@@ -56,6 +56,18 @@ prdid;
     this.condition="New";
 
    this.catagory="Electronics";
+
+
+   this.productName='';
+   this.sku='';
+   this.weight='';
+   this.brandName='';
+   this.manufactureName='';
+   this.productPrice='';
+   this.sellerSku='';
+   this.salePrice='';
+   this.shortDescription='';
+   this.detailedDescription='';
   }
   Electronics1(){
     this.catagory="Electronics"
@@ -192,6 +204,21 @@ this.tos.warning('Must fill all entries')
     this.api.CreateProduct(data).subscribe(res=>{
       console.log("product Created Successfully");
       this.tos.showSuccess('Product Created Successfully');
+
+      this.productName='';
+      this.sku='';
+      this.weight='';
+      this.brandName='';
+      this.manufactureName='';
+      this.productPrice='';
+      this.sellerSku='';
+      this.salePrice='';
+      this.shortDescription='';
+      this.detailedDescription='';
+      this.saleEndDate=null;
+      this.saleStartDate=null;
+
+
     })
   });
 
