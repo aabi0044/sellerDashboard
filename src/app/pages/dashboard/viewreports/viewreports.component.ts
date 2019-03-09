@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
   selector: 'app-viewreports',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./viewreports.component.css']
 })
 export class ViewreportsComponent implements OnInit {
-
-  constructor() { }
+orders;
+  constructor(private api:ApiService) { }
 
   ngOnInit() {
+    this.getOrders();
   }
-
+getOrders(){
+  this.api.getOrders().subscribe(res=>{
+this.orders=res;
+  })
+}
 }
