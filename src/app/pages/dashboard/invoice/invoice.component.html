@@ -1,142 +1,195 @@
-
 <div class="dashboard-wrapper">
-<div class="container-fluid dashboard-content ">
-  <!-- ============================================================== -->
-  <!-- pageheader  -->
-  <!-- ============================================================== -->
-  <!-- ============================================================== -->
-  <!-- end pageheader  -->
-  <!-- ============================================================== -->
+  <div class="container-fluid dashboard-content ">
+    <!-- ============================================================== -->
+    <!-- pageheader  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- end pageheader  -->
+    <!-- ============================================================== -->
 
-  <div class="row" *ngIf="invoice">
-    <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
-      <div class="card">
-        <div class="card-header p-4">
-          <a class="pt-2 d-inline-block" href="index.html"><img src="assets/images/bannerlogo.png"></a>
+    <div class="row" *ngIf="invoice">
+      <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="card">
+          <div class="card-header p-4">
+            <a class="pt-2 d-inline-block" href="index.html"><img src="assets/images/bannerlogo.png"></a>
 
-          <div class="float-right">
-            <h3 class="mb-0">Invoice #{{invoice.invoiceNo}}</h3>
-            <h3 class="mb-0">Order #{{invoice.orderId}}</h3>
-            {{invoice.orderPlaced | date}}
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="row mb-4">
-            <div class="col-sm-6">
-              <h3 class="mb-3">Order Information</h3>
-              <h3 class="text-dark mb-1">Order Date:<small>{{invoice.forDelivery | date}} </small></h3>
-              <h3 class="text-dark mb-1">Order Status: <small>{{invoice.deliveryStatus}}</small></h3>
-            </div>
-            <div class="col-sm-6">
-              <h3 class="mb-3">Account Information</h3>
-              <h3 class="text-dark mb-1">Customer Name: <small>{{invoice.customerName}}</small></h3>
-              <h3 class="text-dark mb-1">Email:<small>{{invoice.customerEmail}}</small></h3>
-              <!--<div>478 Collins Avenue</div>-->
-              <!--<div>Canal Winchester, OH 43110</div>-->
-              <!--<div>Email: info@anthonyk.com</div>-->
-              <!--<div>Phone: +614-837-8483</div>-->
+            <div class="float-right">
+              <h3 class="mb-0">Invoice #{{invoice.invoiceNo}}</h3>
+              <h3 class="mb-0">Order #{{invoice.orderId}}</h3>
+              {{invoice.orderPlaced | date}}
             </div>
           </div>
-        </div>
-        <div class="pills-regular">
-          <ul class="nav nav-tabs mb-3 nav-justified" id="pills-tab" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="pills-productinfo-tab" data-toggle="pill" href="#pills-information"
-                role="tab" aria-controls="pills-information" aria-selected="true">Information</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="pills-images-tab" data-toggle="pill" href="#pills-shipments" role="tab"
-                aria-controls="pills-shipments" aria-selected="false">Shipments</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="pills-offers-tab" data-toggle="pill" href="#pills-invoices" role="tab"
-                aria-controls="pills-invoices" aria-selected="false">Invoices</a>
-            </li>
-          </ul>
-          <div class="row">
-              <div class="col-3">
+          <div class="card-body">
+            <div class="row mb-4">
+              <div class="col-sm-6">
+                <h3 class="mb-3">Order Information</h3>
+                <h3 class="text-dark mb-1">Order Date:<small>{{invoice.forDelivery | date}} </small></h3>
+                <h3 class="text-dark mb-1">Order Status: <small>{{invoice.deliveryStatus}}</small></h3>
+              </div>
+              <div class="col-sm-6">
+                <h3 class="mb-3">Account Information</h3>
+                <h3 class="text-dark mb-1">Customer Name: <small>{{invoice.customerName}}</small></h3>
+                <h3 class="text-dark mb-1">Email:<small>{{invoice.customerEmail}}</small></h3>
+                <!--<div>478 Collins Avenue</div>-->
+                <!--<div>Canal Winchester, OH 43110</div>-->
+                <!--<div>Email: info@anthonyk.com</div>-->
+                <!--<div>Phone: +614-837-8483</div>-->
+              </div>
+            </div>
+          </div>
+          <div class="pills-regular" [ngSwitch]="segment">
+            <ul class="nav nav-tabs mb-3 nav-justified" id="pills-tab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="pills-productinfo-tab" data-toggle="pill" href="#pills-information"
+                  role="tab" aria-controls="pills-information" aria-selected="true"
+                  (click)="information()">Information</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-images-tab" data-toggle="pill" href="#pills-shipments" role="tab"
+                  aria-controls="pills-shipments" aria-selected="false" (click)="shipments()">Shipments</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-offers-tab" data-toggle="pill" href="#pills-invoices" role="tab"
+                  aria-controls="pills-invoices" aria-selected="false" (click)="invoices()">Invoices</a>
+              </li>
+            </ul>
+            <div *ngSwitchCase="'information'">
+              <div class="row">
+                <div class="col-3">
                   <h3 class="text-dark mb-1">Billing Address</h3>
-    
+
                   <div>{{invoice.billingAddress}}</div>
-                 
+
                   <div>Email: <small>{{invoice.customerEmail}}</small></div>
                   <div>Phone: <small> {{invoice.billingPhone}}</small></div>
                 </div>
                 <div class="col-3">
                   <h3 class="text-dark mb-1">Shipping Address</h3>
                   <div>{{invoice.shippingAddress}}</div>
-               
+
                   <div>Email: <small>{{invoice.shippingEmail}}</small></div>
                   <div>Phone:<small>{{invoice.billingPhone}}</small></div>
                 </div>
-          </div>
-        
-          <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Item</th>
-                  <th scope="col">Description</th>
-                  <th scope="col">Unit Cost</th>
-                  <th scope="col">Qty</th>
-                  <th scope="col">Total</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let item of invoice.products; let i=index">
-                  <th scope="row">{{i+1}}</th>
-                  <td>{{item.itemName}}</td>
-                  <td>{{item.Description}}</td>
-                  <td>{{item.unitCost}}</td>
-                  <td>{{item.quantity}}</td>
-                  <td>${{item.total}}</td>
-                </tr>
-           
-              </tbody>
-            </table>
-        
-          <div class="row">
-            <div class="col-lg-4 col-sm-5">
-            </div>
-            <div class="col-lg-4 col-sm-5 ml-auto">
-              <table class="table table-clear">
+              </div>
+
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Unit Cost</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Total</th>
+                  </tr>
+                </thead>
                 <tbody>
-                  <tr>
-                    <td class="left">
-                      <strong class="text-dark">Subtotal</strong>
-                    </td>
-                    <td class="right">${{invoice.netTotal}}</td>
+                  <tr *ngFor="let item of invoice.products; let i=index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{item.itemName}}</td>
+                    <td>{{item.Description}}</td>
+                    <td>{{item.unitCost}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>${{item.total}}</td>
                   </tr>
+
+                </tbody>
+              </table>
+
+              <div class="row">
+                <div class="col-lg-4 col-sm-5">
+                </div>
+                <div class="col-lg-4 col-sm-5 ml-auto">
+                  <table class="table table-clear">
+                    <tbody>
+                      <tr>
+                        <td class="left">
+                          <strong class="text-dark">Subtotal</strong>
+                        </td>
+                        <td class="right">${{invoice.netTotal}}</td>
+                      </tr>
+                      <tr>
+                        <td class="left">
+                          <strong class="text-dark">Discount </strong>
+                        </td>
+                        <td class="right">${{invoice.Discount}}</td>
+                      </tr>
+                      <tr>
+                        <td class="left">
+                          <strong class="text-dark">VAT </strong>
+                        </td>
+                        <td class="right">${{invoice.vat}}</td>
+                      </tr>
+                      <tr>
+                        <td class="left">
+                          <strong class="text-dark">Total</strong>
+                        </td>
+                        <td class="right">
+                          <strong class="text-dark">${{invoice.totalPrice}}</strong>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div *ngSwitchCase="'shipments'">
+              <h1>Shipments</h1>
+              <table class="table table-striped">
+                <thead>
                   <tr>
-                    <td class="left">
-                      <strong class="text-dark">Discount </strong>
-                    </td>
-                    <td class="right">${{invoice.Discount}}</td>
+                    <th scope="col">#</th>
+                    <th scope="col">Shipping Number</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Tracking Number</th>
+                    <th scope="col">Action</th>
                   </tr>
-                  <tr>
-                    <td class="left">
-                      <strong class="text-dark">VAT </strong>
-                    </td>
-                    <td class="right">${{invoice.vat}}</td>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of invoice.products; let i=index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>100007</td>
+                    <td>Apr 20, 2017</td>
+                    <td>#1212</td>
+                    <td><button class="btn btn-primary">View</button></td>
+
                   </tr>
-                  <tr>
-                    <td class="left">
-                      <strong class="text-dark">Total</strong>
-                    </td>
-                    <td class="right">
-                      <strong class="text-dark">${{invoice.totalPrice}}</strong>
-                    </td>
-                  </tr>
+
                 </tbody>
               </table>
             </div>
+            <div *ngSwitchCase="'invoices'">
+              <h1>Invoices</h1>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Invoice Number</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of invoice.products; let i=index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>100007</td>
+                    <td>Apr 20, 2017</td>
+                    <td>#1212</td>
+                    <td><button class="btn btn-primary">Create</button></td>
+
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
           </div>
-        </div>
-        <div class="card-footer bg-white">
-          <p class="mb-0">2983 Glenview Drive Corpus Christi, TX 78476</p>
+          <div class="card-footer bg-white">
+            <p class="mb-0">2983 Glenview Drive Corpus Christi, TX 78476</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
