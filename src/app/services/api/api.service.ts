@@ -10,6 +10,8 @@ url1="http://localhost:3000/users";
 
 ordersUrl="http://localhost:3000/orders/";
 productUrl="http://localhost:3000/products/";
+
+orderReportUrl="http://localhost:3000/monthlyOrdersReport/";
   constructor(
     private http:HttpClient
   ) { }
@@ -59,5 +61,9 @@ updateProducts(id,data){
   console.log(id);
   console.log(data);
   return this.http.put(this.productUrl+ '' +id,data)
+}
+//================================OrdersReport=============
+getOrdersReport(){
+  return this.http.get(this.orderReportUrl);
 }
 }

@@ -30,7 +30,7 @@
               <div class ="col-sm-3">
                 <div class="input-group date">
                   <p class="input-group date">
-                    <input type="text" id="from" class="form-control"/>
+                    <input type="date" id="from" name="startDate" [(ngModel)]="startDate" class="form-control"/>
                     <span class="input-group-btn">
                   <button type="button" class="btn btn-default"><i class="far fa-calendar-alt"></i></button>
                 </span>
@@ -42,14 +42,14 @@
               <label class="input-group date input-group-addon col-sm-2 col-form-label">Ending Order Date:</label>
               <div class ="col-sm-3">
                 <p class="input-group date">
-                  <input type="text" id="to" class="form-control"/>
+                  <input type="date" name="endDate" [(ngModel)]="endDate" id="to" class="form-control"/>
                   <span class="input-group-btn">
                  <button type="button" class="btn btn-default"><i class="far fa-calendar-alt"></i></button>
               </span>
                 </p>
               </div>
             </div>
-            <button type="button" class="btn btn-primary btn-sm">Generate Report</button>
+            <button type="button" class="btn btn-primary btn-sm" (click)="filterByDate()">Generate Report</button>
           </form>
         </div>
       </div>
@@ -68,31 +68,16 @@
                 <th class="border-0">Net Income</th>
               </tr>
               </thead>
-              <tbody *ngFor="let item of orders">
+              <tbody *ngFor="let item of orders ">
               <tr>
                 <td><input type="checkbox"><br></td>
-                <td>16/10/2018</td>
-                <td>5 </td>
-                <td>id000001 </td>
-                <td>$4038.50</td>
+                <td>{{item.period}}</td>
+                <td>{{item.qty}}</td>
+                <td>${{item.subtotal}}</td>
+                <td>${{item.netIncome}}</td>
                 <!--<td><button>View</button></td>-->
 
-              <tr>
-                <td><input type="checkbox"><br></td>
-                <td>16/11/2018</td>
-                <td>2 </td>
-                <td>id000001 </td>
-                <td>$3050.30</td>
-                <!--<td><button>View</button></td>-->
-              </tr>
-              <tr>
-                <td><input type="checkbox"><br></td>
-                <td>16/12/2018</td>
-                <td>3 </td>
-                <td>id000001 </td>
-                <td>$5431,50</td>
-                <!--<td><button>View</button></td>-->
-              </tr>
+              
               </tbody>
             </table>
           </div>
