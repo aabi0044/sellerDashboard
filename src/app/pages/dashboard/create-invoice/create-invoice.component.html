@@ -1,3 +1,107 @@
-<p>
-  create-invoice works!
-</p>
+<div class="dashboard-wrapper">
+  <div class="container-fluid dashboard-content ">
+    <!-- ============================================================== -->
+    <!-- pageheader  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- end pageheader  -->
+    <!-- ============================================================== -->
+    <button class="btn btn-primary" routerLink="/dashboard/invoice/1">Back</button>
+    <div class="row">
+      <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="card">
+          <div class="card-header p-4">
+            <a class="pt-2 d-inline-block" href="index.html"><img src="assets/images/bannerlogo.png"></a>
+
+          </div>
+          <div class="card-body">
+            <div class="row mb-4">
+              <div class="col-sm-6">
+                <h3 class="mb-3">Order Information</h3>
+                <!-- <h3 class="text-dark mb-1">Order Date:<small>{{invoice.forDelivery | date}} </small></h3>
+                    <h3 class="text-dark mb-1">Order Status: <small>{{invoice.deliveryStatus}}</small></h3> -->
+                <h5 class="text-dark mb-1">Order Date : <small>invoice.forDelivery | date </small></h5>
+                <h5 class="text-dark mb-1">Order Status : <small>invoice.deliveryStatus</small></h5>
+              </div>
+              <div class="col-sm-6">
+                <h3 class="mb-3">Account Information</h3>
+                <!-- <h3 class="text-dark mb-1">Customer Name: <small>{{invoice.customerName}}</small></h3>
+                    <h3 class="text-dark mb-1">Email:<small>{{invoice.customerEmail}}</small></h3> -->
+                <h5 class="text-dark mb-1">Customer Name : <small> invoice.customerName</small></h5>
+                <h5 class="text-dark mb-1">Email : <small> invoice.customerEmail</small></h5>
+                <!--<div>478 Collins Avenue</div>-->
+                <!--<div>Canal Winchester, OH 43110</div>-->
+                <!--<div>Email: info@anthonyk.com</div>-->
+                <!--<div>Phone: +614-837-8483</div>-->
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-sm-6">
+                <h3 class="text-dark mb-1">Billing Address</h3>
+
+                <!-- <div>{{invoice.billingAddress}}</div>
+
+                    <div>Email: <small>{{invoice.customerEmail}}</small></div>
+                    <div>Phone: <small> {{invoice.billingPhone}}</small></div> -->
+                <div>invoice.billingAddress</div>
+
+                <div>Email: <small>invoice.customerEmail</small></div>
+                <div>Phone: <small>invoice.billingPhone</small></div>
+              </div>
+              <div class="col-sm-6">
+                <h3 class="text-dark mb-1">Shipping Address</h3>
+                <!-- <div>{{invoice.shippingAddress}}</div>
+
+                    <div>Email: <small>{{invoice.shippingEmail}}</small></div>
+                    <div>Phone:<small>{{invoice.billingPhone}}</small></div> -->
+                <div>invoice.shippingAddress</div>
+
+                <div>Email: <small>invoice.shippingEmail</small></div>
+                <div>Phone:<small>invoice.billingPhone</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="pills-regular">
+            <div style="margin:0px 0px 0px 10px">
+              <h2>Items to Invoice</h2>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Qty Ordered</th>
+                    <th scope="col">Available for Invoice</th>
+                    <th scope="col">Qty</th>
+                    <!-- <th scope="col">Action</th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- <tr *ngFor="let item of invoice.products; let i=index"> -->
+                  <tr>
+                    <th scope="row">i+1</th>
+                    <td>Linen Blazer</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>
+                      <input type="number" placeholder="Please enter quantity" />
+                    </td>
+                    <!-- <td><button class="btn btn-primary" routerLink="/dashboard/view-shipment">View</button></td> -->
+                  </tr>
+
+                </tbody>
+              </table>
+              <br />
+              <button style="width:300px;height:37px" class="btn btn-primary">Save Invoice</button>
+
+            </div>
+            <br />
+
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
