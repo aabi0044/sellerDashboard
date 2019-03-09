@@ -1,159 +1,147 @@
-
-<!-- ============================================================== -->
-<!-- main wrapper -->
-<!-- ============================================================== -->
-
-  <!-- ============================================================== -->
-  <!-- navbar -->
-  <!-- ============================================================== -->
-
-  <!-- ============================================================== -->
-  <!-- end navbar -->
-  <!-- ============================================================== -->
-  <!-- ============================================================== -->
-  <!-- left sidebar -->
-  <!-- ============================================================== -->
-
-  <!-- ============================================================== -->
-  <!-- end left sidebar -->
-  <!-- ============================================================== -->
-  <!-- ============================================================== -->
-  <!-- wrapper  -->
-  <!-- ============================================================== -->
-  <div class="dashboard-wrapper">
-    <div class="container-fluid  dashboard-content">
-      <!-- ============================================================== -->
-      <!-- pageheader  -->
-      <!-- ============================================================== -->
-      <div class="row">
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-          <div class="page-header">
-            <h2 class="pageheader-title">View Orders </h2>
-            <div class="page-breadcrumb">
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Inventory</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">View Orders</li>
-                </ol>
-              </nav>
-            </div>
+<div class="dashboard-wrapper">
+  <div class="container-fluid  dashboard-content">
+    <!-- ============================================================== -->
+    <!-- pageheader  -->
+    <!-- ============================================================== -->
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="page-header">
+          <h2 class="pageheader-title">View Orders </h2>
+          <div class="page-breadcrumb">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Inventory</a></li>
+                <li class="breadcrumb-item active" aria-current="page">View Orders</li>
+              </ol>
+            </nav>
           </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-              <form>
-                <div class="form-group row">
-                  <label class="input-group date input-group-addon col-sm-5 col-form-label" style="margin-left:15px">Starting Order Date:</label>
-                  <div class ="col-sm-6">
-                    <div class="input-group date">
-                      <p class="input-group date">
-                        <input type="date" id="from" class="form-control datetimepicker-input  " name="startDateFilter" [ngModelOptions]="{standalone: true}" [(ngModel)]="startDateFilter" />
-                        <span class="input-group-btn">
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <form>
+            <div class="form-group row">
+              <label class="input-group date input-group-addon col-sm-5 col-form-label"
+                style="margin-left:15px">Starting Order Date:</label>
+              <div class="col-sm-6">
+                <div class="input-group date">
+                  <p class="input-group date">
+                    <input type="date" id="from" class="form-control datetimepicker-input  " name="startDateFilter"
+                      [ngModelOptions]="{standalone: true}" [(ngModel)]="startDateFilter" />
+                    <span class="input-group-btn">
                       <!-- <button type="button" class="btn btn-default"><i class="far fa-calendar-alt"></i></button> -->
                     </span>
-                      </p>
-                    </div>
-                  </div>
+                  </p>
                 </div>
-                <div class="form-group row">
-                  <label class="input-group date input-group-addon col-sm-5 col-form-label" style="margin-left:15px">Ending Order Date:</label>
-                  <div class ="col-sm-6">
-                    <p class="input-group date">
-                      <input type="date" id="to" class="form-control datetimepicker-input  " name="endDateFilter" [(ngModel)]="endDateFilter" [ngModelOptions]="{standalone: true}" />  
-                      <span class="input-group-btn">
-
-                     <!-- <button type="button" class="btn btn-default"><i class="far fa-calendar-alt"></i></button> -->
-                  </span>
-                    </p>
-                  </div>
-                </div>
-                <div class="form-group row">
-                    <button type="button" (click)="filterByDate()" class="btn btn-primary btn-sm" style="padding:10px; margin-left:30px">Get Results</button>
-                </div>
-             
-              </form>
-              <div class="row">
-                  <div class="col-8">
-                  
-                          <div id="inventory-search" class="inventory-search" style="margin-left:15px">
-                            <p class="input-group" >
-                                    <span class="input-group-btn">
-                                     <button type="button" class="btn btn-default"><i class="fas fa-search"></i></button>
-                                    </span>
-                              <input type="number" class="form-control" name="searchText" placeholder="Search.." (input)="filter($event.target.value)"/>
-                            </p>
-                          </div>
-              
-                  </div>
-                  <br>
+              </div>
             </div>
-          </div>
-         
-          </div>
+            <div class="form-group row">
+              <label class="input-group date input-group-addon col-sm-5 col-form-label" style="margin-left:15px">Ending
+                Order Date:</label>
+              <div class="col-sm-6">
+                <p class="input-group date">
+                  <input type="date" id="to" class="form-control datetimepicker-input  " name="endDateFilter"
+                    [(ngModel)]="endDateFilter" [ngModelOptions]="{standalone: true}" />
+                  <span class="input-group-btn">
 
-        <!-- <div class="col-xl-2 col-lg-12 col-md-6 col-sm-12 col-12" style="top: 20px;">
-          <div id="show-label" class="show-label">
-            <p class="input-group">
-              <label class="label1" style="margin: 2px; margin-bottom: 1px">Show </label>
-              <select class="selectpicker">
-                <option>10</option>
-                <option>20</option>
-                <option>30</option>
-              </select>
-              &nbsp
-              <label class="label1" style="margin: 2px; margin-bottom: 1px">Entries</label>
-            </p>
+                    <!-- <button type="button" class="btn btn-default"><i class="far fa-calendar-alt"></i></button> -->
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div class="form-group row">
+              <button type="button" (click)="filterByDate()" class="btn btn-primary btn-sm"
+                style="padding:10px; margin-left:30px">Get Results</button>
+            </div>
+
+          </form>
+          <div class="row">
+            <div class="col-8">
+
+              <div id="inventory-search" class="inventory-search" style="margin-left:15px">
+                <p class="input-group">
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default"><i class="fas fa-search"></i></button>
+                  </span>
+                  <input type="number" class="form-control" name="searchText" placeholder="Search.."
+                    (input)="filter($event.target.value)" />
+                </p>
+              </div>
+
+            </div>
+            <br>
           </div>
-        </div> -->
-<div class="row">
-  
-</div>
-        
+        </div>
+
+      </div>
+
+      <div class="col-xl-2 col-lg-12 col-md-6 col-sm-12 col-12" style="top: 20px;">
+        <div id="show-label" class="show-label">
+          <p class="input-group">
+            <label class="label1" style="margin: 2px; margin-bottom: 1px">Show </label>
+            <label class="label1" style="margin: 2px; margin-bottom: 1px">Entries</label>
+            <select [(ngModel)]="showEntries" class="selectpicker">
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+            </select>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+
+      </div>
 
 
-        <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 col-12">
-          <div class="card">
-            <div class="card-body p-0">
-              <div class="table-responsive">
-                <table class="table">
-                  <thead class="bg-light">
+
+      <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 col-12">
+        <div class="card">
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="bg-light">
                   <tr class="border-0">
                     <th class="border-0">
                       <label style="margin-bottom: 10px;">Filters</label>
                     </th>
                     <th class="border-0">
                       <label style="padding:0px 5px 0px 0px ; margin-bottom: 10px">Status: </label>
-                      <label  class="custom-control custom-checkbox custom-control-inline">
-                        <input #ch1 type="checkbox" (click)="buttoncheck()"  class="custom-control-input"><span class="custom-control-label ">All</span>
+                      <label class="custom-control custom-checkbox custom-control-inline">
+                        <input #ch1 type="checkbox" (click)="buttoncheck()" class="custom-control-input"><span
+                          class="custom-control-label ">All</span>
                       </label>
                       <label class="custom-control custom-checkbox custom-control-inline">
-                        <input #ch2 type="checkbox"    (click)="buttoncheck2()" class="custom-control-input"><span class="custom-control-label">Due Orders</span>
+                        <input #ch2 type="checkbox" (click)="buttoncheck2()" class="custom-control-input"><span
+                          class="custom-control-label">Due Orders</span>
                       </label>
                       <label class="custom-control custom-checkbox custom-control-inline">
-                        <input  #ch3 type="checkbox" (click)="buttoncheck3()" class="custom-control-input"><span class="custom-control-label">In progress</span>
+                        <input #ch3 type="checkbox" (click)="buttoncheck3()" class="custom-control-input"><span
+                          class="custom-control-label">In progress</span>
                       </label>
                       <label class="custom-control custom-checkbox custom-control-inline">
-                        <input  #ch4 type="checkbox"  (click)="buttoncheck4()" class="custom-control-input"><span class="custom-control-label">Completed</span>
+                        <input #ch4 type="checkbox" (click)="buttoncheck4()" class="custom-control-input"><span
+                          class="custom-control-label">Completed</span>
                       </label>
                       <label class="custom-control custom-checkbox custom-control-inline">
-                        <input  #ch5 type="checkbox"   (click)="buttoncheck5()" class="custom-control-input"><span class="custom-control-label">Failed</span>
+                        <input #ch5 type="checkbox" (click)="buttoncheck5()" class="custom-control-input"><span
+                          class="custom-control-label">Failed</span>
                       </label>
-             
+
                     </th>
                   </tr>
-                  </thead>
-                </table>
-              </div>
+                </thead>
+              </table>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 col-12">
-          <div class="card">
-            <div class="card-body p-0">
-              <div class="table-responsive">
-                <table class="table">
-                  <thead class="bg-light">
+      <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 col-12">
+        <div class="card">
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="bg-light">
                   <tr class="border-0">
                     <th class="border-0">#</th>
                     <th class="border-0">Order ID</th>
@@ -167,9 +155,9 @@
                     <th class="border-0">Total Price</th>
                     <th class="border-0">Actions</th>
                   </tr>
-                  </thead>
-                  <tbody *ngFor="let item of orders">
-                  <tr  >
+                </thead>
+                <tbody *ngFor="let item of orders | paginate: { itemsPerPage: showEntries, currentPage: p }">
+                  <tr>
                     <td><input type="checkbox"><br></td>
                     <td>{{item.orderId}}</td>
                     <!-- <td>
@@ -179,71 +167,73 @@
                     <td>{{item.forDelivery | date}}</td>
                     <td>{{item.trackingNumber}} </td>
                     <td>{{item.customerName}} </td>
-                    <td><span   class="badge-dot" [class.badge-brand-orange]="item.deliveryStatus=='In Transit'"  [class.badge-brand-blue]="item.deliveryStatus=='Not Delivered'" [class.badge-brand-green]="item.deliveryStatus=='Delivered'" [class.badge-brand-red]="item.deliveryStatus=='Returned'"></span>{{item.deliveryStatus}}</td>
+                    <td><span class="badge-dot" [class.badge-brand-orange]="item.deliveryStatus=='In Transit'"
+                        [class.badge-brand-blue]="item.deliveryStatus=='Not Delivered'"
+                        [class.badge-brand-green]="item.deliveryStatus=='Delivered'"
+                        [class.badge-brand-red]="item.deliveryStatus=='Returned'"></span>{{item.deliveryStatus}}</td>
 
                     <td>{{item.orderStatus}}</td>
                     <td>${{item.totalPrice}}</td>
                     <td><button (click)="viewInvoice(item.id)">View</button>
-                    <button (click)="viewShipment(item.id)">Ship</button>
+                      <button (click)="viewShipment(item.id)">Ship</button>
                     </td>
                   </tr>
-                  </tbody>
-                </table>
-              </div>
+                </tbody>
+              </table>
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
             </div>
           </div>
-          <!-- <nav aria-label="Page navigation">
-            <ul class="pagination">
-              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-              <li class="page-item active"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link " href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
-          </nav> -->
-          <!--<label class="label2">Page</label>-->
-          <!--<select class="selectpicker">-->
-          <!--<option>1</option>-->
-          <!--<option>2</option>-->
-          <!--<option>3</option>-->
-          <!--</select>-->
-          <!--<label class="label2">of</label>-->
-          <!--<label class="label2">1</label>-->
         </div>
-      </div>
-
-
-      <div class="row">
-        <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12">
-          <!-- ============================================================== -->
-
-        </div>
-        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-          <!-- ============================================================== -->
-        </div>
+        <!-- <nav aria-label="Page navigation">
+        <ul class="pagination">
+          <li *ngFor="let item of orders | paginate: { itemsPerPage: 10, currentPage: p }"> {{item.orderId}} </li>
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link " href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </nav> -->
+        <!--<label class="label2">Page</label>-->
+        <!--<select class="selectpicker">-->
+        <!--<option>1</option>-->
+        <!--<option>2</option>-->
+        <!--<option>3</option>-->
+        <!--</select>-->
+        <!--<label class="label2">of</label>-->
+        <!--<label class="label2">1</label>
       </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- footer -->
-    <!-- ============================================================== -->
-    <div class="footer">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-            Copyright © 2018-2019 Trollee. All rights reserved.
-          </div>
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-            <div class="text-md-right footer-links d-none d-sm-block">
-              <a href="javascript: void(0);">About</a>
-              <a href="javascript: void(0);">Support</a>
-              <a href="javascript: void(0);">Contact Us</a>
-            </div>
+
+
+    <div class="row">
+      <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12">
+        <!-- ============================================================== -->
+
+      </div>
+      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+        <!-- ============================================================== -->
+      </div>
+    </div>
+  </div>
+  <!-- ============================================================== -->
+  <!-- footer -->
+  <!-- ============================================================== -->
+  <div class="footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+          Copyright © 2018-2019 Trollee. All rights reserved.
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+          <div class="text-md-right footer-links d-none d-sm-block">
+            <a href="javascript: void(0);">About</a>
+            <a href="javascript: void(0);">Support</a>
+            <a href="javascript: void(0);">Contact Us</a>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-
-
-
+</div>
