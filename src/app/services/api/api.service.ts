@@ -57,7 +57,7 @@ getSpecificProduct(id){
 getProducts(){
   return this.http.get(this.productUrl);
 }
-updateProducts(id,data){
+updateProduct(id,data){
   console.log(id);
   console.log(data);
   return this.http.put(this.productUrl+ '' +id,data)

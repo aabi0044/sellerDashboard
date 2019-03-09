@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, Renderer } from '@angular/core';
 import { ApiService } from 'src/app/services/api/api.service';
 import { ToasterService } from 'src/app/services/toaster/toaster.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-createproduct',
@@ -44,15 +45,39 @@ prdid;
   @ViewChild('Home') Home: ElementRef;
   @ViewChild('Beauty') Beauty: ElementRef;
   @ViewChild('Baby') Baby: ElementRef;
-
+id;
+getprd;
   constructor(public renderer:Renderer,
     private api :ApiService,
-    private tos:ToasterService) {
+    private tos:ToasterService,
+    private route:ActivatedRoute) {
     
 
    }
 
   ngOnInit() {
+    this.id = this.route.snapshot.params['id'];
+    console.log(this.id);
+if(this.id != null){
+  this.api.getSpecificProduct(this.id).subscribe(res=>{
+this.getprd=res;
+this.productName=this.getprd.productName;
+this.sku=this.getprd.sku;
+this.weight=this.getprd.weight;
+this.brandName=this.getprd.brandName;
+this.manufactureName=this.getprd.manufactureName;
+this.productPrice=this.getprd.productPrice;
+this.sellerSku=this.getprd.sellerSku;
+this.salePrice=this.getprd.salePrice;
+this.shortDescription=this.getprd.shortDescription;
+this.detailedDescription=this.getprd.detailedDescription;
+this.saleEndDate=this.getprd.saleEndDate;
+this.saleStartDate=this.saleStartDate;
+  })
+}
+
+
+
     this.condition="New";
 
    this.catagory="Electronics";
@@ -198,7 +223,10 @@ this.tos.warning('Must fill all entries')
       "sellerSku":this.sellerSku,
       "condition":this.condition,
       "shortDescription":this.shortDescription,
-      "detailedDescription":this.detailedDescription
+      "detailedDescription":this.detailedDescription,
+      "status":'Pending',
+      "quantity":50,
+      "prdstatus":"Active"
     }
     console.log(data);
     this.api.CreateProduct(data).subscribe(res=>{

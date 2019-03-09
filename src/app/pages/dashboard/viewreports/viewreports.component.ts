@@ -8,7 +8,7 @@ const options = {
   decimalSeparator: '.',
   showLabels: true, 
   showTitle: true,
-  title: 'My Awesome CSV',
+  title: 'Report',
   useTextFile: false,
   useBom: true,
   useKeysAsHeaders: true,

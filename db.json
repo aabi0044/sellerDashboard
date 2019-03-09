@@ -39,91 +39,94 @@
       "id": 3
     }
   ],
-  "monthlyOrdersReport":[
+  "monthlyOrdersReport": [
     {
-    "period":"2019-06-19",
-    "qty":10,
-    "subtotal":5000,
-    "netIncome":3875
-  },
-  {
-    "period":"2019-01-19",
-    "qty":10,
-    "subtotal":49000,
-    "netIncome":45875
-  },
-  {
-    "period":"2019-02-19",
-    "qty":10,
-    "subtotal":40800,
-    "netIncome":33875
-  },
-  {
-    "period":"2019-03-19",
-    "qty":10,
-    "subtotal":40900,
-    "netIncome":23875
-  },
-  {
-    "period":"2018-07-19",
-    "qty":10,
-    "subtotal":4000,
-    "netIncome":3875
-  }
-  ,{
-    "period":"2018-08-19",
-    "qty":10,
-    "subtotal":4000,
-    "netIncome":3875
-  }
-  ,{
-    "period":"2018-09-19",
-    "qty":10,
-    "subtotal":4000,
-    "netIncome":3875
-  }
-  ,{
-    "period":"2018-10-19",
-    "qty":10,
-    "subtotal":4000,
-    "netIncome":3875
-  }
-  ,{
-    "period":"2018-11-19",
-    "qty":10,
-    "subtotal":4000,
-    "netIncome":3875
-  }
-  ,{
-    "period":"2018-12-19",
-    "qty":10,
-    "subtotal":4000,
-    "netIncome":3875
-  }
-  ,{
-    "period":"2019-06-19",
-    "qty":10,
-    "subtotal":4000,
-    "netIncome":3875
-  }
-],
+      "period": "2019-06-19",
+      "qty": 10,
+      "subtotal": 5000,
+      "netIncome": 3875
+    },
+    {
+      "period": "2019-01-19",
+      "qty": 10,
+      "subtotal": 49000,
+      "netIncome": 45875
+    },
+    {
+      "period": "2019-02-19",
+      "qty": 10,
+      "subtotal": 40800,
+      "netIncome": 33875
+    },
+    {
+      "period": "2019-03-19",
+      "qty": 10,
+      "subtotal": 40900,
+      "netIncome": 23875
+    },
+    {
+      "period": "2018-07-19",
+      "qty": 10,
+      "subtotal": 4000,
+      "netIncome": 3875
+    },
+    {
+      "period": "2018-08-19",
+      "qty": 10,
+      "subtotal": 4000,
+      "netIncome": 3875
+    },
+    {
+      "period": "2018-09-19",
+      "qty": 10,
+      "subtotal": 4000,
+      "netIncome": 3875
+    },
+    {
+      "period": "2018-10-19",
+      "qty": 10,
+      "subtotal": 4000,
+      "netIncome": 3875
+    },
+    {
+      "period": "2018-11-19",
+      "qty": 10,
+      "subtotal": 4000,
+      "netIncome": 3875
+    },
+    {
+      "period": "2018-12-19",
+      "qty": 10,
+      "subtotal": 4000,
+      "netIncome": 3875
+    },
+    {
+      "period": "2019-06-19",
+      "qty": 10,
+      "subtotal": 4000,
+      "netIncome": 3875
+    }
+  ],
   "products": [
     {
       "id": 1,
-      "productName": "Shirt",
-      "productPrice": 400,
-      "salePrice": 300,
-      "saleStartDate": "",
-      "saleEndDate": "",
-      "sku": "",
-      "weight": "",
-      "brandName": "",
-      "manufacturerName": "",
-      "catagory": "",
-      "sellerSku": "",
-      "condition": "",
-      "shortDescription": "",
-      "detailedDescription": ""
+      "productName": "any",
+      "productPrice": 2500,
+      "salePrice": 2300,
+      "saleStartDate": "2019-03-05",
+      "saleEndDate": "2019-06-19",
+      "sku": "1231",
+      "weight": "2KG",
+      "brandName": "addidas",
+      "manufacturerName": "anybody ",
+      "catagory": "Fashion",
+      "sellerSku": "qdfdw2122de",
+      "condition": "Old",
+      "shortDescription": "this is dummy testing ",
+      "detailedDescription": "and this too. so that lets test again bro. okay fine . add more text here ",
+      "status": "Approved",
+      "quantity": 50,
+      "prdstatus": "Active"
     },
     {
       "id": 2,
@@ -140,7 +143,30 @@
       "sellerSku": "qdfdw2122de",
       "condition": "Old",
       "shortDescription": "this is dummy testing ",
-      "detailedDescription": "and this too. so that lets test again bro. okay fine . add more text here "
+      "detailedDescription": "and this too. so that lets test again bro. okay fine . add more text here ",
+      "status": "Pending",
+      "quantity": 50,
+      "prdstatus": "Active"
+    },
+    {
+      "id": 3,
+      "productName": "any",
+      "productPrice": 2500,
+      "salePrice": 2300,
+      "saleStartDate": "2019-03-05",
+      "saleEndDate": "2019-06-19",
+      "sku": "1231",
+      "weight": "2KG",
+      "brandName": "addidas",
+      "manufacturerName": "anybody ",
+      "catagory": "Fashion",
+      "sellerSku": "qdfdw2122de",
+      "condition": "Old",
+      "shortDescription": "this is dummy testing ",
+      "detailedDescription": "and this too. so that lets test again bro. okay fine . add more text here ",
+      "status": "NotApproved",
+      "quantity": 50,
+      "prdstatus": "Active"
     }
   ],
   "orders": [

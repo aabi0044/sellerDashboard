@@ -63,20 +63,28 @@
                       </label>
                       <label class="custom-control custom-checkbox custom-control-inline">
                         <input #ch2 type="checkbox" (click)="buttoncheck2()" class="custom-control-input"><span
-                          class="custom-control-label">Due Orders</span>
+                          class="custom-control-label">Pending</span>
                       </label>
                       <label class="custom-control custom-checkbox custom-control-inline">
                         <input #ch3 type="checkbox" (click)="buttoncheck3()" class="custom-control-input"><span
-                          class="custom-control-label">In progress</span>
+                          class="custom-control-label">Approved</span>
                       </label>
                       <label class="custom-control custom-checkbox custom-control-inline">
                         <input #ch4 type="checkbox" (click)="buttoncheck4()" class="custom-control-input"><span
-                          class="custom-control-label">Completed</span>
+                          class="custom-control-label">Not Approved</span>
                       </label>
                       <label class="custom-control custom-checkbox custom-control-inline">
+                          <input #ch4 type="checkbox" (click)="buttoncheck4()" class="custom-control-input"><span
+                            class="custom-control-label">Active</span>
+                        </label>
+                        <label class="custom-control custom-checkbox custom-control-inline">
+                            <input #ch4 type="checkbox" (click)="buttoncheck4()" class="custom-control-input"><span
+                              class="custom-control-label">DeActive</span>
+                          </label>
+                      <!-- <label class="custom-control custom-checkbox custom-control-inline">
                         <input #ch5 type="checkbox" (click)="buttoncheck5()" class="custom-control-input"><span
                           class="custom-control-label">Failed</span>
-                      </label>
+                      </label> -->
 
                     </th>
                   </tr>
@@ -96,7 +104,7 @@
                   <tr class="border-0">
                     <th class="border-0">#</th>
                     <th class="border-0">Status</th>
-                    <th class="border-0">Image</th>
+              
                     <th class="border-0">Product Name</th>
                     <th class="border-0">Product ID</th>
                     <th class="border-0">Manufacturer</th>
@@ -106,36 +114,26 @@
                     <th class="border-0">Actions</th>
                   </tr>
                 </thead>
-                <!-- <tbody *ngFor="let item of products | paginate: { itemsPerPage: showEntries, currentPage: p }"> -->
-                <tbody>
+                <tbody *ngFor="let item of products | paginate: { itemsPerPage: showEntries, currentPage: p }">
+               
                   <tr>
                     <td><input type="checkbox"><br></td>
-                    <td>Pending</td>
-                    <td>
-                      <div class="m-r-10"><img src="assets/images/product-pic.jpg" alt="user" class="rounded"
-                          width="45"></div>
-                    </td>
-                    <td>Product #1 </td>
-                    <td>id000001 </td>
-                    <td>Toshiba</td>
-                    <td>01120000 </td>
-                    <td>20</td>
-                    <td>$80.00</td>
+                    <td>{{item.status}}</td>
+                  
+                    <td>{{item.productName}}</td>
+                    <td>{{item.id}} </td>
+                    <td>{{item.manufacturerName}}</td>
+                    <td>{{item.sku}} </td>
+                    <td>{{item.quantity}}</td>
+                    <td>${{item.productPrice}}</td>
                     <!--<td><button>View</button></td>-->
 
                     <td>
                       <div class="dropdown float-right">
-                        <a href="#" class="card-drop" data-toggle="dropdown" aria-expanded="true">
-                          <i class="mdi mdi-dots-vertical"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                          <!-- item-->
-                          <a href="javascript:void(0);" class="dropdown-item">Edit</a>
-                          <!-- item-->
-                          <a href="javascript:void(0);" class="dropdown-item">Clone</a>
-                          <!-- item-->
-                          <a href="javascript:void(0);" class="dropdown-item">Deactivate</a>
-                        </div>
+                      
+                        <button  class="btn btn-info" (click)="edit(item.id)"> Edit</button>
+                   <button  class="btn btn-danger size" *ngIf="item.prdstatus=='Active'" (click)="deActivate(item.id)"> Deactivate</button>
+                   <button  *ngIf="item.prdstatus=='Deactive'" (click)="activate(item.id)" class="btn btn-success size"> Activate</button>
                       </div>
                       <!--<select class="selectpicker">-->
                       <!--<option>Edit</option>-->
@@ -144,78 +142,7 @@
                       <!--</select>-->
                     </td>
 
-                  <tr>
-                    <td><input type="checkbox"><br></td>
-                    <td>Pending</td>
-                    <td>
-                      <div class="m-r-10"><img src="assets/images/product-pic.jpg" alt="user" class="rounded"
-                          width="45"></div>
-                    </td>
-                    <td>Product #1 </td>
-                    <td>id000001 </td>
-                    <td>Toshiba</td>
-                    <td>01120000 </td>
-                    <td>20</td>
-                    <td>$80.00</td>
-                    <!--<td><button>View</button></td>-->
-
-                    <td>
-                      <div class="dropdown float-right">
-                        <a href="#" class="card-drop" data-toggle="dropdown" aria-expanded="true">
-                          <i class="mdi mdi-dots-vertical"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                          <!-- item-->
-                          <a href="javascript:void(0);" class="dropdown-item">Edit</a>
-                          <!-- item-->
-                          <a href="javascript:void(0);" class="dropdown-item">Clone</a>
-                          <!-- item-->
-                          <a href="javascript:void(0);" class="dropdown-item">Deactivate</a>
-                        </div>
-                      </div>
-                      <!--<select class="selectpicker">-->
-                      <!--<option>Edit</option>-->
-                      <!--<option>Delete</option>-->
-                      <!--<option>Check Inventory Stocks</option>-->
-                      <!--</select>-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><input type="checkbox"><br></td>
-                    <td>Pending</td>
-                    <td>
-                      <div class="m-r-10"><img src="assets/images/product-pic.jpg" alt="user" class="rounded"
-                          width="45"></div>
-                    </td>
-                    <td>Product #1 </td>
-                    <td>id000001 </td>
-                    <td>Toshiba</td>
-                    <td>01120000 </td>
-                    <td>20</td>
-                    <td>$80.00</td>
-                    <!--<td><button>View</button></td>-->
-
-                    <td>
-                      <div class="dropdown float-right">
-                        <a href="#" class="card-drop" data-toggle="dropdown" aria-expanded="true">
-                          <i class="mdi mdi-dots-vertical"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                          <!-- item-->
-                          <a href="javascript:void(0);" class="dropdown-item">Edit</a>
-                          <!-- item-->
-                          <a href="javascript:void(0);" class="dropdown-item">Clone</a>
-                          <!-- item-->
-                          <a href="javascript:void(0);" class="dropdown-item">Deactivate</a>
-                        </div>
-                      </div>
-                      <!--<select class="selectpicker">-->
-                      <!--<option>Edit</option>-->
-                      <!--<option>Delete</option>-->
-                      <!--<option>Check Inventory Stocks</option>-->
-                      <!--</select>-->
-                    </td>
-                  </tr>
+              
                 </tbody>
               </table>
               <pagination-controls (pageChange)="p = $event"></pagination-controls>
