@@ -36,6 +36,23 @@
                 <!--<div>Phone: +614-837-8483</div>-->
               </div>
             </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <h3 class="text-dark mb-1">Billing Address</h3>
+
+                <div>{{invoice.billingAddress}}</div>
+
+                <div>Email: <small>{{invoice.customerEmail}}</small></div>
+                <div>Phone: <small> {{invoice.billingPhone}}</small></div>
+              </div>
+              <div class="col-sm-6">
+                <h3 class="text-dark mb-1">Shipping Address</h3>
+                <div>{{invoice.shippingAddress}}</div>
+
+                <div>Email: <small>{{invoice.shippingEmail}}</small></div>
+                <div>Phone:<small>{{invoice.billingPhone}}</small></div>
+              </div>
+            </div>
           </div>
           <div class="pills-regular" [ngSwitch]="segment">
             <ul class="nav nav-tabs mb-3 nav-justified" id="pills-tab" role="tablist">
@@ -54,23 +71,7 @@
               </li>
             </ul>
             <div *ngSwitchCase="'information'">
-              <div class="row">
-                <div class="col-3">
-                  <h3 class="text-dark mb-1">Billing Address</h3>
 
-                  <div>{{invoice.billingAddress}}</div>
-
-                  <div>Email: <small>{{invoice.customerEmail}}</small></div>
-                  <div>Phone: <small> {{invoice.billingPhone}}</small></div>
-                </div>
-                <div class="col-3">
-                  <h3 class="text-dark mb-1">Shipping Address</h3>
-                  <div>{{invoice.shippingAddress}}</div>
-
-                  <div>Email: <small>{{invoice.shippingEmail}}</small></div>
-                  <div>Phone:<small>{{invoice.billingPhone}}</small></div>
-                </div>
-              </div>
 
               <table class="table table-striped">
                 <thead>
@@ -134,7 +135,7 @@
               </div>
             </div>
             <div *ngSwitchCase="'shipments'">
-              <h1>Shipments</h1>
+              <!-- <h1>Shipments</h1> -->
               <table class="table table-striped">
                 <thead>
                   <tr>
@@ -159,7 +160,7 @@
               </table>
             </div>
             <div *ngSwitchCase="'invoices'">
-              <h1>Invoices</h1>
+              <!-- <h1>Invoices</h1> -->
               <table class="table table-striped">
                 <thead>
                   <tr>
