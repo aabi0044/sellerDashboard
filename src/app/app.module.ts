@@ -26,7 +26,8 @@ import { CreateproductComponent } from './pages/dashboard/createproduct/createpr
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ManageinventoryComponent } from './pages/dashboard/manageinventory/manageinventory.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { ViewShipmentComponent } from './pages/dashboard/view-shipment/view-shipment.component'; // <-- import the module
+import { ViewShipmentComponent } from './pages/dashboard/view-shipment/view-shipment.component';
+import { CreateInvoiceComponent } from './pages/dashboard/create-invoice/create-invoice.component'; // <-- import the module
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { ViewShipmentComponent } from './pages/dashboard/view-shipment/view-ship
     CreateproductComponent,
     ManageinventoryComponent,
     ViewShipmentComponent,
+    CreateInvoiceComponent,
   ],
   imports: [
     BrowserModule,
@@ -110,6 +112,10 @@ import { ViewShipmentComponent } from './pages/dashboard/view-shipment/view-ship
           {
             path: 'view-shipment',
             component: ViewShipmentComponent
+          },
+          {
+            path: 'create-invoice',
+            component: CreateInvoiceComponent
           }
         ]
       }
