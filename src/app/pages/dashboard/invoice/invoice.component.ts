@@ -8,22 +8,32 @@ import { ApiService } from 'src/app/services/api/api.service';
   styleUrls: ['./invoice.component.css']
 })
 export class InvoiceComponent implements OnInit {
-id;
-invoice;
+  id;
+  invoice;
+  segment = 'information';
   constructor(private route: ActivatedRoute,
-    private api:ApiService) {
+    private api: ApiService) {
     this.id = this.route.snapshot.params['id'];
     console.log(this.id);
-   }
- 
+  }
+
   ngOnInit() {
     this.getOrder();
   }
-getOrder(){
-  console.log("object");
-this.api.getSpecificOrder(this.id).subscribe(res=>{
-  console.log(res);
-  this.invoice=res;
-})
-}
+  shipments() {
+    this.segment = 'shipments'
+  }
+  invoices() {
+    this.segment = 'invoices'
+  }
+  information() {
+    this.segment = 'information'
+  }
+  getOrder() {
+    console.log("object");
+    this.api.getSpecificOrder(this.id).subscribe(res => {
+      console.log(res);
+      this.invoice = res;
+    })
+  }
 }
