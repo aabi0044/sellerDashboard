@@ -19,14 +19,14 @@
               <div class="col-sm-6">
                 <h3 class="mb-3">Order Information</h3>
                 <!-- <h3 class="text-dark mb-1">Order Date:<small>{{invoice.forDelivery | date}} </small></h3>
-                  <h3 class="text-dark mb-1">Order Status: <small>{{invoice.deliveryStatus}}</small></h3> -->
+                    <h3 class="text-dark mb-1">Order Status: <small>{{invoice.deliveryStatus}}</small></h3> -->
                 <h5 class="text-dark mb-1">Order Date : <small>invoice.forDelivery | date </small></h5>
                 <h5 class="text-dark mb-1">Order Status : <small>invoice.deliveryStatus</small></h5>
               </div>
               <div class="col-sm-6">
                 <h3 class="mb-3">Account Information</h3>
                 <!-- <h3 class="text-dark mb-1">Customer Name: <small>{{invoice.customerName}}</small></h3>
-                  <h3 class="text-dark mb-1">Email:<small>{{invoice.customerEmail}}</small></h3> -->
+                    <h3 class="text-dark mb-1">Email:<small>{{invoice.customerEmail}}</small></h3> -->
                 <h5 class="text-dark mb-1">Customer Name : <small> invoice.customerName</small></h5>
                 <h5 class="text-dark mb-1">Email : <small> invoice.customerEmail</small></h5>
                 <!--<div>478 Collins Avenue</div>-->
@@ -41,8 +41,8 @@
 
                 <!-- <div>{{invoice.billingAddress}}</div>
 
-                  <div>Email: <small>{{invoice.customerEmail}}</small></div>
-                  <div>Phone: <small> {{invoice.billingPhone}}</small></div> -->
+                    <div>Email: <small>{{invoice.customerEmail}}</small></div>
+                    <div>Phone: <small> {{invoice.billingPhone}}</small></div> -->
                 <div>invoice.billingAddress</div>
 
                 <div>Email: <small>invoice.customerEmail</small></div>
@@ -52,8 +52,8 @@
                 <h3 class="text-dark mb-1">Shipping Address</h3>
                 <!-- <div>{{invoice.shippingAddress}}</div>
 
-                  <div>Email: <small>{{invoice.shippingEmail}}</small></div>
-                  <div>Phone:<small>{{invoice.billingPhone}}</small></div> -->
+                    <div>Email: <small>{{invoice.shippingEmail}}</small></div>
+                    <div>Phone:<small>{{invoice.billingPhone}}</small></div> -->
                 <div>invoice.shippingAddress</div>
 
                 <div>Email: <small>invoice.shippingEmail</small></div>
@@ -63,40 +63,15 @@
           </div>
           <div class="pills-regular">
             <div style="margin:0px 0px 0px 10px">
-              <h2>Tracking Codes</h2>
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Carrier</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Number</th>
-                    <!-- <th scope="col">Action</th> -->
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- <tr *ngFor="let item of invoice.products; let i=index"> -->
-                  <tr>
-                    <th scope="row">i+1</th>
-                    <td>Custom</td>
-                    <td>21</td>
-                    <td>1212</td>
-                    <!-- <td><button class="btn btn-primary" routerLink="/dashboard/view-shipment">View</button></td> -->
-                  </tr>
-
-                </tbody>
-              </table>
-            </div>
-
-            <div style="margin:10px 0px 0px 10px">
-              <h2>Ordered Items</h2>
+              <h2>Items to Invoice</h2>
               <table class="table table-striped">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Product</th>
                     <th scope="col">Qty Ordered</th>
-                    <th scope="col">Qty to Ship</th>
+                    <th scope="col">Available for Invoice</th>
+                    <th scope="col">Qty</th>
                     <!-- <th scope="col">Action</th> -->
                   </tr>
                 </thead>
@@ -104,15 +79,24 @@
                   <!-- <tr *ngFor="let item of invoice.products; let i=index"> -->
                   <tr>
                     <th scope="row">i+1</th>
-                    <td>Custom</td>
-                    <td>21</td>
-                    <td>1212</td>
+                    <td>Linen Blazer</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>
+                      <input type="number" placeholder="Please enter quantity" />
+                    </td>
                     <!-- <td><button class="btn btn-primary" routerLink="/dashboard/view-shipment">View</button></td> -->
                   </tr>
 
                 </tbody>
               </table>
+              <br />
+              <button style="width:300px;height:37px" class="btn btn-primary">Save Invoice</button>
+
             </div>
+            <br />
+
+
 
           </div>
 

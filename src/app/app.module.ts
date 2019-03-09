@@ -28,6 +28,7 @@ import { ManageinventoryComponent } from './pages/dashboard/manageinventory/mana
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ViewShipmentComponent } from './pages/dashboard/view-shipment/view-shipment.component';
 import { SellerdashboardComponent } from './pages/dashboard/sellerdashboard/sellerdashboard.component'; // <-- import the module
+import { CreateInvoiceComponent } from './pages/dashboard/create-invoice/create-invoice.component'; // <-- import the module
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { SellerdashboardComponent } from './pages/dashboard/sellerdashboard/sell
     ManageinventoryComponent,
     ViewShipmentComponent,
     SellerdashboardComponent,
+    CreateInvoiceComponent,
   ],
   imports: [
     BrowserModule,
@@ -119,6 +121,10 @@ import { SellerdashboardComponent } from './pages/dashboard/sellerdashboard/sell
           },{
             path:'sellerdashboard',
             component:SellerdashboardComponent
+          },
+          {
+            path: 'create-invoice',
+            component: CreateInvoiceComponent
           }
         ]
       }
