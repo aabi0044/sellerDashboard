@@ -24,6 +24,8 @@ state;
 imageData: any;
 email;
 password;
+coming;
+userid;
 @ViewChild('display') displayImage : ElementRef;
   constructor(private api:ApiService,
     public ren: Renderer2) { 
@@ -60,8 +62,12 @@ password;
   getUser(){
     this.id=localStorage.getItem('uid');
     this.api.getSpecificUser(this.id).subscribe(res=>{
-      console.log(res);
-      this.getuser=res;
+this.coming=res;
+let a =this.coming.filter((elem)=>{
+  return elem.userid==localStorage.getItem('uid');
+})
+      // console.log(res);
+      this.getuser=a;
 
       this.fname=this.getuser.firstName;
       this.lname=this.getuser.lastName;
@@ -74,6 +80,7 @@ password;
       this.state=this.getuser.state;
 this.email=this.getuser.email;
 this.password=this.getuser.password;
+this.userid=localStorage.getItem('uid');
 
     })
   }
@@ -91,7 +98,8 @@ let data={
 "city":this.city,
 "state":this.state,
 "email":this.email,
-"password":this.password
+"password":this.password,
+"userid":localStorage.getItem('uid')
 
 }
 this.api.updateUser(this.id,data).subscribe(res=>{

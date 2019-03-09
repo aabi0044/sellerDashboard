@@ -9,6 +9,8 @@
       "street1": "any street nothing to live",
       "street2": "Dummy testing bro",
       "city": "Pakistan",
+      "email": "okay@hotmail.com",
+      "password": "a@1234567",
       "state": "Punjab",
       "id": 1
     },
@@ -21,6 +23,8 @@
       "street1": "any street nothing to live",
       "street2": "Dummy testing bro",
       "city": "Pakistan",
+      "email": "notokay@hotmail.com",
+      "password": "a@1234567",
       "state": "Punjab",
       "id": 2
     },
@@ -37,18 +41,48 @@
       "email": "aqibpakii@hotmail.com",
       "password": "1234567",
       "id": 3
+    },
+    {
+      "id": 4,
+      "firstName": "Laeeq",
+      "lastName": "Khan ",
+      "email": "laeeq@ema.com",
+      "password": "a1234567@"
+    },
+    {
+      "id": 5,
+      "firstName": "Muhammad",
+      "lastName": "Abdullah",
+      "email": "laweeq@ema.com",
+      "password": "a123456@"
+    },
+    {
+      "id": 6,
+      "firstName": "Muhammad",
+      "lastName": "Abdullah",
+      "email": "laewweq@ema.com",
+      "password": "a123456@"
+    },
+    {
+      "id": 7,
+      "firstName": "Dummy",
+      "lastName": "Khan",
+      "email": "laeewqqq@ema.com",
+      "password": "a123456@"
     }
   ],
   "monthlyOrdersReport": [
     {
       "period": "2019-06-19",
       "qty": 10,
+      "userid": 1,
       "subtotal": 5000,
       "netIncome": 3875
     },
     {
       "period": "2019-01-19",
       "qty": 10,
+      "userid": 1,
       "subtotal": 49000,
       "netIncome": 45875
     },
@@ -56,17 +90,20 @@
       "period": "2019-02-19",
       "qty": 10,
       "subtotal": 40800,
+      "userid": 1,
       "netIncome": 33875
     },
     {
       "period": "2019-03-19",
       "qty": 10,
       "subtotal": 40900,
+      "userid": 1,
       "netIncome": 23875
     },
     {
       "period": "2018-07-19",
       "qty": 10,
+      "userid": 1,
       "subtotal": 4000,
       "netIncome": 3875
     },
@@ -74,29 +111,34 @@
       "period": "2018-08-19",
       "qty": 10,
       "subtotal": 4000,
+      "userid": 1,
       "netIncome": 3875
     },
     {
       "period": "2018-09-19",
       "qty": 10,
       "subtotal": 4000,
+      "userid": 1,
       "netIncome": 3875
     },
     {
       "period": "2018-10-19",
       "qty": 10,
       "subtotal": 4000,
+      "userid": 1,
       "netIncome": 3875
     },
     {
       "period": "2018-11-19",
       "qty": 10,
       "subtotal": 4000,
+      "userid": 1,
       "netIncome": 3875
     },
     {
       "period": "2018-12-19",
       "qty": 10,
+      "userid": 1,
       "subtotal": 4000,
       "netIncome": 3875
     },
@@ -104,12 +146,14 @@
       "period": "2019-06-19",
       "qty": 10,
       "subtotal": 4000,
+      "userid": 1,
       "netIncome": 3875
     }
   ],
   "products": [
     {
       "id": 1,
+      "userid": 1,
       "productName": "Product Name",
       "productPrice": 2500,
       "salePrice": 2300,
@@ -123,11 +167,12 @@
       "shortDescription": "this is dummy testing blah blah blah .",
       "detailedDescription": "and this too. so that lets test again bro. okay fine . add more text here ",
       "status": "Approved",
-      "quantity": "Approved",
+      "quantity": 50,
       "prdstatus": "Deactive"
     },
     {
       "id": 2,
+      "userid": 1,
       "productName": "any",
       "productPrice": 2500,
       "salePrice": 2300,
@@ -148,6 +193,7 @@
     },
     {
       "id": 3,
+      "userid": 1,
       "productName": "any",
       "productPrice": 2500,
       "salePrice": 2300,
@@ -170,6 +216,7 @@
   "orders": [
     {
       "id": 1,
+      "userid": 1,
       "orderId": 1,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
@@ -223,6 +270,7 @@
     {
       "id": 2,
       "orderId": 2,
+      "userid": 1,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
       "forDelivery": "2019-03-05",
@@ -275,6 +323,7 @@
     {
       "id": 3,
       "orderId": 3,
+      "userid": 1,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
       "forDelivery": "2019-03-05",
@@ -326,6 +375,7 @@
     {
       "id": 4,
       "orderId": 4,
+      "userid": 1,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
       "forDelivery": "2019-03-05",
@@ -377,6 +427,7 @@
     },
     {
       "id": 5,
+      "userid": 1,
       "orderId": 5,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
@@ -430,6 +481,7 @@
     {
       "id": 6,
       "orderId": 6,
+      "userid": 1,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
       "forDelivery": "2019-03-05",
@@ -482,6 +534,7 @@
     {
       "id": 7,
       "orderId": 7,
+      "userid": 1,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
       "forDelivery": "2019-03-05",
@@ -532,6 +585,7 @@
     },
     {
       "id": 8,
+      "userid": 1,
       "orderId": 8,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
@@ -585,6 +639,7 @@
     {
       "id": 9,
       "orderId": 9,
+      "userid": 1,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
       "forDelivery": "2019-03-05",
@@ -636,6 +691,7 @@
     },
     {
       "id": 10,
+      "userid": 1,
       "orderId": 10,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
@@ -689,6 +745,7 @@
     {
       "id": 11,
       "orderId": 11,
+      "userid": 1,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
       "forDelivery": "2019-03-05",
@@ -740,6 +797,7 @@
     {
       "id": 12,
       "orderId": 12,
+      "userid": 1,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
       "forDelivery": "2019-03-05",
@@ -791,6 +849,7 @@
     },
     {
       "id": 13,
+      "userid": 1,
       "orderId": 13,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
@@ -843,6 +902,7 @@
     },
     {
       "id": 14,
+      "userid": 1,
       "orderId": 14,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
@@ -895,6 +955,7 @@
     },
     {
       "id": 15,
+      "userid": 1,
       "orderId": 15,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
@@ -946,6 +1007,7 @@
     },
     {
       "id": 16,
+      "userid": 1,
       "orderId": 16,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
@@ -999,6 +1061,7 @@
     {
       "id": 17,
       "orderId": 17,
+      "userid": 1,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
       "forDelivery": "2019-03-05",
@@ -1050,6 +1113,7 @@
     },
     {
       "id": 18,
+      "userid": 1,
       "orderId": 18,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
@@ -1102,6 +1166,7 @@
     },
     {
       "id": 19,
+      "userid": 1,
       "orderId": 19,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
@@ -1153,6 +1218,7 @@
     },
     {
       "id": 20,
+      "userid": 1,
       "orderId": 20,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
@@ -1205,6 +1271,7 @@
     },
     {
       "id": 21,
+      "userid": 1,
       "orderId": 21,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
@@ -1257,6 +1324,7 @@
     },
     {
       "id": 22,
+      "userid": 1,
       "orderId": 22,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
@@ -1310,6 +1378,7 @@
     {
       "id": 23,
       "orderId": 23,
+      "userid": 1,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
       "forDelivery": "2019-07-05",
@@ -1361,6 +1430,7 @@
     {
       "id": 24,
       "orderId": 24,
+      "userid": 1,
       "image": "./image.jpg",
       "orderPlaced": "Fri Mar 08 2019 19:31:04 GMT+0500 (Pakistan Standard Time)",
       "forDelivery": "2019-04-05",
@@ -1375,6 +1445,59 @@
       "billingAddress": "house No 311 F10 Islamabad",
       "shippingAddress": "house No 311 F10 Islamabad",
       "billingPhone": "004451247892",
+      "netTotal": 5000,
+      "subTotal": 5000,
+      "Discount": 1000,
+      "vat": 100,
+      "products": [
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 5,
+          "total": 5000
+        },
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 5,
+          "total": 5000
+        },
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 5,
+          "total": 5000
+        },
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 5,
+          "total": 5000
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "userid": "7",
+      "orderId": 25,
+      "image": "./image.jpg",
+      "orderPlaced": " 2019-03-02",
+      "forDelivery": "2019-03-05",
+      "trackingNumber": 25,
+      "customerName": "johan",
+      "deliveryStatus": "In Transit",
+      "orderStatus": "Payment Completed",
+      "totalPrice": 987,
+      "invoiceNo": 25,
+      "customerEmail": "customer@email.com",
+      "shippingEmail": "customer@email.com",
+      "billingAddress": "2341  Tenmile Road Boston",
+      "shippingAddress": "2341  Tenmile Road Boston",
+      "billingPhone": "0014151247892",
       "netTotal": 5000,
       "subTotal": 5000,
       "Discount": 1000,

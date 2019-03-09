@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ApiService } from 'src/app/services/api/api.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { element } from '@angular/core/src/render3';
 
 
 @Component({
@@ -28,6 +29,7 @@ export class ViewOrdersComponent implements OnInit {
   endDateFilter: Date;
   showEntries = 10;
   public results = [];
+  coming;
   ngOnInit() {
     this.getOrders();
     // this.getPendingOrders();
@@ -38,8 +40,10 @@ export class ViewOrdersComponent implements OnInit {
   }
   getOrders() {
     this.api.getOrders().subscribe(res => {
+      this.coming=res;
+      let a = this.coming.filter(e=>e.userid==localStorage.getItem('uid'));
       console.log(res);
-      this.orders = res;
+      this.orders = a;
     })
   }
   buttoncheck() {
@@ -96,9 +100,10 @@ export class ViewOrdersComponent implements OnInit {
   getPendingOrders() {
     this.api.getOrders().subscribe(res => {
       console.log(res);
-
-      this.data = res;
-      let a = this.data.filter(e => e.deliveryStatus == "In Transit");
+      this.coming=res;
+      let b = this.coming.filter(e=>e.userid==localStorage.getItem('uid'));
+      this.data = b;
+      let a = this.data.filter(e => e.deliveryStatus == "In Transit" && e.userid==localStorage.getItem('uid'));
       console.log(a);
       this.orders = a;
     })
@@ -107,9 +112,10 @@ export class ViewOrdersComponent implements OnInit {
   getInProgress() {
     this.api.getOrders().subscribe(res => {
       console.log(res);
-
-      this.data = res;
-      let a = this.data.filter(e => e.deliveryStatus == "Not Delivered");
+      this.coming=res;
+      let b = this.coming.filter(e=>e.userid==localStorage.getItem('uid'));
+      this.data = b;
+      let a = this.data.filter(e => e.deliveryStatus == "Not Delivered"&& e.userid==localStorage.getItem('uid'));
       console.log(a);
       this.orders = a;
     })
@@ -117,9 +123,11 @@ export class ViewOrdersComponent implements OnInit {
   getCompleted() {
     this.api.getOrders().subscribe(res => {
       console.log(res);
+      this.coming=res;
+      let b = this.coming.filter(e=>e.userid==localStorage.getItem('uid'));
 
-      this.data = res;
-      let a = this.data.filter(e => e.deliveryStatus == "Delivered");
+      this.data = b;
+      let a = this.data.filter(e => e.deliveryStatus == "Delivered"&& e.userid==localStorage.getItem('uid'));
       console.log(a);
       this.orders = a;
     })
@@ -127,9 +135,10 @@ export class ViewOrdersComponent implements OnInit {
   getFailed() {
     this.api.getOrders().subscribe(res => {
       console.log(res);
-
-      this.data = res;
-      let a = this.data.filter(e => e.deliveryStatus == "Returned");
+      this.coming=res;
+      let b = this.coming.filter(e=>e.userid==localStorage.getItem('uid'));
+      this.data = b;
+      let a = this.data.filter(e => e.deliveryStatus == "Returned"&& e.userid==localStorage.getItem('uid'));
       console.log(a);
       this.orders = a;
     })
@@ -137,11 +146,13 @@ export class ViewOrdersComponent implements OnInit {
 
   filter(product) {
     var array = Object.assign(this.orders);
-    this.orders = this.orders.filter(e => e.trackingNumber == product);
+    this.orders = this.orders.filter(e => e.trackingNumber == product );
     console.log(product);
     if (product == '') {
       this.api.getOrders().subscribe(res => {
-        this.orders = res;
+        this.coming=res;
+        let a = this.coming.filter(e=>e.userid== localStorage.getItem('uid'));
+        this.orders = a;
       })
       // this.orders = array;
       console.log(array);
@@ -154,7 +165,7 @@ export class ViewOrdersComponent implements OnInit {
 
     console.log(this.startDateFilter);
     let i = this.orders.filter((elem) => {
-      return elem.forDelivery >= this.startDateFilter && elem.forDelivery <= this.endDateFilter
+      return elem.forDelivery >= this.startDateFilter && elem.forDelivery <= this.endDateFilter && elem.userid==localStorage.getItem('uid');
     })
     console.log(i);
     this.orders = i;

@@ -11,6 +11,7 @@ export class ShipmentComponent implements OnInit {
 
   id;
   invoice;
+  
     constructor(private route: ActivatedRoute,
       private api:ApiService) {
       this.id = this.route.snapshot.params['id'];

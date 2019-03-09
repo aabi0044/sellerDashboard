@@ -66,4 +66,7 @@ updateProduct(id,data){
 getOrdersReport(){
   return this.http.get(this.orderReportUrl);
 }
+CreateOrderReport(data){
+  return this.http.post(this.orderReportUrl,data);
+}
 }

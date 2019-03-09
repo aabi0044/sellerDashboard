@@ -24,7 +24,7 @@ orders;
 startDate:Date;
 endDate:Date;
 data;
-
+coming;
   constructor(private api:ApiService,) { }
 
   ngOnInit() {
@@ -32,7 +32,10 @@ data;
   }
 getOrders(){
   this.api.getOrdersReport().subscribe(res=>{
-this.orders=res;
+    this.coming=res;
+    let a = this.coming.filter(e=>e.userid==localStorage.getItem('uid'));
+
+this.orders=a;
 
 console.log(this.orders);
   })
@@ -44,7 +47,7 @@ filterByDate(){
   this.api.getOrdersReport().subscribe(res=>{
     this.data=res;
     let a = this.data.filter((elem)=>{
-      return elem.period>=this.startDate && elem.period<=this.endDate
+      return elem.period>=this.startDate && elem.period<=this.endDate && elem.userid==localStorage.getItem('uid');
     })
     console.log(a);
     this.orders=a;

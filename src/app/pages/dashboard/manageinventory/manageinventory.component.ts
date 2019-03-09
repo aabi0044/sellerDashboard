@@ -20,6 +20,7 @@ export class ManageinventoryComponent implements OnInit {
   getPrd;
   data;
   searchText='';
+  coming;
   constructor(private api :ApiService,
     private tos:ToasterService,
     private router:Router) { }
@@ -102,7 +103,7 @@ getPending(){
   this.api.getProducts().subscribe(res=>{
     this.data=res;
     let a =this.data.filter((elem)=>{
-      return elem.status=="Pending";
+      return elem.status=="Pending" && elem.userid==localStorage.getItem('uid');
     })
     this.products=a;
   })
@@ -111,7 +112,7 @@ getApproved(){
   this.api.getProducts().subscribe(res=>{
     this.data=res;
     let a =this.data.filter((elem)=>{
-      return elem.status=="Approved";
+      return elem.status=="Approved"&& elem.userid==localStorage.getItem('uid');
     })
     this.products=a;
   })
@@ -120,7 +121,7 @@ getNotApproved(){
   this.api.getProducts().subscribe(res=>{
     this.data=res;
     let a =this.data.filter((elem)=>{
-      return elem.status=="NotApproved";
+      return elem.status=="NotApproved" && elem.userid==localStorage.getItem('uid');
     })
     this.products=a;
   })
@@ -129,7 +130,7 @@ getActive(){
   this.api.getProducts().subscribe(res=>{
     this.data=res;
     let a =this.data.filter((elem)=>{
-      return elem.prdstatus=="Active";
+      return elem.prdstatus=="Active" && elem.userid==localStorage.getItem('uid');
     })
     this.products=a;
   })
@@ -138,7 +139,7 @@ getNotActive(){
   this.api.getProducts().subscribe(res=>{
     this.data=res;
     let a =this.data.filter((elem)=>{
-      return elem.prdstatus=="Deactive";
+      return elem.prdstatus=="Deactive" && elem.userid==localStorage.getItem('uid');
     })
     this.products=a;
   })
@@ -152,12 +153,17 @@ filterCondition(product) {
 
 getProducts(){
 this.api.getProducts().subscribe(res=>{
-  this.products=res;
+  this.coming=res;
+  let a =this.coming.filter((elem)=>{
+    return elem.userid==localStorage.getItem('uid');
+  })
+  this.products=a;
 })
 }
 activate(id){
   console.log(id);
   this.api.getSpecificProduct(id).subscribe(res=>{
+
 this.getPrd=res;
 let data={
   "id":this.getPrd.id,
@@ -177,7 +183,9 @@ let data={
   "detailedDescription":this.getPrd.detailedDescription,
   "status":this.getPrd.status,
   "quantity":this.getPrd.quantity,
-  "prdstatus":"Active"
+  "prdstatus":"Active",
+  "userid":localStorage.getItem('uid')
+
 }
 this.api.updateProduct(id,data).subscribe(res=>{
 this.tos.showSuccess("Status Updated");
@@ -212,7 +220,8 @@ let data={
   "detailedDescription":this.getPrd.detailedDescription,
   "status":this.getPrd.status,
   "quantity":this.getPrd.quantity,
-  "prdstatus":"Deactive"
+  "prdstatus":"Deactive",
+  "userid":localStorage.getItem('uid')
 }
 this.api.updateProduct(id,data).subscribe(res=>{
 this.tos.showSuccess("Status Updated");

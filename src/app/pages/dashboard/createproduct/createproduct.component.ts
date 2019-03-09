@@ -28,7 +28,7 @@ shortDescription;
 detailedDescription;
 
 
-
+userid;
 
 prdid;
 
@@ -53,7 +53,7 @@ getprd;
     private route:ActivatedRoute,
     private router:Router
 ) {
-    
+    this.userid=localStorage.getItem('uid');
 
    }
 
@@ -229,7 +229,8 @@ this.tos.warning('Must fill all entries')
       "detailedDescription":this.detailedDescription,
       "status":'Pending',
       "quantity":50,
-      "prdstatus":"Active"
+      "prdstatus":"Active",
+      "userid":this.userid
     }
     console.log(data);
     this.api.CreateProduct(data).subscribe(res=>{
@@ -256,6 +257,7 @@ this.tos.warning('Must fill all entries')
   }
   update(){
     if(this.saleEndDate != null  && this.saleStartDate != null){
+      
       let data={
         "id":this.getprd.id,
         "productName":this.productName,
@@ -274,7 +276,8 @@ this.tos.warning('Must fill all entries')
         "detailedDescription":this.detailedDescription,
         "status":this.getprd.status,
         "quantity":this.getprd.status,
-        "prdstatus":this.getprd.prdstatus
+        "prdstatus":this.getprd.prdstatus,
+        "userid":this.userid
       }
   
       this.api.updateProduct(this.id,data).subscribe(res=>{
