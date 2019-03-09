@@ -89,20 +89,20 @@
                       <!-- Default checked -->
                       <div class="custom-control custom-radio">
                         <input type="radio" class="custom-control-input" id="categoryName" name="defaultExampleRadios" style=" padding: 0px 5px 0px 5px" checked
-                        [ngModelOptions]="{standalone: true}" [(ngModel)]="catagory"
+                     #Electronics (click)="Electronics1()"
                         > 
                         <label class="custom-control-label" for="categoryName" style=" padding: 0px 5px 0px 0px">Electronics </label>   
                       </div>
                  
                       <!-- Default unchecked -->
                       <div class="custom-control custom-radio">
-                        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="catagory" type="radio" class="custom-control-input" id="categoryName1" name="defaultExampleRadios" style=" padding: 0px 5px 0px 5px">
+                        <input #Fashion type="radio" (click)="fn2()" class="custom-control-input" id="categoryName1" name="defaultExampleRadios" style=" padding: 0px 5px 0px 5px">
                         <label class="custom-control-label" for="categoryName1" style=" padding: 0px 5px 0px 0px"> Fashion </label>
                       </div>
                    
                       <!-- Default unchecked -->
                       <div class="custom-control custom-radio">
-                        <input  [ngModelOptions]="{standalone: true}" [(ngModel)]="catagory" type="radio" class="custom-control-input" id="categoryName2" name="defaultExampleRadios" style=" padding: 0px 5px 0px 5px">
+                        <input  #Home type="radio" (click)="fn3()"  class="custom-control-input" id="categoryName2" name="defaultExampleRadios" style=" padding: 0px 5px 0px 5px">
                         <label class="custom-control-label" for="categoryName2" style=" padding: 0px 5px 0px 0px">Home & Kitchen </label>
                       </div>
                      
@@ -112,14 +112,14 @@
                     <div class="form-group row">
                         <label for="productName" class="col-sm-3 col-form-label"></label>
                         <div class="custom-control custom-radio">
-                            <input   [ngModelOptions]="{standalone: true}" [(ngModel)]="catagory" type="radio" class="custom-control-input" id="categoryName3" name="defaultExampleRadios" style=" padding: 0px 5px 0px 5px">
+                            <input  #Beauty type="radio" (click)="fn4()"  class="custom-control-input" id="categoryName3" name="defaultExampleRadios" style=" padding: 0px 5px 0px 5px">
                             <label class="custom-control-label" for="categoryName3" style=" padding: 0px 5px 0px 0px">Beauty & Fragrance </label>
                           </div>
                           <!-- Default unchecked -->
-                          <div class="custom-control custom-radio">
-                            <input  [ngModelOptions]="{standalone: true}" [(ngModel)]="catagory" type="radio" class="custom-control-input" id="categoryName4" name="defaultExampleRadios" style=" padding: 0px 5px 0px 5px">
+                          <!-- <div class="custom-control custom-radio">
+                            <input  #Baby type="radio" (click)="fn5()"  class="custom-control-input" id="categoryName4" name="defaultExampleRadios" style=" padding: 0px 5px 0px 5px">
                             <label class="custom-control-label" for="categoryName3" style=" padding: 0px 5px 0px 0px">Baby & Kids</label>
-                          </div>
+                          </div> -->
 
                     </div>
                   </form>
@@ -171,19 +171,19 @@
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Actual Price: </label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="salePrice">
+                        <input type="number" [(ngModel)]="productPrice" name="productPrice" class="form-control" id="salePrice">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="sellerSKU" class="col-sm-3 col-form-label">Seller SKU: </label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="sellerSKU">
+                        <input type="text" class="form-control" name="sellerSku" [(ngModel)]="sellerSku" id="sellerSKU">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="salePrice" class="col-sm-3 col-form-label">Sale Price(SGD $): </label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="salePrice">
+                        <input type="number" name="salePrice" [(ngModel)]="salePrice" class="form-control" id="salePrice">
                       </div>
                     </div>
                     <div class="form-group row">
@@ -213,11 +213,11 @@
                       <!-- Default checked -->
                       <div class="col-sm-8">
                         <div class="custom-control custom-radio">
-                          <input type="radio" class="custom-control-input" id="conditionNew" name="defaultExampleRadios" checked>
+                          <input type="radio" (click)="cndNew()" class="custom-control-input" id="conditionNew" name="defaultExampleRadios" checked>
                           <label class="custom-control-label" for="conditionNew">New </label>
                         </div>
                         <div class="custom-control custom-radio">
-                          <input type="radio" class="custom-control-input" id="conditionOld" name="defaultExampleRadios">
+                          <input (click)="cndOld()"  type="radio" class="custom-control-input" id="conditionOld" name="defaultExampleRadios">
                           <label class="custom-control-label" for="conditionOld">Old</label>
                         </div>
                       </div>
@@ -232,13 +232,13 @@
                       <div class="form-group row">
                         <label for="shortProductDescription" class="col-sm-4 col-form-label">Short Product Description:</label>
                         <div class="col-sm-4">
-                          <textarea type="text" class="form-control" rows="3" id="shortProductDescription"></textarea>
+                          <textarea type="text" name="shortDescription" [(ngModel)]="shortDescription" class="form-control" rows="3" id="shortProductDescription"></textarea>
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="detailedProductDescription" class="col-sm-4 col-form-label">Detailed Product Description:</label>
                         <div class="col-sm-4">
-                          <textarea type="text" class="form-control" rows="5" id="detailedProductDescription"></textarea>
+                          <textarea type="text" name="detailedDescription" [(ngModel)]="detailedDescription" class="form-control" rows="5" id="detailedProductDescription"></textarea>
                         </div>
                       </div>
                     </form>
