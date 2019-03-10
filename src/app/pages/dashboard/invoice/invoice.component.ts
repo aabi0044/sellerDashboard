@@ -10,6 +10,7 @@ import { ApiService } from 'src/app/services/api/api.service';
 export class InvoiceComponent implements OnInit {
   id;
   invoice;
+  user;
   segment = 'information';
   constructor(private route: ActivatedRoute,
     private api: ApiService) {
@@ -18,6 +19,7 @@ export class InvoiceComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getCustomer();
     this.getOrder();
   }
   shipments() {
@@ -34,6 +36,12 @@ export class InvoiceComponent implements OnInit {
     this.api.getSpecificOrder(this.id).subscribe(res => {
       console.log(res);
       this.invoice = res;
+    })
+  }
+  getCustomer(){
+
+    this.api.getSpecificUser(localStorage.getItem('uid')).subscribe(res=>{
+this.user=res;
     })
   }
 }

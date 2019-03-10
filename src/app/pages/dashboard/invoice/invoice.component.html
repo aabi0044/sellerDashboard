@@ -26,10 +26,10 @@
                 <h3 class="text-dark mb-1">Order Date:<small>{{invoice.forDelivery | date}} </small></h3>
                 <h3 class="text-dark mb-1">Order Status: <small>{{invoice.deliveryStatus}}</small></h3>
               </div>
-              <div class="col-sm-6">
+              <div class="col-sm-6" *ngIf="user">
                 <h3 class="mb-3">Account Information</h3>
-                <h3 class="text-dark mb-1">Customer Name: <small>{{invoice.customerName}}</small></h3>
-                <h3 class="text-dark mb-1">Email:<small>{{invoice.customerEmail}}</small></h3>
+                <h3 class="text-dark mb-1">Customer Name: <small>{{user.firstName}} {{user.lastName}}</small></h3>
+                <h3 class="text-dark mb-1">Email:<small>{{user.email}}</small></h3>
                 <!--<div>478 Collins Avenue</div>-->
                 <!--<div>Canal Winchester, OH 43110</div>-->
                 <!--<div>Email: info@anthonyk.com</div>-->
@@ -147,11 +147,11 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let item of invoice.products; let i=index">
-                    <th scope="row">{{i+1}}</th>
-                    <td>100007</td>
-                    <td>Apr 20, 2017</td>
-                    <td>#1212</td>
+                  <tr *ngIf="invoice">
+                    <th scope="row">{{1}}</th>
+                    <td>{{invoice.invoiceNo}}</td>
+                    <td>{{invoice.forDelivery}}</td>
+                    <td>{{invoice.trackingNumber}}</td>
                     <td><button class="btn btn-primary" routerLink="/dashboard/view-shipment">View</button></td>
 
                   </tr>
