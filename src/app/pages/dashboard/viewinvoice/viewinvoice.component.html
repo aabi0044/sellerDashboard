@@ -6,7 +6,7 @@
     <!-- ============================================================== -->
     <!-- end pageheader  -->
     <!-- ============================================================== -->
-    <button class="btn btn-primary" (click)="backToInvoice()">Back</button>
+    <button class="btn btn-primary" routerLink="/dashboard/invoice/{{id}}">Back</button>
     <div class="row">
       <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="card">
@@ -19,16 +19,16 @@
               <div class="col-sm-6">
                 <h3 class="mb-3">Order Information</h3>
                 <!-- <h3 class="text-dark mb-1">Order Date:<small>{{invoice.forDelivery | date}} </small></h3>
-                    <h3 class="text-dark mb-1">Order Status: <small>{{invoice.deliveryStatus}}</small></h3> -->
-                <h5 class="text-dark mb-1">Order Date : <small>invoice.forDelivery | date </small></h5>
-                <h5 class="text-dark mb-1">Order Status : <small>invoice.deliveryStatus</small></h5>
+                  <h3 class="text-dark mb-1">Order Status: <small>{{invoice.deliveryStatus}}</small></h3> -->
+                <h5 class="text-dark mb-1">Order Date : <small>{{order.orderPlaced |date}} </small></h5>
+                <h5 class="text-dark mb-1">Order Status : <small>{{order.orderStatus}}</small></h5>
               </div>
               <div class="col-sm-6">
                 <h3 class="mb-3">Account Information</h3>
                 <!-- <h3 class="text-dark mb-1">Customer Name: <small>{{invoice.customerName}}</small></h3>
-                    <h3 class="text-dark mb-1">Email:<small>{{invoice.customerEmail}}</small></h3> -->
-                <h5 class="text-dark mb-1">Customer Name : <small> invoice.customerName</small></h5>
-                <h5 class="text-dark mb-1">Email : <small> invoice.customerEmail</small></h5>
+                  <h3 class="text-dark mb-1">Email:<small>{{invoice.customerEmail}}</small></h3> -->
+                <h5 class="text-dark mb-1">Customer Name : <small> {{user.firstName}} {{user.lastName}}</small></h5>
+                <h5 class="text-dark mb-1">Email : <small> {{user.email}}</small></h5>
                 <!--<div>478 Collins Avenue</div>-->
                 <!--<div>Canal Winchester, OH 43110</div>-->
                 <!--<div>Email: info@anthonyk.com</div>-->
@@ -41,67 +41,59 @@
 
                 <!-- <div>{{invoice.billingAddress}}</div>
 
-                    <div>Email: <small>{{invoice.customerEmail}}</small></div>
-                    <div>Phone: <small> {{invoice.billingPhone}}</small></div> -->
-                <div>invoice.billingAddress</div>
+                  <div>Email: <small>{{invoice.customerEmail}}</small></div>
+                  <div>Phone: <small> {{invoice.billingPhone}}</small></div> -->
+                <div>{{order.billingAddress}}</div>
 
-                <div>Email: <small>invoice.customerEmail</small></div>
-                <div>Phone: <small>invoice.billingPhone</small></div>
+                <div>Email: <small>{{order.shippingEmail}}</small></div>
+                <div>Phone: <small>{{order.billingPhone}}</small></div>
               </div>
               <div class="col-sm-6">
                 <h3 class="text-dark mb-1">Shipping Address</h3>
                 <!-- <div>{{invoice.shippingAddress}}</div>
 
-                    <div>Email: <small>{{invoice.shippingEmail}}</small></div>
-                    <div>Phone:<small>{{invoice.billingPhone}}</small></div> -->
-                <div>invoice.shippingAddress</div>
+                  <div>Email: <small>{{invoice.shippingEmail}}</small></div>
+                  <div>Phone:<small>{{invoice.billingPhone}}</small></div> -->
+                <div>{{order.shippingAddress}}</div>
 
-                <div>Email: <small>invoice.shippingEmail</small></div>
-                <div>Phone:<small>invoice.billingPhone</small></div>
+                <div>Email: <small>{{order.shippingEmail}}</small></div>
+                <div>Phone:<small>{{order.billingPhone}}</small></div>
               </div>
             </div>
           </div>
           <div class="pills-regular">
-            <div style="margin:0px 0px 0px 10px">
-              <h2>Items to Invoice</h2>
+          
+
+            <div style="margin:10px 0px 0px 10px">
+              <h2>Final Invoice Details</h2>
               <table class="table table-striped">
                 <thead>
-                  <tr>
+                  <tr >
                     <th scope="col">#</th>
                     <th scope="col">Product</th>
-                    <th scope="col">Qty Ordered</th>
-                    <th scope="col">Available for Invoice</th>
-                    <th scope="col">Qty</th>
+                    <th scope="col">Shipped Quantity</th>
+                    <th scope="col">Price Per item</th>
                     <!-- <th scope="col">Action</th> -->
                   </tr>
                 </thead>
                 <tbody>
                   <!-- <tr *ngFor="let item of invoice.products; let i=index"> -->
-                  <tr *ngFor="let item of order.products ;let i=index ">
+                  <tr *ngFor="let item of order.products;let i=index">
                     <th scope="row">{{i+1}}</th>
                     <td>{{item.itemName}}</td>
-                    <td>{{item.quantity}}</td>
-                    <td>{{available}}</td>
-                    <td *ngIf="item.quantity <= available">
-                     {{item.quantity}}
-                    </td><td *ngIf="item.quantity >= available">
-                      {{available}}
-                     </td>
+                    <td>{{invoice.quantityToShip}}</td>
+                   
+                    <td>{{item.unitCost}}</td>
                     <!-- <td><button class="btn btn-primary" routerLink="/dashboard/view-shipment">View</button></td> -->
                   </tr>
 
                 </tbody>
               </table>
-              <br />
-              <button style="width:300px;height:37px" class="btn btn-primary" (click)="saveInvoice(order.products)">Save Invoice</button>
-
+              
             </div>
-            <br />
-
-
 
           </div>
-
+         
         </div>
       </div>
     </div>

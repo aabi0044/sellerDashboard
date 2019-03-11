@@ -62,4 +62,7 @@ this.user=res;
       console.log(this.getInvoice);
     })
   }
+  viewInvoiceDetails(){
+    this.router.navigate(['/dashboard/viewinvoice/'+this.id]);
+  }
 }

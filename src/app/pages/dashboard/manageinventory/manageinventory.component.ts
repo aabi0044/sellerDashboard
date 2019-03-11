@@ -211,6 +211,7 @@ let data={
   "status":this.getPrd.status,
   "quantity":this.getPrd.quantity,
   "prdstatus":"Active",
+  "availibility":this.getPrd.availibility,
   "userid":localStorage.getItem('uid')
 
 }
@@ -248,6 +249,7 @@ let data={
   "status":this.getPrd.status,
   "quantity":this.getPrd.quantity,
   "prdstatus":"Deactive",
+   "availibility":this.getPrd.availibility,
   "userid":localStorage.getItem('uid')
 }
 this.api.updateProduct(id,data).subscribe(res=>{

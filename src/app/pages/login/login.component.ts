@@ -33,7 +33,7 @@ this.api.getUsers().subscribe(res=>{
   if(getuser.length!=0 ){
     this.tos.showSuccess("login Successfully")
       localStorage.setItem('uid',getuser[0].id)
-      this.router.navigate(['./dashboard']);
+      this.router.navigate(['./dashboard/sellerdashboard']);
    
    
     

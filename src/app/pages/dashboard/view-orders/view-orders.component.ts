@@ -158,7 +158,7 @@ export class ViewOrdersComponent implements OnInit {
 
   filter(product) {
     var array = Object.assign(this.orders);
-    this.orders = this.orders.filter(e => e.trackingNumber == product );
+    this.orders = this.orders.filter(e => e.orderId == product );
     console.log(product);
     if (product == '') {
       this.api.getOrders().subscribe(res => {

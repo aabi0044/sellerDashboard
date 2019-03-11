@@ -83,5 +83,7 @@ saveInvoice(i){
 
 
 }
-
+backToInvoice(){
+  this.router.navigate(['/dashboard/invoice/'+this.id])
+}
 }

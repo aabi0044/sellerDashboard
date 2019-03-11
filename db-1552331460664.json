@@ -502,6 +502,7 @@
     },
     {
       "id": 2,
+      "userid": 1,
       "productName": "any",
       "productPrice": 2500,
       "salePrice": 2300,
@@ -519,12 +520,11 @@
       "status": "Pending",
       "quantity": 50,
       "prdstatus": "Active",
-      "userid": "1"
-      ,
       "availibility": "Out Of Stock"
     },
     {
       "id": 3,
+      "userid": 1,
       "productName": "any",
       "productPrice": 2500,
       "salePrice": 2300,
@@ -542,8 +542,7 @@
       "status": "NotApproved",
       "quantity": 50,
       "prdstatus": "Active",
-      "availibility": "Out Of Stock",
-      "userid": "1"
+      "availibility": "Out Of Stock"
     },
     {
       "id": 4,
@@ -563,7 +562,7 @@
       "detailedDescription": "",
       "status": "Pending",
       "quantity": 50,
-      "prdstatus": "Deactive",
+      "prdstatus": "Active",
       "userid": "1",
       "availibility": "Out Of Stock"
     },
@@ -585,7 +584,7 @@
       "detailedDescription": "dasdsadsa",
       "status": "Pending",
       "quantity": 50,
-      "prdstatus": "Deactive",
+      "prdstatus": "Active",
       "userid": "1",
       "availibility": "Out Of Stock"
     },

@@ -30,7 +30,8 @@ import { ViewShipmentComponent } from './pages/dashboard/view-shipment/view-ship
 import { SellerdashboardComponent } from './pages/dashboard/sellerdashboard/sellerdashboard.component'; // <-- import the module
 import { CreateInvoiceComponent } from './pages/dashboard/create-invoice/create-invoice.component';
 import { PaymentSummaryComponent } from './pages/dashboard/payment-summary/payment-summary.component';
-import { SalesSummaryComponent } from './pages/dashboard/sales-summary/sales-summary.component'; // <-- import the module
+import { SalesSummaryComponent } from './pages/dashboard/sales-summary/sales-summary.component';
+import { ViewinvoiceComponent } from './pages/dashboard/viewinvoice/viewinvoice.component'; // <-- import the module
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { SalesSummaryComponent } from './pages/dashboard/sales-summary/sales-sum
     CreateInvoiceComponent,
     PaymentSummaryComponent,
     SalesSummaryComponent,
+    ViewinvoiceComponent,
   ],
   imports: [
     BrowserModule,
@@ -146,6 +148,10 @@ import { SalesSummaryComponent } from './pages/dashboard/sales-summary/sales-sum
           {
             path: 'sales-summary',
             component: SalesSummaryComponent
+          },
+          {
+            path: 'viewinvoice/:id',
+            component: ViewinvoiceComponent
           }
         ]
       }

@@ -65,7 +65,7 @@
                   <span class="input-group-btn">
                     <button type="button" class="btn btn-default"><i class="fas fa-search"></i></button>
                   </span>
-                  <input type="number" class="form-control" name="searchText" placeholder="Search.."
+                  <input type="number" min="0" class="form-control" name="searchText" placeholder="Search.."
                     (input)="filter($event.target.value)" />
                 </p>
               </div>

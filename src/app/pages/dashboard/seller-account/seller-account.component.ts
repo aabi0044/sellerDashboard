@@ -26,6 +26,7 @@ email;
 password;
 coming;
 userid;
+again;
 @ViewChild('display') displayImage : ElementRef;
   constructor(private api:ApiService,
     public ren: Renderer2) { 
@@ -62,12 +63,10 @@ userid;
   getUser(){
     this.id=localStorage.getItem('uid');
     this.api.getSpecificUser(this.id).subscribe(res=>{
-this.coming=res;
-let a =this.coming.filter((elem)=>{
-  return elem.userid==localStorage.getItem('uid');
-})
+
+
       // console.log(res);
-      this.getuser=a;
+      this.getuser=res;
 
       this.fname=this.getuser.firstName;
       this.lname=this.getuser.lastName;
