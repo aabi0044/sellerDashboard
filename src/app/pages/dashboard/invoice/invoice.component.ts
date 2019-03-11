@@ -11,6 +11,8 @@ export class InvoiceComponent implements OnInit {
   id;
   invoice;
   user;
+  coming;
+ getInvoice;
   segment = 'information';
   constructor(private route: ActivatedRoute,
     private api: ApiService,
@@ -22,6 +24,7 @@ export class InvoiceComponent implements OnInit {
   ngOnInit() {
     this.getCustomer();
     this.getOrder();
+    this.getInvoices();
   }
   shipments() {
     this.segment = 'shipments'
@@ -50,5 +53,13 @@ this.user=res;
   }
   createInvoice(){
     this.router.navigate(['/dashboard/create-invoice/'+ this.id]);
+  }
+  getInvoices(){
+    this.api.getInvoices().subscribe(res=>{
+      this.coming=res;
+      let a = this.coming.filter(e=>e.userid == localStorage.getItem('uid') && e.id==this.id);
+      this.getInvoice=a;
+      console.log(this.getInvoice);
+    })
   }
 }

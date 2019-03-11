@@ -71,7 +71,6 @@
       "password": "a123456@"
     }
   ],
-  
   "monthlyOrdersReport": [
     {
       "period": "2019-06-19",
@@ -498,7 +497,8 @@
       "detailedDescription": "and this too. so that lets test again bro. okay fine . add more text here ",
       "status": "Approved",
       "quantity": 50,
-      "prdstatus": "Deactive"
+      "prdstatus": "Deactive",
+      "availibility":"In Stock"
     },
     {
       "id": 2,
@@ -519,7 +519,8 @@
       "detailedDescription": "and this too. so that lets test again bro. okay fine . add more text here ",
       "status": "Pending",
       "quantity": 50,
-      "prdstatus": "Active"
+      "prdstatus": "Active",
+      "availibility":"Out Of Stock"
     },
     {
       "id": 3,
@@ -540,7 +541,8 @@
       "detailedDescription": "and this too. so that lets test again bro. okay fine . add more text here ",
       "status": "NotApproved",
       "quantity": 50,
-      "prdstatus": "Active"
+      "prdstatus": "Active",
+      "availibility":"Out Of Stock"
     },
     {
       "id": 4,
@@ -561,7 +563,8 @@
       "status": "Pending",
       "quantity": 50,
       "prdstatus": "Active",
-      "userid": "1"
+      "userid": "1",
+      "availibility":"Out Of Stock"
     },
     {
       "id": 5,
@@ -582,7 +585,8 @@
       "status": "Pending",
       "quantity": 50,
       "prdstatus": "Active",
-      "userid": "1"
+      "userid": "1",
+      "availibility":"Out Of Stock"
     },
     {
       "id": 6,
@@ -603,7 +607,8 @@
       "status": "Pending",
       "quantity": 50,
       "prdstatus": "Active",
-      "userid": "1"
+      "userid": "1",
+      "availibility":"Out Of Stock"
     }
   ],
   "orders": [
@@ -664,12 +669,12 @@
     },
     {
       "id": 2,
-      "orderId": 2,
       "userid": 1,
+      "orderId": 2,
       "image": "./image.jpg",
       "orderPlaced": "2019-02-15",
       "forDelivery": "2019-03-05",
-      "trackingNumber": 2,
+      "trackingNumber": "28465",
       "customerName": "johan",
       "deliveryStatus": "Not Delivered",
       "orderStatus": "Payment Pending",
@@ -684,6 +689,8 @@
       "subTotal": 5000,
       "Discount": 1000,
       "vat": 100,
+      "carrier": "USPS",
+      "title": "unable to add multiple objects in array using ionic",
       "products": [
         {
           "itemName": "Origin License",
@@ -742,27 +749,27 @@
           "itemName": "Origin License",
           "Description": "Extended License",
           "unitCost": 1000,
-          "quantity": 5,
+          "quantity": 25,
           "total": 5000
         },
         {
           "itemName": "Origin License",
           "Description": "Extended License",
           "unitCost": 1000,
-          "quantity": 5,
+          "quantity": 25,
           "total": 5000
         },
         {
           "itemName": "Origin License",
           "Description": "Extended License",
           "unitCost": 1000,
-          "quantity": 5
+          "quantity": 25
         },
         {
           "itemName": "Origin License",
           "Description": "Extended License",
           "unitCost": 1000,
-          "quantity": 5,
+          "quantity": 25,
           "total": 5000
         }
       ]
@@ -8447,15 +8454,117 @@
         }
       ]
     }
-  ],"invoices":[{
-
-    "id":1,
-    "date":"2019-03-05",
-    "amount":"922",
-    "cart":[
-      {
-        
-      }
-    ]
-  }]
+  ],
+  "invoices": [
+    {
+      "id": "1",
+      "date": "2019-03-11T14:26:02.096Z",
+      "amount": 20000,
+      "cart": [
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 5,
+          "total": 5000
+        },
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 5,
+          "total": 5000
+        },
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 5,
+          "total": 5000
+        },
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 5,
+          "total": 5000
+        }
+      ],
+      "quantityToShip": 5,
+      "userid": "1"
+    },
+    {
+      "id": "2",
+      "date": "2019-03-11T14:29:40.638Z",
+      "amount": 20000,
+      "cart": [
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 5,
+          "total": 5000
+        },
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 5,
+          "total": 5000
+        },
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 5,
+          "total": 5000
+        },
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 5,
+          "total": 5000
+        }
+      ],
+      "quantityToShip": 5,
+      "userid": "1"
+    },
+    {
+      "id": "3",
+      "date": "2019-03-11T14:34:47.695Z",
+      "amount": 20000,
+      "cart": [
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 25,
+          "total": 5000
+        },
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 25,
+          "total": 5000
+        },
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 25
+        },
+        {
+          "itemName": "Origin License",
+          "Description": "Extended License",
+          "unitCost": 1000,
+          "quantity": 25,
+          "total": 5000
+        }
+      ],
+      "quantityToShip": 15,
+      "userid": "1"
+    }
+  ]
 }

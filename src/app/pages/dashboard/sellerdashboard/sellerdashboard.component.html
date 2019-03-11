@@ -34,25 +34,25 @@
                     <label class="card-text">Payment Pending</label>
                   </div>
                   <div class="card-text right-corner">
-                    <label class="card-text">5</label>
+                    <label class="card-text">{{getpending}}</label>
                   </div>
                   <div class="card-text">
                     <label class="card-text">Payment Completed</label>
                   </div>
                   <div class="card-text right-corner2">
-                    <label class="card-text">20</label>
+                    <label class="card-text">{{getCompleted}}</label>
                   </div>
                   <div class="card-text">
                     <label class="card-text">Delivery in Progress</label>
                   </div>
                   <div class="card-text right-corner3">
-                    <label class="card-text">20</label>
+                    <label class="card-text">{{getDeliveryProgress}}</label>
                   </div>
                   <div class="card-text">
                     <label class="card-text">Order Completed</label>
                   </div>
                   <div class="card-text right-corner4">
-                    <label class="card-text">20</label>
+                    <label class="card-text">{{completed}}</label>
                   </div>
                 </thead>
               </table>
@@ -127,7 +127,7 @@
                     <thead class="bg-light">
                       <tr class="border-0">
                         <th class="border-0">#</th>
-                        <th class="border-0">Image</th>
+                      
                         <th class="border-0">Product Name</th>
                         <th class="border-0">Product ID</th>
                         <th class="border-0">Manufacturer</th>
@@ -137,64 +137,24 @@
                         <th class="border-0">Stock Status</th>
                       </tr>
                     </thead>
-                    <!-- <tbody *ngFor="let item of products | paginate: { itemsPerPage: 5, currentPage: p }"> -->
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>
-                          <div class="m-r-10"><img src="assets/images/product-pic.jpg" alt="user" class="rounded"
-                              width="45"></div>
-                        </td>
-                        <td>Product #1 </td>
-                        <td>id000001 </td>
-                        <td>Toshiba</td>
-                        <td>01120000 </td>
-                        <td style="padding-left: 50px;">20</td>
-                        <td>$80.00</td>
-                        <td><span class="badge-dot badge-success mr-1"></span>Instock </td>
+                    <tbody *ngFor="let item of products | paginate: { itemsPerPage: 5, currentPage: p } ; let i=index">
+                    <!-- <tbody *ngFor="let item of products | paginate: { itemsPerPage: 5, currentPage: p }" > -->
+                      <tr >
+                        <td>{{i+1}}</td>
+                       
+                        <td>{{item.productName}} </td>
+                        <td>{{item.id}} </td>
+                        <td>{{item.manufacturerName}}</td>
+                        <td>{{item.sku}} </td>
+                        <td style="padding-left: 50px;">{{item.quantity}}</td>
+                        <td>${{item.productPrice}}</td>
+                        <td><span class="badge-dot "
+                          [class.badge-brand-green]="item.availibility=='In Stock'"
+                          [class.badge-brand-red]="item.availibility=='Out Of Stock'"
+                          
+                          ></span>{{item.availibility}}</td>
                       </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>
-                          <div class="m-r-10"><img src="assets/images/product-pic-2.jpg" alt="user" class="rounded"
-                              width="45"></div>
-                        </td>
-                        <td>Product #2 </td>
-                        <td>id000002 </td>
-                        <td>Toshiba</td>
-                        <td>01120001 </td>
-                        <td style="padding-left: 50px;">12</td>
-                        <td>$180.00</td>
-                        <td><span class="badge-dot badge-success mr-1"></span>Instock </td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>
-                          <div class="m-r-10"><img src="assets/images/product-pic-3.jpg" alt="user" class="rounded"
-                              width="45"></div>
-                        </td>
-                        <td>Product #3 </td>
-                        <td>id000003 </td>
-                        <td>Toshiba</td>
-                        <td>01120002 </td>
-                        <td style="padding-left: 50px;">23</td>
-                        <td>$820.00</td>
-                        <td><span class="badge-dot badge-success mr-1"></span>Instock </td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>
-                          <div class="m-r-10"><img src="assets/images/product-pic-4.jpg" alt="user" class="rounded"
-                              width="45"></div>
-                        </td>
-                        <td>Product #4 </td>
-                        <td>id000004 </td>
-                        <td>Toshiba</td>
-                        <td>01120003 </td>
-                        <td style="padding-left: 50px;">34</td>
-                        <td>$340.00</td>
-                        <td><span class="badge-dot badge-fail mr-1"></span>Out Of Stock </td>
-                      </tr>
+                     
                       <!-- <tr>
 
                         <td colspan="9"><a href="manage_inventory.html" class="btn btn-outline-light float-right">View

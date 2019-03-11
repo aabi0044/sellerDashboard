@@ -6,12 +6,12 @@
     <!-- ============================================================== -->
     <!-- end pageheader  -->
     <!-- ============================================================== -->
-    <button class="btn btn-primary" routerLink="/dashboard/invoice/1">Back</button>
+    <button class="btn btn-primary" routerLink="/dashboard/invoice/id">Back</button>
     <div class="row">
       <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="card">
           <div class="card-header p-4">
-            <a class="pt-2 d-inline-block" href="index.html"><img src="assets/images/bannerlogo.png"></a>
+            <a class="pt-2 d-inline-block" ><img src="assets/images/bannerlogo.png"></a>
 
           </div>
           <div class="card-body">
@@ -77,21 +77,23 @@
                 </thead>
                 <tbody>
                   <!-- <tr *ngFor="let item of invoice.products; let i=index"> -->
-                  <tr *ngFor="let item of order.products ;let i=index">
+                  <tr *ngFor="let item of order.products ;let i=index ">
                     <th scope="row">{{i+1}}</th>
                     <td>{{item.itemName}}</td>
                     <td>{{item.quantity}}</td>
-                    <td>{{item.quantity}}</td>
-                    <td>
-                      <input type="number" placeholder="Please enter quantity" name="shipedQuantity" id="id_{{item.quantity}}" />
-                    </td>
+                    <td>{{available}}</td>
+                    <td *ngIf="item.quantity <= available">
+                     {{item.quantity}}
+                    </td><td *ngIf="item.quantity >= available">
+                      {{available}}
+                     </td>
                     <!-- <td><button class="btn btn-primary" routerLink="/dashboard/view-shipment">View</button></td> -->
                   </tr>
 
                 </tbody>
               </table>
               <br />
-              <button style="width:300px;height:37px" class="btn btn-primary" (click)="saveInvoice('id_'+item.quantity)">Save Invoice</button>
+              <button style="width:300px;height:37px" class="btn btn-primary" (click)="saveInvoice(order.products)">Save Invoice</button>
 
             </div>
             <br />

@@ -12,6 +12,7 @@ ordersUrl="http://localhost:3000/orders/";
 productUrl="http://localhost:3000/products/";
 
 orderReportUrl="http://localhost:3000/monthlyOrdersReport/";
+invoiceUrl="http://localhost:3000/invoices/"
   constructor(
     private http:HttpClient
   ) { }
@@ -68,5 +69,15 @@ getOrdersReport(){
 }
 CreateOrderReport(data){
   return this.http.post(this.orderReportUrl,data);
+}
+//==========================================================
+createInvoice(data){
+return this.http.post(this.invoiceUrl,data);
+}
+getInvoice(id){
+  return this.http.get(this.invoiceUrl+''+id);
+}
+getInvoices(){
+  return this.http.get(this.invoiceUrl);
 }
 }

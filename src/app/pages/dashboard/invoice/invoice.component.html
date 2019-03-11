@@ -11,7 +11,7 @@
       <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="card">
           <div class="card-header p-4">
-            <a class="pt-2 d-inline-block" href="index.html"><img src="assets/images/bannerlogo.png"></a>
+            <a class="pt-2 d-inline-block" ><img src="assets/images/bannerlogo.png"></a>
 
             <div class="float-right">
               <h3 class="mb-0">Invoice #{{invoice.invoiceNo}}</h3>
@@ -172,11 +172,11 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let item of invoice.products; let i=index">
+                  <tr *ngFor="let item of getInvoice; let i=index">
                     <th scope="row">{{i+1}}</th>
-                    <td>100007</td>
-                    <td>Apr 20, 2017</td>
-                    <td>#1212</td>
+                    <td>{{item.id}}</td>
+                    <td>{{item.date | date}}</td>
+                    <td>{{item.amount}}</td>
                     <td><button class="btn btn-primary" routerLink="/dashboard/create-invoice">Print</button></td>
 
 

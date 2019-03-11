@@ -11,6 +11,8 @@ export class CreateInvoiceComponent implements OnInit {
 id;
 order;
 shipedQuantity;
+available=15;
+getInvoices;
   constructor(private route: ActivatedRoute,
     private api: ApiService,
     private router:Router) { 
@@ -27,9 +29,59 @@ this.order=res;
 console.log(this.order);
   })
 }
-saveInvoice(value){
-  console.log(value);
-  let containputiner = document.querySelector("#"+value);
-  console.log(containputiner);
+saveInvoice(i){
+  if(i[0].quantity<this.available){
+    console.log(i[0].quantity);
+
+    
+    this.api.getInvoices().subscribe(res=>{
+  this.getInvoices=res;
+  let len =this.getInvoices.length-1;
+  // let id=this.getInvoices[len].id+1;
+  
+  let data={
+    "id":this.id,
+    "date":new Date,
+    "amount":20000,
+    "cart":i,
+    "quantityToShip":i[0].quantity,
+    "userid":localStorage.getItem('uid')
+  }
+  this.api.createInvoice(data).subscribe(res=>{
+    console.log("created ");
+  })
+    })
+
+  }
+  else{
+    this.api.getInvoices().subscribe(res=>{
+      this.getInvoices=res;
+      let len =this.getInvoices.length-1;
+      let id=this.getInvoices[len].id+1;
+      
+      let data={
+        "id":this.id,
+        "date":new Date,
+        "amount":20000,
+        "cart":i,
+        "quantityToShip":this.available,
+        "userid":localStorage.getItem('uid')
+      }
+      this.api.createInvoice(data).subscribe(res=>{
+        console.log(" okay created ");
+      })
+        })
+  }
+  let total=0;
+  console.log(i);
+//   let length=i.length;
+//   for( let j =0;j<length;j++){
+// total=total+i.total;
+
+//   }
+
+
+
 }
+
 }

@@ -69,7 +69,9 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Carrier</th>
+                    <td *ngIf="order.carrier== null"></td>
                     <th scope="col">Title</th>
+                    <td *ngIf="order.title ==null"></td>
                     <th scope="col">Number</th>
                     <!-- <th scope="col">Action</th> -->
                   </tr>
@@ -78,7 +80,10 @@
                   <!-- <tr *ngFor="let item of invoice.products; let i=index"> -->
                   <tr *ngIf="order">
                     <th scope="row">1</th>
+                    <td *ngIf="order.carrier== null">--</td>
+                   
                     <td>{{order.carrier}}</td>
+                    <td *ngIf="order.title ==null">--</td>
                     <td>{{order.title}}</td>
                     <td>{{order.trackingNumber}}</td>
                     <!-- <td><button class="btn btn-primary" routerLink="/dashboard/view-shipment">View</button></td> -->
@@ -106,7 +111,8 @@
                     <th scope="row">{{i+1}}</th>
                     <td>{{item.itemName}}</td>
                     <td>{{item.quantity}}</td>
-                    <td>{{item.quantity}}</td>
+                    <td *ngIf="qtyToship==null">--</td>
+                    <td>{{qtyToship}}</td>
                     <!-- <td><button class="btn btn-primary" routerLink="/dashboard/view-shipment">View</button></td> -->
                   </tr>
 
