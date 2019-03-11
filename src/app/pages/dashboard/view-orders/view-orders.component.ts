@@ -2,8 +2,20 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ApiService } from 'src/app/services/api/api.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { element } from '@angular/core/src/render3';
+import { ExportToCsv } from 'export-to-csv';
 
-
+const options = { 
+  fieldSeparator: ',',
+  quoteStrings: '"',
+  decimalSeparator: '.',
+  showLabels: true, 
+  showTitle: true,
+  title: 'View Order ',
+  useTextFile: false,
+  useBom: true,
+  useKeysAsHeaders: true,
+  // headers: ['Column 1', 'Column 2', etc...] <-- Won't work with useKeysAsHeaders present!
+};
 @Component({
   selector: 'app-view-orders',
   templateUrl: './view-orders.component.html',
@@ -169,46 +181,7 @@ export class ViewOrdersComponent implements OnInit {
     })
     console.log(i);
     this.orders = i;
-    //     console.log(this.startDateFilter);
-
-    //     let r=new Date(this.startDateFilter);
-    //     let t=new Date(this.endDateFilter);
-    //     console.log(r);
-    //      this.startdate = { year: r.getFullYear(), month: r.getMonth() + 1, day:r.getDate() };
-    //     console.log(this.startdate);
-    //      this.enddate = { year: t.getFullYear(), month: t.getMonth() + 1, day: t.getDate() };
-
-    // let b= this.orders.filter((elem)=>{
-    //   let w = new Date(elem.forDelivery);
-    //   // console.log(w);
-    //    this.comingdate = { year: w.getFullYear(), month: w.getMonth() + 1, day: w.getDate() };
-    //   console.log(this.comingdate);
-    //   if(this.comingdate.year==this.startdate.year && this.comingdate.year ==this.enddate.year && this.comingdate.month ==this.startdate.month ){
-
-
-    //     return (this.comingdate.day>=this.startdate.day && this.comingdate.day <= this.enddate.day)
-    //   }
-    // else if(this.startdate.year==this.enddate.year && this.startdate.month != this.enddate.month){
-    //   return this.comingdate.year==this.startdate.year;
-    // }
-
-    //   // return (this.comingdate.year==this.startdate.year && this.comingdate.month == this.startdate.month && this.comingdate.day>= this.startdate.day)
-    //   // && (this.comingdate.year==this.enddate.year && this.comingdate.month==this.enddate.year && this.comingdate.day<=this.enddate.day)
-    // })
-    // console.log(b);
-    //  if(this.comingdate.year==this.startdate.year && this.comingdate.year ==this.enddate.year && this.comingdate.month ==this.startdate.month ){
-    // this.orders=b;
-    //  }
-    //  else if(this.startdate.year==this.enddate.year && this.startdate.month != this.enddate.month){
-    // this.use=b;
-    // this.use.filter((elem)=>{
-    //   let w = new Date(elem.forDelivery);
-    //   this.comingdate = { year: w.getFullYear(), month: w.getMonth() + 1, day: w.getDate() };
-    // return (this.comingdate.month== this.startdate.month || this.comingdate.month==this.enddate.month)
-    //  && (this.comingdate.day>=this.startdate.day || this.comingdate.day<=this.enddate.day)
-    // })
-    // this.orders=this.use;
-    //  }
+ 
   }
   //=========================================================================
   viewInvoice(id) {
@@ -224,5 +197,10 @@ export class ViewOrdersComponent implements OnInit {
     console.log(val);
 
   }
+  CSV(){
+
+    const csvExporter = new ExportToCsv(options);
+     csvExporter.generateCsv(this.orders);
+   }
 
 }
