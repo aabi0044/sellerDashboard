@@ -1,3 +1,4 @@
+<div class="dashboard-wrapper">
 <div class="container-fluid dashboard-content ">
   <!-- ============================================================== -->
   <!-- pageheader  -->
@@ -82,19 +83,21 @@
                 <tbody>
                   <tr>
                     <td>
-                      <select name="carrier_code" id="trackingC1">
-                        <option value="dhl">DHL</option>
-                        <option value="fedex">Fedex</option>
-                        <option value="ups">UPS</option>
-                        <option value="usps">USPS</option>
+                      <select name="carrier_code" id="trackingC1" (change)="change($event)">
+                        <option value="DHL">DHL</option>
+                        <option value="Fedex">Fedex</option>
+                        <option value="UPS">UPS</option>
+                        <option value="USPS">USPS</option>
                       </select>
+                      
                     </td>
                     <td>
-                      <input type="text" name="title">
+                      <input type="text" name="title" [(ngModel)]="title">
                     </td>
                     <td>
-                      <input style="width:200px" type="text" name="number" placeholder="please enter tracking number" />
+                      <input style="width:200px" type="text" name="number" [(ngModel)]="TrackingNumber" placeholder="please enter tracking number" />
                     </td>
+                    <button class="btn btn-success" style="width:100px;height:40px;" (click)="update()">Save</button>
                   </tr>
                 </tbody>
               </table>
@@ -168,4 +171,4 @@
       </div>
     </div>
   </div>
-</div>
+</div></div>

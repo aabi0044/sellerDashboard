@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
@@ -13,7 +13,8 @@ export class InvoiceComponent implements OnInit {
   user;
   segment = 'information';
   constructor(private route: ActivatedRoute,
-    private api: ApiService) {
+    private api: ApiService,
+    private router:Router) {
     this.id = this.route.snapshot.params['id'];
     console.log(this.id);
   }
@@ -43,5 +44,11 @@ export class InvoiceComponent implements OnInit {
     this.api.getSpecificUser(localStorage.getItem('uid')).subscribe(res=>{
 this.user=res;
     })
+  }
+  view(){
+    this.router.navigate(['/dashboard/view-shipment/'+ this.id]);
+  }
+  createInvoice(){
+    this.router.navigate(['/dashboard/create-invoice/'+ this.id]);
   }
 }

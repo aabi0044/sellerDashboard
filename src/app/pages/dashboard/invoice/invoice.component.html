@@ -152,7 +152,7 @@
                     <td>{{invoice.invoiceNo}}</td>
                     <td>{{invoice.forDelivery}}</td>
                     <td>{{invoice.trackingNumber}}</td>
-                    <td><button class="btn btn-primary" routerLink="/dashboard/view-shipment">View</button></td>
+                    <td><button class="btn btn-primary" (click)="view()">View</button></td>
 
                   </tr>
 
@@ -184,7 +184,7 @@
 
                 </tbody>
               </table>
-              <button class="btn btn-primary float-right" routerLink="/dashboard/create-invoice">Create</button>
+              <button class="btn btn-primary float-right" (click)="createInvoice()">Create</button>
             </div>
 
           </div>

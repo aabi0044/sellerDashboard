@@ -122,12 +122,21 @@ import { SalesSummaryComponent } from './pages/dashboard/sales-summary/sales-sum
           {
             path: 'view-shipment',
             component: ViewShipmentComponent
-          }, {
+          },
+          {
+            path: 'view-shipment/:id',
+            component: ViewShipmentComponent
+          },
+           {
             path: 'sellerdashboard',
             component: SellerdashboardComponent
           },
           {
             path: 'create-invoice',
+            component: CreateInvoiceComponent
+          },
+          {
+            path: 'create-invoice/:id',
             component: CreateInvoiceComponent
           },
           {

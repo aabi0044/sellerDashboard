@@ -223,7 +223,7 @@
                       </div>
                     </div>
                   </form>
-                <button type="button" class="btn btn-cancel btn-sm">Cancel</button>
+                <button type="button" class="btn btn-cancel btn-sm" (click)="cancel()">Cancel</button>
                 <button type="button" class="btn btn-primary btn-sm" (click)="gotoTab3()">Submit and Next</button>
               </div>
               <div #tab3pill class="tab-pane fade" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
@@ -242,7 +242,7 @@
                         </div>
                       </div>
                     </form>
-                    <button type="button" class="btn btn-cancel btn-sm">Cancel</button>
+                    <button type="button" class="btn btn-cancel btn-sm" (click)="cancel()">Cancel</button>
                     <button type="button" class="btn btn-primary btn-sm" *ngIf="id == null" (click)="gotoTab1()">Submit and Finish</button>
                     <button type="button" class="btn btn-primary btn-sm" *ngIf="id != null" (click)="update()">update</button>
                   </div>

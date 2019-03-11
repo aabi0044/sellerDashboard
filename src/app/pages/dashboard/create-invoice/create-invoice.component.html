@@ -77,13 +77,13 @@
                 </thead>
                 <tbody>
                   <!-- <tr *ngFor="let item of invoice.products; let i=index"> -->
-                  <tr>
-                    <th scope="row">i+1</th>
-                    <td>Linen Blazer</td>
-                    <td>1</td>
-                    <td>1</td>
+                  <tr *ngFor="let item of order.products ;let i=index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{item.itemName}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{{item.quantity}}</td>
                     <td>
-                      <input type="number" placeholder="Please enter quantity" />
+                      <input type="number" placeholder="Please enter quantity" name="shipedQuantity" id="id_{{item.quantity}}" />
                     </td>
                     <!-- <td><button class="btn btn-primary" routerLink="/dashboard/view-shipment">View</button></td> -->
                   </tr>
@@ -91,7 +91,7 @@
                 </tbody>
               </table>
               <br />
-              <button style="width:300px;height:37px" class="btn btn-primary">Save Invoice</button>
+              <button style="width:300px;height:37px" class="btn btn-primary" (click)="saveInvoice('id_'+item.quantity)">Save Invoice</button>
 
             </div>
             <br />

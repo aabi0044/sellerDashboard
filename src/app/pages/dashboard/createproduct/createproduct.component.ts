@@ -319,4 +319,19 @@ this.tos.warning("Prices can't be Negattive Number");
     }
    
   }
+  cancel(){
+    this.productName='';
+    this.sku='';
+    this.weight='';
+    this.brandName='';
+    this.manufactureName='';
+    this.productPrice='';
+    this.sellerSku='';
+    this.salePrice='';
+    this.shortDescription='';
+    this.detailedDescription='';
+    this.saleEndDate=null;
+    this.saleStartDate=null;
+   
+  }
 }
