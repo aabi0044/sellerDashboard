@@ -36,7 +36,7 @@ export class ViewOrdersComponent implements OnInit {
   enddate;
   data;
   use;
-  searchText: number;
+  searchText='';
   startDateFilter: Date;
   endDateFilter: Date;
   showEntries = 10;
@@ -170,9 +170,14 @@ export class ViewOrdersComponent implements OnInit {
       console.log(array);
       console.log('object');
     }
-
+  
 
   }
+  filterCondition(product) {
+  
+  
+    return product.orderRef.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1;
+    }
   filterByDate() {
 
     console.log(this.startDateFilter);

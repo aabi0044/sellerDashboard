@@ -65,8 +65,8 @@
                   <span class="input-group-btn">
                     <button type="button" class="btn btn-default"><i class="fas fa-search"></i></button>
                   </span>
-                  <input type="number" min="0" class="form-control" name="searchText" placeholder="Search.."
-                    (input)="filter($event.target.value)" />
+                  <input type="text"  class="form-control" placeholder="Search.."
+                  name="searchText" [(ngModel)]="searchText" />
                 </p>
               </div>
 
@@ -159,7 +159,7 @@
                   </tr>
                 </thead>
                 <tbody *ngFor="let item of orders | paginate: { itemsPerPage: showEntries, currentPage: p }">
-                  <tr>
+                  <tr *ngIf = "filterCondition(item)">
                     <td><input type="checkbox"><br></td>
                     <td>{{item.orderId}}</td>
                     <!-- <td>
