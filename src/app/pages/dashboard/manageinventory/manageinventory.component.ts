@@ -34,6 +34,7 @@ export class ManageinventoryComponent implements OnInit {
   getPrd;
   data;
   searchText='';
+  searchTextSku='';
   coming;
   constructor(private api :ApiService,
     private tos:ToasterService,
@@ -159,9 +160,21 @@ getNotActive(){
   })
 }
 filterCondition(product) {
-
+  
+if(this.searchText){
   return product.productName.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1;
 }
+else if(this.searchTextSku){
+  return product.sku.toLowerCase().indexOf(this.searchTextSku.toLowerCase()) != -1;
+}
+return product.productName.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1;
+}
+// filterConditionSku(product) {
+
+//   return product.sku.toLowerCase().indexOf(this.searchTextSku.toLowerCase()) != -1;
+// }
+
+
 
 //===================================filter=====================================
 

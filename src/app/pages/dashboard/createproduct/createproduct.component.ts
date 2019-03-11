@@ -122,10 +122,13 @@ this.condition="New"
  
   gotoTab2()
   {
-    if(this.productName== null || this.sku==null || this.weight== null || this.brandName==null || this.manufactureName==null){
-      this.tos.warning("Must fill all entries")
-    }
-    else{
+    console.log(this.productName);
+    console.log(this.sku);
+    console.log(this.weight);
+    console.log(this.brandName);
+    console.log(this.manufactureName);
+    if(this.productName!= '' && this.sku!='' && this.weight!= '' && this.brandName!='' && this.manufactureName!=''){
+    
       console.log(this.Tab1Pill);
       console.log(this.Tab2Pill);
       this.renderer.setElementProperty(this.Tab1.nativeElement,'aria-selected',false);
@@ -138,6 +141,9 @@ this.condition="New"
       console.log(this.Tab1Pill);
       console.log(this.Tab2Pill);
     }
+    else{
+      this.tos.warning("Must fill all entries")
+    }
     
   }
 
@@ -147,7 +153,7 @@ this.condition="New"
     console.log(this.saleStartDate);
     // console.log(this.Tab2Pill);
     // console.log(this.Tab3Pill);
-    if(this.productPrice!=null||this.sellerSku!=null || this.salePrice != null ||this.saleEndDate != null || this.saleStartDate!= null ){
+    if(this.productPrice!=null&&this.sellerSku!=null && this.salePrice != null &&this.saleEndDate != null && this.saleStartDate!= null ){
       if(this.saleEndDate>=this.saleStartDate){
 
         console.log("object");
@@ -174,29 +180,37 @@ this.tos.warning('Must fill all entries')
   }
   gotoTab1()
   {
-    if(this.saleEndDate>=this.saleStartDate ){
-      if(this.shortDescription != null || this.detailedDescription != null ){
-
-        console.log(this.Tab2Pill);
-        console.log(this.Tab3Pill);
-        this.renderer.setElementProperty(this.Tab3.nativeElement,'aria-selected',false);
-        this.renderer.setElementProperty(this.Tab3.nativeElement,'className','nav-link');
-        this.renderer.setElementProperty(this.Tab3Pill.nativeElement,'className','tab-pane fade');
+    if(this.productName!= '' && this.sku!='' && this.weight!= '' && this.brandName!='' && this.manufactureName!='' 
+      &&this.productPrice!=''&&this.sellerSku!='' && this.salePrice != '' &&this.saleEndDate != null
+      && this.saleStartDate!= null&&this.shortDescription != '' && this.detailedDescription != '' ){
+        if(this.saleEndDate>=this.saleStartDate ){
+         
     
-        this.renderer.setElementProperty(this.Tab1.nativeElement,'aria-selected',true);
-        this.renderer.setElementProperty(this.Tab1.nativeElement,'className','nav-link active');
-        this.renderer.setElementProperty(this.Tab1Pill.nativeElement,'className','tab-pane fade show active');
-        console.log(this.Tab2Pill);
-        console.log(this.Tab3Pill);
-        this.createProduct();
+            console.log(this.Tab2Pill);
+            console.log(this.Tab3Pill);
+            this.renderer.setElementProperty(this.Tab3.nativeElement,'aria-selected',false);
+            this.renderer.setElementProperty(this.Tab3.nativeElement,'className','nav-link');
+            this.renderer.setElementProperty(this.Tab3Pill.nativeElement,'className','tab-pane fade');
+        
+            this.renderer.setElementProperty(this.Tab1.nativeElement,'aria-selected',true);
+            this.renderer.setElementProperty(this.Tab1.nativeElement,'className','nav-link active');
+            this.renderer.setElementProperty(this.Tab1Pill.nativeElement,'className','tab-pane fade show active');
+            console.log(this.Tab2Pill);
+            console.log(this.Tab3Pill);
+            this.createProduct();
+          }
+         
+        
+        else{
+          this.tos.warning("Sale Ending Date must grater than Starting date ");
+        }
+
+
+      }else{
+
+        this.tos.warning('Please Fill All Entries')
       }
-      else{
-  this.tos.warning("Must fill all entries")
-      }
-    }
-    else{
-      this.tos.warning("Sale Ending Date must grater than Starting date ");
-    }
+   
   
    
   }
@@ -205,61 +219,15 @@ this.tos.warning('Must fill all entries')
   }
 
   createProduct(){
-    this.api.getProducts().subscribe(res=>{
-      this.allProducts=res;
-      console.log(this.allProducts);
-      let len=this.allProducts.length-1;
- this.prdid=this.allProducts[len].id;
- console.log(this.prdid);
-    let data={
-      "id":this.prdid+1,
-      "productName":this.productName,
-      "productPrice":this.productPrice,
-      "salePrice":this.salePrice,
-      "saleStartDate":this.saleStartDate,
-      "saleEndDate":this.saleEndDate,
-      "sku":this.sku,
-      "weight":this.weight,
-      "brandName":this.brandName, 
-      "manufacturerName":this.manufactureName,
-      "catagory":this.catagory,
-      "sellerSku":this.sellerSku,
-      "condition":this.condition,
-      "shortDescription":this.shortDescription,
-      "detailedDescription":this.detailedDescription,
-      "status":'Pending',
-      "quantity":50,
-      "prdstatus":"Active",
-      "userid":this.userid
-    }
-    console.log(data);
-    this.api.CreateProduct(data).subscribe(res=>{
-      console.log("product Created Successfully");
-      this.tos.showSuccess('Product Created Successfully');
-
-      this.productName='';
-      this.sku='';
-      this.weight='';
-      this.brandName='';
-      this.manufactureName='';
-      this.productPrice='';
-      this.sellerSku='';
-      this.salePrice='';
-      this.shortDescription='';
-      this.detailedDescription='';
-      this.saleEndDate=null;
-      this.saleStartDate=null;
-
-
-    })
-  });
-
-  }
-  update(){
-    if(this.saleEndDate != null  && this.saleStartDate != null){
-      
+    if(this.productPrice>0 && this.salePrice>0){
+      this.api.getProducts().subscribe(res=>{
+        this.allProducts=res;
+        console.log(this.allProducts);
+        let len=this.allProducts.length-1;
+   this.prdid=this.allProducts[len].id;
+   console.log(this.prdid);
       let data={
-        "id":this.getprd.id,
+        "id":this.prdid+1,
         "productName":this.productName,
         "productPrice":this.productPrice,
         "salePrice":this.salePrice,
@@ -274,22 +242,80 @@ this.tos.warning('Must fill all entries')
         "condition":this.condition,
         "shortDescription":this.shortDescription,
         "detailedDescription":this.detailedDescription,
-        "status":this.getprd.status,
-        "quantity":this.getprd.status,
-        "prdstatus":this.getprd.prdstatus,
+        "status":'Pending',
+        "quantity":50,
+        "prdstatus":"Active",
         "userid":this.userid
       }
+      console.log(data);
+      this.api.CreateProduct(data).subscribe(res=>{
+        console.log("product Created Successfully");
+        this.tos.showSuccess('Product Created Successfully');
   
-      this.api.updateProduct(this.id,data).subscribe(res=>{
-        this.tos.showSuccess("Updated");
-        setTimeout(function(){
-          
-        },1000);
-        this.router.navigate(['/dashboard/manageinventory']);
+        this.productName='';
+        this.sku='';
+        this.weight='';
+        this.brandName='';
+        this.manufactureName='';
+        this.productPrice='';
+        this.sellerSku='';
+        this.salePrice='';
+        this.shortDescription='';
+        this.detailedDescription='';
+        this.saleEndDate=null;
+        this.saleStartDate=null;
+  
+  
       })
+    });
     }
     else{
-this.tos.warning('Sale Ending Date must grater than Starting date')
+this.tos.warning("Prices can't be Negattive Number");
+    }
+   
+
+  }
+  update(){
+    if(this.productPrice>0 && this.salePrice>0){
+      if(this.saleEndDate != null  && this.saleStartDate != null){
+      
+        let data={
+          "id":this.getprd.id,
+          "productName":this.productName,
+          "productPrice":this.productPrice,
+          "salePrice":this.salePrice,
+          "saleStartDate":this.saleStartDate,
+          "saleEndDate":this.saleEndDate,
+          "sku":this.sku,
+          "weight":this.weight,
+          "brandName":this.brandName, 
+          "manufacturerName":this.manufactureName,
+          "catagory":this.catagory,
+          "sellerSku":this.sellerSku,
+          "condition":this.condition,
+          "shortDescription":this.shortDescription,
+          "detailedDescription":this.detailedDescription,
+          "status":this.getprd.status,
+          "quantity":this.getprd.status,
+          "prdstatus":this.getprd.prdstatus,
+          "userid":this.userid
+        }
+    
+        this.api.updateProduct(this.id,data).subscribe(res=>{
+          this.tos.showSuccess("Updated");
+          setTimeout(function(){
+            
+          },1000);
+          this.router.navigate(['/dashboard/manageinventory']);
+        })
+      }
+      else{
+  this.tos.warning('Sale Ending Date must grater than Starting date')
+      }
+     
+    }
+    else{
+      this.tos.warning("Prices can't be Negattive Number");
     }
    
   }

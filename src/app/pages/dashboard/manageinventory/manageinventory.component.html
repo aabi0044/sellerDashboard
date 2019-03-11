@@ -42,11 +42,19 @@
 
       <div class="col-xl-3 col-lg-12 col-md-6 col-sm-12 col-12">
         <div id="inventory-search" class="inventory-search">
-          <p class="input-group" style="left: 613px">
+          <p class="input-group" style="left: 458px">
             <span class="input-group-btn">
               <button type="button" class="btn btn-default"><i class="fas fa-search"></i></button>
             </span>
-            <input type="text" class="form-control" placeholder="Search by Product Name or SKU"   name="searchText" [(ngModel)]="searchText"   />
+            <input type="text" class="form-control" placeholder="Search by Product Name "   name="searchText" [(ngModel)]="searchText"   />
+          </p>
+        </div>
+        <div id="inventory-search" class="inventory-search">
+          <p class="input-group" style="left: 458px">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default"><i class="fas fa-search"></i></button>
+            </span>
+            <input type="text" class="form-control" placeholder="Search by  SKU"   name="searchText" [(ngModel)]="searchTextSku"  />
           </p>
         </div>
       </div>
@@ -121,8 +129,8 @@
                   </tr>
                 </thead>
                 <tbody *ngFor="let item of products | paginate: { itemsPerPage: showEntries, currentPage: p }">
-               
-                  <tr  *ngIf = "filterCondition(item)" >
+             
+                  <tr  *ngIf = "filterCondition(item)"  >
                     <td><input type="checkbox"><br></td>
                     <td>{{item.status}}</td>
                   
