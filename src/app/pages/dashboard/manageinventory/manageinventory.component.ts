@@ -2,6 +2,20 @@ import { Component, OnInit, ViewChild, ElementRef  } from '@angular/core';
 import { ApiService } from 'src/app/services/api/api.service';
 import { ToasterService } from 'src/app/services/toaster/toaster.service';
 import { Router } from '@angular/router';
+import { ExportToCsv } from 'export-to-csv';
+
+const options = { 
+  fieldSeparator: ',',
+  quoteStrings: '"',
+  decimalSeparator: '.',
+  showLabels: true, 
+  showTitle: true,
+  title: 'View Order ',
+  useTextFile: false,
+  useBom: true,
+  useKeysAsHeaders: true,
+  // headers: ['Column 1', 'Column 2', etc...] <-- Won't work with useKeysAsHeaders present!
+};
 
 @Component({
   selector: 'app-manageinventory',
@@ -235,4 +249,9 @@ edit(id){
 this.router.navigate(['dashboard/createproduct/' + id]);
 
 }
+CSV(){
+
+  const csvExporter = new ExportToCsv(options);
+   csvExporter.generateCsv(this.products);
+ }
 }

@@ -8,7 +8,7 @@ const options = {
   decimalSeparator: '.',
   showLabels: true, 
   showTitle: true,
-  title: 'Report',
+  title: 'View Report ',
   useTextFile: false,
   useBom: true,
   useKeysAsHeaders: true,
