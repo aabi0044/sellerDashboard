@@ -54,7 +54,7 @@ export class ViewOrdersComponent implements OnInit {
     this.api.getOrders().subscribe(res => {
       this.coming=res;
       let a = this.coming.filter(e=>e.userid==localStorage.getItem('uid'));
-      console.log(res);
+      console.log(a);
       this.orders = a;
     })
   }
