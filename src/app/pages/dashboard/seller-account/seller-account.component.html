@@ -9,7 +9,7 @@
             <div class="page-breadcrumb">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a  class="breadcrumb-link">Inventory</a></li>
+                  <li class="breadcrumb-item"><a class="breadcrumb-link">Inventory</a></li>
                   <li class="breadcrumb-item active" aria-current="page">Seller Account</li>
                 </ol>
               </nav>
@@ -112,7 +112,7 @@
                       <div class="col-sm-4">
 
                         <select class="form-control" (change)="selectCountry($event)">
-
+                          <option [selected]="city">{{city}}</option>
                           <option value="Afghanistan">Afghanistan</option>
                           <option value="Aland Islands">Aland Islands</option>
                           <option value="Albania">Albania</option>
