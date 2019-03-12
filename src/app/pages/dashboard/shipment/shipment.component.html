@@ -83,7 +83,7 @@
                   <tbody>
                     <tr>
                       <td>
-                        <select name="carrier_code" id="trackingC1" (change)="change($event)">
+                        <select name="carrier_code" id="trackingC1" [(ngModel)]="carrier" (change)="change($event)">
                           <option value="DHL">DHL</option>
                           <option value="Fedex">Fedex</option>
                           <option value="UPS">UPS</option>

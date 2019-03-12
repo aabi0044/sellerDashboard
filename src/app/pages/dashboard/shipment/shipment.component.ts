@@ -18,17 +18,17 @@ export class ShipmentComponent implements OnInit {
   coming;
   constructor(private route: ActivatedRoute,
     private api: ApiService,
-    private tos:ToasterService,
-    private router:Router) {
+    private tos: ToasterService,
+    private router: Router) {
     this.id = this.route.snapshot.params['id'];
     console.log(this.id);
   }
 
   ngOnInit() {
     this.getOrder();
-    this.carrier="DHL";
-    
-  console.log(this.id);
+    // this.carrier="DHL";
+
+    console.log(this.id);
   }
   getOrder() {
     console.log("object");
@@ -36,9 +36,9 @@ export class ShipmentComponent implements OnInit {
       console.log(res);
       this.invoice = res;
 
-      this.title=this.invoice.title;
-      this.TrackingNumber=this.invoice.trackingNumber;
-      this.carrier=this.invoice.carrier;
+      this.title = this.invoice.title;
+      this.TrackingNumber = this.invoice.trackingNumber;
+      this.carrier = this.invoice.carrier;
     })
   }
   change(event: any) {
@@ -46,10 +46,10 @@ export class ShipmentComponent implements OnInit {
     this.carrier = val;
   }
   update() {
-    this.api.getSpecificOrder(this.id).subscribe(res=>{
+    this.api.getSpecificOrder(this.id).subscribe(res => {
 
-this.coming=res;
-console.log(this.coming);
+      this.coming = res;
+      console.log(this.coming);
 
       let data = {
         "id": this.coming.id,
@@ -73,9 +73,9 @@ console.log(this.coming);
         "subTotal": this.coming.subTotal,
         "Discount": this.coming.Discount,
         "vat": this.coming.vat,
-        "carrier":this.carrier,
-        "title":this.title,
-        "orderRef":this.coming.orderRef,
+        "carrier": this.carrier,
+        "title": this.title,
+        "orderRef": this.coming.orderRef,
         "products": [
           {
             "itemName": "Origin License",
@@ -108,12 +108,12 @@ console.log(this.coming);
         ]
       }
 
-      this.api.updateOrder(this.id,data).subscribe(res=>{
+      this.api.updateOrder(this.id, data).subscribe(res => {
         this.tos.showSuccess('Updated')
         this.router.navigate(['/dashboard/vieworders']);
       })
     })
-  
+
 
 
 

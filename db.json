@@ -623,7 +623,6 @@
     {
       "id": 1,
       "userid": 1,
-      "orderRef": "1",
       "orderId": 1,
       "image": "./image.jpg",
       "orderPlaced": "2019-02-15",
@@ -643,8 +642,9 @@
       "subTotal": 5000,
       "Discount": 1000,
       "vat": 100,
-      "carrier": "Fedex",
-      "title": "Unable to hit POST service in Angular 6 TS",
+      "carrier": "UPS",
+      "title": "hello",
+      "orderRef": "1",
       "products": [
         {
           "itemName": "Origin License",
@@ -679,7 +679,6 @@
     {
       "id": 2,
       "userid": 1,
-      "orderRef": "2",
       "orderId": 2,
       "image": "./image.jpg",
       "orderPlaced": "2019-02-15",
@@ -701,6 +700,7 @@
       "vat": 100,
       "carrier": "USPS",
       "title": "unable to add multiple objects in array using ionic",
+      "orderRef": "2",
       "products": [
         {
           "itemName": "Origin License",
@@ -787,13 +787,12 @@
     },
     {
       "id": 4,
-      "orderId": 4,
-      "orderRef": "4",
       "userid": 1,
+      "orderId": 4,
       "image": "./image.jpg",
       "orderPlaced": "2019-02-15",
       "forDelivery": "2019-03-05",
-      "trackingNumber": 4,
+      "trackingNumber": "4456",
       "customerName": "johan",
       "deliveryStatus": "Returned",
       "orderStatus": "Completed",
@@ -808,6 +807,9 @@
       "subTotal": 5000,
       "Discount": 1000,
       "vat": 100,
+      "carrier": "Fedex",
+      "title": "testing",
+      "orderRef": "4",
       "products": [
         {
           "itemName": "Origin License",
