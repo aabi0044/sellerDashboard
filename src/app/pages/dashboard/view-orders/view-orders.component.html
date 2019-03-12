@@ -52,7 +52,7 @@
             <div class="form-group row">
               <button type="button" (click)="filterByDate()" class="btn btn-primary btn-sm"
                 style="padding:10px; margin-left:30px">Get Results</button>
-                <button type="button" (click)="CSV()" class="btn btn-primary btn-sm"
+              <button type="button" (click)="CSV()" class="btn btn-primary btn-sm"
                 style="padding:10px; margin-left:08px">Generate Report</button>
             </div>
 
@@ -65,8 +65,8 @@
                   <span class="input-group-btn">
                     <button type="button" class="btn btn-default"><i class="fas fa-search"></i></button>
                   </span>
-                  <input type="text"  class="form-control" placeholder="Search.."
-                  name="searchText" [(ngModel)]="searchText" />
+                  <input type="text" class="form-control" placeholder="Search.." name="searchText"
+                    [(ngModel)]="searchText" />
                 </p>
               </div>
 
@@ -145,7 +145,7 @@
               <table class="table">
                 <thead class="bg-light">
                   <tr class="border-0">
-                    <th class="border-0">#</th>
+                    <!-- <th class="border-0">#</th> -->
                     <th class="border-0">Order ID</th>
                     <!-- <th class="border-0">Image</th> -->
                     <th class="border-0">Order placed</th>
@@ -158,9 +158,10 @@
                     <th class="border-0">Actions</th>
                   </tr>
                 </thead>
-                <tbody *ngFor="let item of orders | paginate: { itemsPerPage: showEntries, currentPage: p }">
-                  <tr *ngIf = "filterCondition(item)">
-                    <td><input type="checkbox"><br></td>
+                <tbody
+                  *ngFor="let item of orders | paginate: { itemsPerPage: showEntries, currentPage: p }; let i=index">
+                  <tr *ngIf="filterCondition(item)">
+                    <!-- <td>{{i+1}}</td> -->
                     <td>{{item.orderId}}</td>
                     <!-- <td>
                       <div class="m-r-10"><img src="item.image" alt="user" class="rounded" width="45"></div>

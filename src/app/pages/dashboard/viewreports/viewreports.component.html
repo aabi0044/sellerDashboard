@@ -11,7 +11,7 @@
             <div class="page-breadcrumb">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a  class="breadcrumb-link">Orders</a></li>
+                  <li class="breadcrumb-item"><a class="breadcrumb-link">Orders</a></li>
                   <li class="breadcrumb-item active" aria-current="page">View Reports </li>
                 </ol>
               </nav>
@@ -27,25 +27,25 @@
           <form>
             <div class="form-group row">
               <label class="input-group date input-group-addon col-sm-2 col-form-label">Starting Order Date:</label>
-              <div class ="col-sm-3">
+              <div class="col-sm-3">
                 <div class="input-group date">
                   <p class="input-group date">
-                    <input type="date" id="from" name="startDate" [(ngModel)]="startDate" class="form-control"/>
+                    <input type="date" id="from" name="startDate" [(ngModel)]="startDate" class="form-control" />
                     <span class="input-group-btn">
-                  <button type="button" class="btn btn-default"><i class="far fa-calendar-alt"></i></button>
-                </span>
+                      <button type="button" class="btn btn-default"><i class="far fa-calendar-alt"></i></button>
+                    </span>
                   </p>
                 </div>
               </div>
             </div>
             <div class="form-group row">
               <label class="input-group date input-group-addon col-sm-2 col-form-label">Ending Order Date:</label>
-              <div class ="col-sm-3">
+              <div class="col-sm-3">
                 <p class="input-group date">
-                  <input type="date" name="endDate" [(ngModel)]="endDate" id="to" class="form-control"/>
+                  <input type="date" name="endDate" [(ngModel)]="endDate" id="to" class="form-control" />
                   <span class="input-group-btn">
-                 <button type="button" class="btn btn-default"><i class="far fa-calendar-alt"></i></button>
-              </span>
+                    <button type="button" class="btn btn-default"><i class="far fa-calendar-alt"></i></button>
+                  </span>
                 </p>
               </div>
             </div>
@@ -60,30 +60,30 @@
           <div class="table-responsive">
             <table class="table">
               <thead class="bg-light">
-              <tr class="border-0">
-                <th class="border-0">#</th>
-                <th class="border-0">Period</th>
-                <th class="border-0">Qty Sold</th>
-                <th class="border-0">Subtotal</th>
-                <th class="border-0">Net Income</th>
-              </tr>
+                <tr class="border-0">
+                  <th class="border-0">#</th>
+                  <th class="border-0">Period</th>
+                  <th class="border-0">Qty Sold</th>
+                  <th class="border-0">Subtotal</th>
+                  <th class="border-0">Net Income</th>
+                </tr>
               </thead>
-              <tbody *ngFor="let item of orders ">
-              <tr>
-                <td><input type="checkbox"><br></td>
-                <td>{{item.period}}</td>
-                <td>{{item.qty}}</td>
-                <td>${{item.subtotal}}</td>
-                <td>${{item.netIncome}}</td>
-                <!--<td><button>View</button></td>-->
+              <tbody *ngFor="let item of orders; let i=index ">
+                <tr>
+                  <td>{{i+1}}</td>
+                  <td>{{item.period}}</td>
+                  <td>{{item.qty}}</td>
+                  <td>${{item.subtotal}}</td>
+                  <td>${{item.netIncome}}</td>
+                  <!--<td><button>View</button></td>-->
 
-              
+
               </tbody>
             </table>
           </div>
         </div>
       </div>
-   
+
     </div>
   </div>
   <!-- ============================================================== -->
@@ -107,7 +107,7 @@
   </div>
 </div>
 <script type='text/javascript'>
-  $(function(){
+  $(function () {
     $('.input-group.date').datepicker({
       format: 'dd/mm/yyyy',
       calendarWeeks: true,

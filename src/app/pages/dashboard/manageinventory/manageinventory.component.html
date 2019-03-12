@@ -18,7 +18,7 @@
         </div>
       </div>
       <button type="button" (click)="CSV()" class="btn btn-primary btn-sm"
-      style="padding:10px; margin-left:08px ; width: 150px; height: 50px" >Generate Report</button>
+        style="padding:10px; margin-left:08px ; width: 150px; height: 50px">Generate Report</button>
 
       <div class="col-xl-2 col-lg-12 col-md-6 col-sm-12 col-12" style="top: 20px;">
         <div id="show-label" class="show-label">
@@ -32,13 +32,13 @@
 
             <label class="label1" style="margin: 2px; margin-bottom: 1px">Entries</label>
           </p>
-       
+
           <br />
-        
+
         </div>
 
       </div>
-    
+
 
       <div class="col-xl-3 col-lg-12 col-md-6 col-sm-12 col-12">
         <div id="inventory-search" class="inventory-search">
@@ -46,7 +46,8 @@
             <span class="input-group-btn">
               <button type="button" class="btn btn-default"><i class="fas fa-search"></i></button>
             </span>
-            <input type="text" class="form-control" placeholder="Search by Product Name "   name="searchText" [(ngModel)]="searchText"   />
+            <input type="text" class="form-control" placeholder="Search by Product Name " name="searchText"
+              [(ngModel)]="searchText" />
           </p>
         </div>
         <div id="inventory-search" class="inventory-search">
@@ -54,7 +55,8 @@
             <span class="input-group-btn">
               <button type="button" class="btn btn-default"><i class="fas fa-search"></i></button>
             </span>
-            <input type="text" class="form-control" placeholder="Search by  SKU"   name="searchText" [(ngModel)]="searchTextSku"  />
+            <input type="text" class="form-control" placeholder="Search by  SKU" name="searchText"
+              [(ngModel)]="searchTextSku" />
           </p>
         </div>
       </div>
@@ -88,13 +90,13 @@
                           class="custom-control-label">Not Approved</span>
                       </label>
                       <label class="custom-control custom-checkbox custom-control-inline">
-                          <input #ch5 type="checkbox" (click)="buttoncheck5()" class="custom-control-input"><span
-                            class="custom-control-label">Active</span>
-                        </label>
-                        <label class="custom-control custom-checkbox custom-control-inline">
-                            <input #ch6 type="checkbox" (click)="buttoncheck6()" class="custom-control-input"><span
-                              class="custom-control-label">DeActive</span>
-                          </label>
+                        <input #ch5 type="checkbox" (click)="buttoncheck5()" class="custom-control-input"><span
+                          class="custom-control-label">Active</span>
+                      </label>
+                      <label class="custom-control custom-checkbox custom-control-inline">
+                        <input #ch6 type="checkbox" (click)="buttoncheck6()" class="custom-control-input"><span
+                          class="custom-control-label">DeActive</span>
+                      </label>
                       <!-- <label class="custom-control custom-checkbox custom-control-inline">
                         <input #ch5 type="checkbox" (click)="buttoncheck5()" class="custom-control-input"><span
                           class="custom-control-label">Failed</span>
@@ -118,22 +120,23 @@
                   <tr class="border-0">
                     <th class="border-0">#</th>
                     <th class="border-0">Status</th>
-              
+
                     <th class="border-0">Product Name</th>
                     <th class="border-0">Product ID</th>
                     <th class="border-0">Manufacturer</th>
                     <th class="border-0">SKU</th>
                     <th class="border-0">Quantity Available</th>
                     <th class="border-0">Price</th>
-                    <th class="border-0 " style="text-align:center !important;" >Actions</th>
+                    <th class="border-0 " style="text-align:center !important;">Actions</th>
                   </tr>
                 </thead>
-                <tbody *ngFor="let item of products | paginate: { itemsPerPage: showEntries, currentPage: p }">
-             
-                  <tr  *ngIf = "filterCondition(item)"  >
-                    <td><input type="checkbox"><br></td>
+                <tbody
+                  *ngFor="let item of products | paginate: { itemsPerPage: showEntries, currentPage: p }; let i=index">
+
+                  <tr *ngIf="filterCondition(item)">
+                    <td>{{i+1}}</td>
                     <td>{{item.status}}</td>
-                  
+
                     <td>{{item.productName}}</td>
                     <td>{{item.id}} </td>
                     <td>{{item.manufacturerName}}</td>
@@ -144,10 +147,12 @@
 
                     <td>
                       <div class="dropdown float-right">
-                      
-                        <button  class="btn btn-info" (click)="edit(item.id)"> Edit</button>
-                   <button  class="btn btn-danger size" *ngIf="item.prdstatus=='Active'" (click)="deActivate(item.id)"> Deactivate</button>
-                   <button  *ngIf="item.prdstatus=='Deactive'" (click)="activate(item.id)" class="btn btn-success size"> Activate</button>
+
+                        <button class="btn btn-info" (click)="edit(item.id)"> Edit</button>
+                        <button class="btn btn-danger size" *ngIf="item.prdstatus=='Active'"
+                          (click)="deActivate(item.id)"> Deactivate</button>
+                        <button *ngIf="item.prdstatus=='Deactive'" (click)="activate(item.id)"
+                          class="btn btn-success size"> Activate</button>
                       </div>
                       <!--<select class="selectpicker">-->
                       <!--<option>Edit</option>-->
@@ -156,7 +161,7 @@
                       <!--</select>-->
                     </td>
 
-              
+
                 </tbody>
               </table>
               <pagination-controls (pageChange)="p = $event"></pagination-controls>
